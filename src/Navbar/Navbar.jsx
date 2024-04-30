@@ -4,7 +4,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import './Navbar.css';
 import FlagIcon from '@mui/icons-material/Flag';
-import styled from 'styled-components';
+
 
 function Navbar() {
   return (
