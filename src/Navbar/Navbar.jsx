@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import './Navbar.css';
 import FlagIcon from '@mui/icons-material/Flag';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import IndianFlag from '../assets/indianflag.webp'
 
 
 function Navbar() {
@@ -38,18 +39,33 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <div className="rinavbottom
-navbottomght">
-          <div className="lang"><FlagIcon /></div>
+        <div className="right">
+          <div className="lang">
+            <img src={IndianFlag} />
+            <span>IN</span>
+            <ArrowDropDownIcon className='di'/>
+          </div>
           <div className="navbar__links">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            {/* Add more links as needed */}
+            <a href="#">
+              <span>Hello, sign in</span>
+              <div>
+                <span>Account & Lists </span>
+                <ArrowDropDownIcon className='di'/>
+              </div>
+            </a>
+            <a href="#">
+              <span>Returns</span>
+              <div>
+                <span>& orders</span>
+              </div>
+            </a>
+            <a href="#">
+              <span>Cart</span>
+            </a>
           </div>
         </div>
       </div>
-      
+
     </>
 
   );
