@@ -14,8 +14,7 @@ function App() {
       <div className="main-content">
       <Home />
         {/* Your main content goes here */}
-        <h1>Welcome to My Amazon Navbar</h1>
-        <p>This is just a demo application.</p>
+       
       </div>
     </div>
   );
