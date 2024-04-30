@@ -1,9 +1,10 @@
 // Navbar.jsx
 import React from 'react';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import './Navbar.css';
 import FlagIcon from '@mui/icons-material/Flag';
+import styled from 'styled-components';
 
 function Navbar() {
   return (
@@ -12,9 +13,9 @@ function Navbar() {
         <img src="src/assets/Logo.png" alt="Amazon Logo" />
       </div> 
       <div className="navbar__deliver-to">
-      <LocationOnIcon/>
-        Deliver to: 
-        <span className="navbar__deliver-to-country">United States</span>
+      <LocationOnOutlinedIcon/>
+        Deliver to
+        <span className="navbar__deliver-to-country">India</span>
       </div>
       <div className="navbar__search">
         <input type="text" placeholder="Search..." />
