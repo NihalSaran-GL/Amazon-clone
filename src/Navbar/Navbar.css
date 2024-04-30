@@ -1,72 +1,113 @@
 /* Navbar.css */
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgb(19, 25, 33);
+  /* background-color: #232f3e; */
+  color: white;
+  height: 60px;
+}
+
+.left {
+  width: 100px;
+  display: flex;
+}
+
+.navbar__deliver-to {
+  margin-left: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin-right: 10px;
+
+  span {
     display: flex;
+
+    div{
+      width: 25px;
+    }
+
+    span {
+      width: 63px !important;
+      font-size: 12px;
+    }
+  }
+
+  div {
+    margin-top: -5px;
+    display: flex;
+    font-size: 12px;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #232f3e;
-    color: white;
-  }
 
-  .navbar__deliver-to {
-    flex: 1;
-    font-size: 14px;
-    margin-right: 10px;
-    
-    
+    span {
+      font-size: 14px;
+    }
   }
-  
-  .navbar__deliver-to-country {
-   
-    display: block;
-    font-weight: bold;
-    margin-left: 5px;
-  }
-  
-  
-  .navbar__logo img {
-    height: 40px;
-    
-    
-  }
-  
-  .navbar__links a {
-    
-    
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-  }
-  
-  .navbar__search input {
-    padding: 5px;
-    
-    margin-right: 10px;
-    
-    width: 200%;
-    
-  }
-  
-  .navbar__search .searchbox {
-    padding: 5px 5px;
-    flex: 1;
-    
-    background-color: #febd69;
-    color: black;
-    border: none;
-    cursor: pointer;
-    width: 10%;
-    
-  }
+}
 
-  
-  .navbar__search button:hover {
-    background-color: black;
-  }
+.navbar__deliver-to-country {
+
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+.box{
+  display: flex;
+  background-color: rgb(230, 230, 230);
+  color: rgb(15, 17, 17);
+  border-radius: 5px 0px 0px 5px;
+  align-items: center;
+  font-size: 14px !important;
+  padding: 5px;
+}
+
+.navbar__logo img {
+  height: 40px;
 
 
-  .lang {
+}
 
-    position: relative;
-    display: flex;
-  }
+.navbar__links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.navbar__search input {
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.952);
+  border: none;
+  width: 200%;
+}
+
+.navbar__search{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar__search .searchbox {
+  height: 40px !;
+  border-radius: 0px 5px 5px 0px;
+  width: 45px;
+
+  background-color: #febd69;
+  color: black;
+  border: none;
+  cursor: pointer;
+
+}
+
+
+.navbar__search button:hover {
+  background-color: black;
+}
+
+
+.lang {
+
+  position: relative;
+  display: flex;
+}
