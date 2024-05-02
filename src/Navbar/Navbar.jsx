@@ -6,6 +6,7 @@ import './Navbar.css';
 import FlagIcon from '@mui/icons-material/Flag';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import IndianFlag from '../assets/indianflag.webp'
+import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 
 
 function Navbar() {
@@ -43,14 +44,14 @@ function Navbar() {
           <div className="lang">
             <img src={IndianFlag} />
             <span>IN</span>
-            <ArrowDropDownIcon className='di'/>
+            <ArrowDropDownIcon className='di' />
           </div>
           <div className="navbar__links">
             <a href="#">
               <span>Hello, sign in</span>
               <div>
                 <span>Account & Lists </span>
-                <ArrowDropDownIcon className='di'/>
+                <ArrowDropDownIcon className='di' />
               </div>
             </a>
             <a href="#">
@@ -59,8 +60,11 @@ function Navbar() {
                 <span>& orders</span>
               </div>
             </a>
-            <a href="#">
-              <span>Cart</span>
+            <a className='cartParent' href="#">
+              <AddShoppingCartOutlinedIcon/>
+              <div  className='cart'>
+                <span>Cart</span>
+              </div>
             </a>
           </div>
         </div>
