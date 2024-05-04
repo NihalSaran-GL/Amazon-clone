@@ -3,9 +3,8 @@ import React from 'react';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import './Navbar.css';
-import FlagIcon from '@mui/icons-material/Flag';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import IndianFlag from '../assets/indianflag.webp'
+import IndianFlag from '../../assets/indianflag.webp'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 
 
