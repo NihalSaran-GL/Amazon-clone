@@ -1,8 +1,8 @@
 // App.jsx
 import React from 'react';
-import Navbar from './Navbar/Navbar';
-import Home from './Components/Home';
-import Navbottom from './Navbar/navbottom/navbottom';
+import Navbar from './Components/Navbar/Navbar';
+import Home from './Components/HomePage/Home';
+import Navbottom from './Components/Navbar/navbottom/navbottom';
 
 function App() {
 
