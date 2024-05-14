@@ -4,3 +4,6 @@
     margin: 0 auto; /* Center the carousel */
   }
   
+.thumbs{
+  display: none;
+}
