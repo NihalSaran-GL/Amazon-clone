@@ -8,6 +8,7 @@ import { FooterBottom } from '../Footer/FooterBottom/FooterBottom';
 import { Slider1 } from './Slider1/slider1';
 import {Slider2} from './Slider2/slider2'
 import {Slider3} from './Slider3/slider3'
+import {FooterSignIn} from '../Footer/FooterSignIn/FooterSignIn'
 
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
       <Slider1 />
       <Slider2 />
       <Slider3 />
+      <FooterSignIn />
       <Footer/>
       <FooterBottom/>
     </div>
