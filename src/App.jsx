@@ -1,20 +1,15 @@
 import React from 'react';
-import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/HomePage/Home';
-import Navbottom from './Components/Navbar/navbottom/navbottom';
+import Product from './Components/ProductDetails/Product'
 import './App.css'
 
 function App() {
 
-  
   return (
     <div>
-      <Navbar />
-      <Navbottom/>
       <div className="main-content">
-      <Home />
-        {/* Your main content goes here */}
-       
+        {/* <Home /> */}
+        <Product />
       </div>
     </div>
   );
