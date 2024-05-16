@@ -1,12 +1,22 @@
-import React from 'react'
-import './Product.css'
+import React from 'react';
+import './Product.css';
 import { Footer } from '../Footer/Footer';
 import { FooterBottom } from '../Footer/FooterBottom/FooterBottom';
 import Navbottom from '../Navbar/navbottom/navbottom';
 import Navbar from '../Navbar/Navbar';
-import { FooterSignIn } from '../Footer/FooterSignIn/FooterSignIn'
+import { FooterSignIn } from '../Footer/FooterSignIn/FooterSignIn';
+import productImage from '../../assets/productimg.jpg';
+import productImage2 from '../../assets/productimg2.png';
+import productImage3 from '../../assets/productimg3.jpg';
+import productImage4 from '../../assets/productimg4.jpg';
+import productImage5 from '../../assets/productimg5.jpg';
+import productImage6 from '../../assets/productimg6.jpg';
+import shareLogo from '../../assets/sharelogo.png';
+import rating from '../../assets/rating.png';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import amazonchoice from '../../assets/amazon-choice.png';
 
-function Product() {
+function ProductPage() {
     return (
         <div className='product-main-page'>
             <Navbar />
@@ -35,8 +45,48 @@ function Product() {
                     <span>Smartphones</span>
                 </span>
                 <div className="productDescription-container">
-                    <div className="view">Photos</div>
-                    <div className="description">Description</div>
+                    <div className="view">
+                        <div className="otherView">
+                            <span className="preview select">
+                                <img className='pi' src={productImage} alt="Product" />
+                            </span>
+                            <span className="preview">
+                                <img className='pi2' src={productImage2} alt="Product" />
+                            </span>
+                            <span className="text">3 VIDEOS</span>
+                            <span className="preview">
+                                <img className='pi' src={productImage3} alt="Product" />
+                            </span>
+                            <span className="preview">
+                                <img className='pi' src={productImage4} alt="Product" />
+                            </span>
+                            <span className="preview">
+                                <img className='pi' src={productImage5} alt="Product" />
+                            </span>
+                            <span className="preview">
+                                <img className='pi' src={productImage6} alt="Product" />
+                            </span>
+                        </div>
+                        <img src={productImage} alt="Product" />
+                        <span className="note">Roll over image to zoom in</span>
+                        <img className='shareLogo' src={shareLogo} alt="" />
+                    </div>
+
+                    <div className="description">
+                        <div className="title">iQOO Z9 5G (Brushed Green, 8GB RAM, 128GB Storage) | Dimensity 7200 5G Processor | Sony IMX882 OIS Camera | 120Hz AMOLED with 1800 nits Local Peak Brightness | 44W Charger in The Box</div>
+                        <div className="store"><a href="">Visit the iQOO Store</a></div>
+                        <div className="rating">
+                            <span>4.2</span>
+                            <img src={rating} alt="" />
+                            <ArrowDropDownIcon className='arrow' />
+                            <span className="ratingCount">1,827 ratings</span>
+                            <span className='ml'>|</span>
+                            <span className="ratingCount ml">Search this page</span>
+                        </div>
+                        <img src={amazonchoice} alt="" />
+                        <div className="bought">5K+ bought in past month</div>
+                        <div class="hl"></div>
+                    </div>
                 </div>
             </div>
 
@@ -44,7 +94,7 @@ function Product() {
             <Footer />
             <FooterBottom />
         </div>
-    )
+    );
 }
 
-export default Product;
+export default ProductPage;

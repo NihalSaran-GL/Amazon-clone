@@ -33,7 +33,7 @@ function Navbar() {
               <span>All</span>
               <ArrowDropDownIcon />
             </div>
-            <input type="text" placeholder="Search..." />
+            <input type="text" placeholder="Search Amazon.in" />
             <div className="searchbox">
               <SearchIcon />
             </div>
