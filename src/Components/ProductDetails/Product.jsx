@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Product.css';
 import { Footer } from '../Footer/Footer';
 import { FooterBottom } from '../Footer/FooterBottom/FooterBottom';
@@ -15,8 +15,15 @@ import shareLogo from '../../assets/sharelogo.png';
 import rating from '../../assets/rating.png';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import amazonchoice from '../../assets/amazon-choice.png';
+import ProductPrice from './ProductPrice'; 
 
 function ProductPage() {
+    const [selectedValue, setSelectedValue] = useState('a');
+
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
+    };
+
     return (
         <div className='product-main-page'>
             <Navbar />
@@ -45,7 +52,7 @@ function ProductPage() {
                     <span>Smartphones</span>
                 </span>
                 <div className="productDescription-container">
-                    <div className="view">
+                <div className="view">
                         <div className="otherView">
                             <span className="preview select">
                                 <img className='pi' src={productImage} alt="Product" />
@@ -72,20 +79,24 @@ function ProductPage() {
                         <img className='shareLogo' src={shareLogo} alt="" />
                     </div>
 
+
                     <div className="description">
-                        <div className="title">iQOO Z9 5G (Brushed Green, 8GB RAM, 128GB Storage) | Dimensity 7200 5G Processor | Sony IMX882 OIS Camera | 120Hz AMOLED with 1800 nits Local Peak Brightness | 44W Charger in The Box</div>
-                        <div className="store"><a href="">Visit the iQOO Store</a></div>
-                        <div className="rating">
-                            <span>4.2</span>
-                            <img src={rating} alt="" />
-                            <ArrowDropDownIcon className='arrow' />
-                            <span className="ratingCount">1,827 ratings</span>
-                            <span className='ml'>|</span>
-                            <span className="ratingCount ml">Search this page</span>
+                        <div className="Text">
+                            <div className="title">iQOO Z9 5G (Brushed Green, 8GB RAM, 128GB Storage) | Dimensity 7200 5G Processor | Sony IMX882 OIS Camera | 120Hz AMOLED with 1800 nits Local Peak Brightness | 44W Charger in The Box</div>
+                            <div className="store"><a href="">Visit the iQOO Store</a></div>
+                            <div className="rating">
+                                <span>4.2</span>
+                                <img src={rating} alt="" />
+                                <ArrowDropDownIcon className='arrow' />
+                                <span className="ratingCount">1,827 ratings</span>
+                                <span className='ml'>|</span>
+                                <span className="ratingCount ml">Search this page</span>
+                            </div>
+                            <img src={amazonchoice} alt="" />
+                            <div className="bought">5K+ bought in past month</div>
+                            <div class="hl"></div>
                         </div>
-                        <img src={amazonchoice} alt="" />
-                        <div className="bought">5K+ bought in past month</div>
-                        <div class="hl"></div>
+                        <ProductPrice selectedValue={selectedValue} handleChange={handleChange} />
                     </div>
                 </div>
             </div>
