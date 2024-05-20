@@ -1,5 +1,7 @@
 import React from 'react';
+import './ProductPrice.css'
 import Radio from '@mui/material/Radio';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 function ProductPrice({ selectedValue, handleChange }) {
     return (
@@ -32,6 +34,17 @@ function ProductPrice({ selectedValue, handleChange }) {
                     name="radio-buttons"
                     inputProps={{ 'aria-label': 'A' }}
                 />
+            </div>
+            <div className="withoutExchange-content">
+                <div className='free-delivery'>FREE delivery <span>Thursday, 23 May. </span>&nbsp;Details</div>
+                <div className="fastest-delivery">Or fastest delivery <span className='today'>Today.&nbsp;</span>Order within <span className='time'>9 hrs 50 mins.</span><span>&nbsp;Details</span></div>
+                <div className='locationicon'>
+                    <LocationOnOutlinedIcon className='location-icon' />
+                    <span className="update-location">update loaction</span>
+                </div>
+                <div className="instock">In Stock</div>
+                <div className="company">Ships from<span>Amazon</span></div>
+                <div className="owner">Sold by<span>Darshita Etel</span></div>
             </div>
         </div>
     );

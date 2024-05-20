@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React from 'react';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import SearchIcon from '@mui/icons-material/Search';

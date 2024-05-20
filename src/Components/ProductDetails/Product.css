@@ -164,48 +164,6 @@
             border-top: 1px solid rgb(173, 173, 173);
             width: 100%;
         }
-
-        .price {
-            border: 1px solid rgb(173, 173, 173);
-            border-radius: 10px;
-            height: 400px;
-            width: 220px;
-
-            .withExchange {
-                display: flex;
-                background: rgb(241, 241, 241);
-                border-radius: 10px 10px 0px 0px;
-                justify-content: space-between;
-                padding: 10px;
-            }
-
-            .withoutExchange {
-                display: flex;
-                padding: 10px;
-                justify-content: space-between;
-            }
-
-            .leftText{
-                margin-left: 3px;
-                font-size: 12px;
-                div{
-                    font-weight: bold;
-                }
-                span{
-                    color: rgb(177, 39 , 4);
-
-                    span{
-                        color: black;
-                    }
-                }
-            }
-
-            .right-select{
-                height: 15px;
-                width: 15px;
-                margin-top: 10px;
-            }
-        }
     }
 
 }
