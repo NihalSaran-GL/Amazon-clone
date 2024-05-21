@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import './Product.css';
-import { Footer } from '../Footer/Footer';
-import { FooterBottom } from '../Footer/FooterBottom/FooterBottom';
-import Navbottom from '../Navbar/navbottom/navbottom';
-import Navbar from '../Navbar/Navbar';
-import { FooterSignIn } from '../Footer/FooterSignIn/FooterSignIn';
 import productImage from '../../assets/productimg.jpg';
 import productImage2 from '../../assets/productimg2.png';
 import productImage3 from '../../assets/productimg3.jpg';
@@ -98,10 +93,6 @@ function ProductPage() {
                     </div>
                 </div>
             </div>
-
-            <FooterSignIn />
-            <Footer />
-            <FooterBottom />
         </div>
     );
 }
