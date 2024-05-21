@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import SearchIcon from '@mui/icons-material/Search';
+import Navbottom from './navbottom/navbottom';
 import './Navbar.css';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import IndianFlag from '../../assets/indianflag.webp';
@@ -72,6 +73,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+      <Navbottom />
     </>
   );
 }
