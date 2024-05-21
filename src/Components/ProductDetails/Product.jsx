@@ -26,8 +26,6 @@ function ProductPage() {
 
     return (
         <div className='product-main-page'>
-            <Navbar />
-            <Navbottom />
 
             <div className="productPage-container">
                 <nav className="productPage-navbottom">
@@ -94,7 +92,7 @@ function ProductPage() {
                             </div>
                             <img src={amazonchoice} alt="" />
                             <div className="bought">5K+ bought in past month</div>
-                            <div class="hl"></div>
+                            <div className="hl"></div>
                         </div>
                         <ProductPrice selectedValue={selectedValue} handleChange={handleChange} />
                     </div>
