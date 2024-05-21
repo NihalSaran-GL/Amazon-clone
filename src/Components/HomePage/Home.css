@@ -1,106 +1,17 @@
 /* Home.css */
-
-/* Container for all components */
-.home-container {
-    position: relative;
-  }
-  
-  /* Absolute positioning for the card over the image carousel */
-  .card-over-image {
-    position: absolute;
-    top: 65%; /* Adjust this value to position the card vertically */
-    left: 13%; /* Adjust this value to position the card horizontally */
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the card appears above the image carousel */
-    height: 50%;
-    width: 340px;
-    background: #fff;
-  }
-  .card-over-image1 {
-    position: absolute;
-    top: 65%; /* Adjust this value to position the card vertically */
-    left: 38%; /* Adjust this value to position the card horizontally */
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the card appears above the image carousel */
-    height: 50%;
-    width: 340px;
-    background: #fff;
-  }
- 
-  .card-over-image2 {
-    position: absolute;
-    top: 65%; /* Adjust this value to position the card vertically */
-    left: 63%; /* Adjust this value to position the card horizontally */
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the card appears above the image carousel */
-    height: 50%;
-    width: 340px;
-    background: #fff;
-  }
-
-  .card-over-image3 {
-    position: absolute;
-    top: 65%; /* Adjust this value to position the card vertically */
-    left: 88%; /* Adjust this value to position the card horizontally */
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the card appears above the image carousel */
-    height: 50%;
-    width: 340px;
-    background: #fff;
-  }
-
-  .card-over-image4 {
-    position: absolute;
-    top: 120%; /* Adjust this value to position the card vertically */
-    left: 13%; /* Adjust this value to position the card horizontally */
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the card appears above the image carousel */
-    height: 50%;
-    width: 340px;
-    background: #fff;
-  }
-
-  .card-over-image5 {
-    position: absolute;
-    top: 120%; /* Adjust this value to position the card vertically */
-    left: 38%; /* Adjust this value to position the card horizontally */
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the card appears above the image carousel */
-    height: 50%;
-    width: 340px;
-    background: #fff;
-  }
-
-  .card-over-image6 {
-    position: absolute;
-    top: 120%; /* Adjust this value to position the card vertically */
-    left: 63%; /* Adjust this value to position the card horizontally */
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the card appears above the image carousel */
-    height: 50%;
-    width: 340px;
-    background: #fff;
-  }
-
-  .card-over-image7 {
-    position: absolute;
-    top: 120%; /* Adjust this value to position the card vertically */
-    left: 88%; /* Adjust this value to position the card horizontally */
-    transform: translate(-50%, -50%);
-    z-index: 1; /* Ensure the card appears above the image carousel */
-    height: 50%;
-    width: 340px;
-    background: #fff;
-  }
+.card-over-image {
+  z-index: 1;
+  height: 440px;
+  width: 340px;
+  background: #fff;
+}
 
 
-
-  
-  
-  /* Grid layout for cards */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
+.card-grid {
+  margin-left: 5%;
+  width: 90%;
+  position: absolute;
+  top: 450px;
+  justify-content: space-between;
+  display: flex;
+}

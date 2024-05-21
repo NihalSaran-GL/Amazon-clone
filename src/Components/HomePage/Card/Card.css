@@ -1,0 +1,23 @@
+.card-title{
+    margin-bottom: 20px;
+}
+
+.cardImageContainer{
+    display: flex;
+    justify-content: space-around;
+
+    .card-img{
+        width: 150px;
+    }
+
+    .cardImage{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .card-img-des{
+        font-size: 11px;
+    }
+}
