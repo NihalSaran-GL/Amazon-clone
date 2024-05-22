@@ -12,9 +12,6 @@ function Home() {
       <Imagecarousel />
       <div className="card-grid">
         <MyCard title="Another Card" content="This is another card." />
-        <MyCard title="Another Card" content="This is another card." />
-        <MyCard title="Another Card" content="This is another card." />
-        <MyCard title="Another Card" content="This is another card." />
       </div>
       <Slider1 />
       <Slider2 />
