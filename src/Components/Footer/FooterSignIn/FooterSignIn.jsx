@@ -9,22 +9,20 @@ export const FooterSignIn = () => {
       <div>
         <div>See personalized recommendations</div>
         <div className="mehrcontainer">
-          <a href="">
-            <div className="amazonbutton">
-              <Link to='/signin'>
-                <span> Sign In </span>
-              </Link>
-            </div>
-          </a>
+          <div className="amazonbutton">
+            <Link to='/signin'>
+              <span> Sign In </span>
+            </Link>
+          </div>
         </div>
         <div>
           <span>New customers?</span>
-          <Link to='/signup'>
-            <a href='' id='span2'>Start here.</a>
+          <Link to='/signup' id='span2'>
+            Start here.
           </Link>
         </div>
       </div>
       <hr />
-    </div >
+    </div>
   )
 }
