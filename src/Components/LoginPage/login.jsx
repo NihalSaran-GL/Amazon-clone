@@ -1,5 +1,6 @@
 import React from 'react';
 import './login.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
     return (
@@ -24,8 +25,7 @@ function Login() {
                 </form>
 
                 <p>
-                    By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please
-                    see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
+                    By creating an account or logging in, you agree to Amazon’s <span className="blueText">Conditions of Use</span> and <span className="blueText">Privacy Policy</span>.
                 </p>
 
             </div>
@@ -34,7 +34,9 @@ function Login() {
                 <span>New to Amazon?</span>
                 <hr className='hr' />
             </div>
-            <button className='login__registerButton'>Create your Amazon Account</button>
+            <Link to='/signup'>
+                <button className='login__registerButton'>Create your Amazon Account</button>
+            </Link>
         </div>
     )
 }

@@ -19,7 +19,9 @@ export const FooterSignIn = () => {
         </div>
         <div>
           <span>New customers?</span>
-          <span id='span2'>Start here.</span>
+          <Link to='/signup'>
+            <a href='' id='span2'>Start here.</a>
+          </Link>
         </div>
       </div>
       <hr />

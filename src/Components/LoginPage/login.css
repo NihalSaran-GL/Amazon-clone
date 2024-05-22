@@ -35,12 +35,12 @@
     margin-bottom: 5px;
 }
 
-.login__container>form>input {
+.login__container>form>input, .input {
     height: 30px;
     margin-bottom: 10px;
     background-color: white;
     width: 98%;
-    border: 1px solid black;
+    border: 1px solid rgb(127, 127, 127);
     border-radius: 5px;
 }
 
