@@ -7,6 +7,7 @@ import './Navbar.css';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import IndianFlag from '../../assets/indianflag.webp';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
+import Amazonlogo from '../../../src/assets/Logo.png'
 
 function Navbar() {
   return (
@@ -15,8 +16,9 @@ function Navbar() {
         <div className="left">
           <div className="navbar__logo">
             {/* Use Link for routing */}
-            <Link to="/">
-              <img src="src/assets/Logo.png" alt="Amazon Logo" />
+            <Link to="/Amazon-clone">
+            <img src={Amazonlogo} />
+
             </Link>
           </div>
           <div className="navbar__deliver-to">
