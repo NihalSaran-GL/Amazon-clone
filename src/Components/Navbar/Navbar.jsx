@@ -66,7 +66,7 @@ function Navbar() {
                 <span>& orders</span>
               </div>
             </Link>
-            <Link to="/product" className='cartParent'>
+            <Link to="/Amazon-clone" className='cartParent'>
               <AddShoppingCartOutlinedIcon/>
               <div  className='cart'>
                 <span>Cart</span>
