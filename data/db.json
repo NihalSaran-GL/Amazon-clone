@@ -1,0 +1,76 @@
+{
+  "cards": [
+    {
+      "title": "Card Title 1",
+      "images": [
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    },
+    {
+      "title": "Card Title 2",
+      "images": [
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    },
+    {
+      "title": "Card Title 3",
+      "images": [
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    },
+    {
+      "title": "Card Title 4",
+      "images": [
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    },
+    {
+      "title": "Card Title 5",
+      "images": [
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    },
+    {
+      "title": "Card Title 6",
+      "images": [
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    },
+    {
+      "title": "Card Title 7",
+      "images": [
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    },
+    {
+      "title": "Card Title 8",
+      "images": [
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    }
+  ]
+}

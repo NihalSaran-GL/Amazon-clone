@@ -1,23 +1,30 @@
-.card-title{
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px; /* Adjust gap between cards as needed */
+    margin-left: 50px;
+}
+
+.card-title {
     margin-bottom: 20px;
 }
 
-.cardImageContainer{
+.cardImageContainer {
     display: flex;
     justify-content: space-around;
+}
 
-    .card-img{
-        width: 150px;
-    }
+.cardImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
 
-    .cardImage{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin-bottom: 15px;
-    }
+.card-img {
+    width: 150px;
+}
 
-    .card-img-des{
-        font-size: 11px;
-    }
+.card-img-des {
+    font-size: 11px;
 }
