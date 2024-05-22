@@ -4,7 +4,8 @@ import Product from './Components/ProductDetails/Product'
 import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Footer } from './Components/Footer/Footer';
-import './App.css'
+import './App.css';
+
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
         <Route path="/Amazon-clone" element={
           <Home />
         } />
-        <Route path='/product' element={
+        <Route path='/product/:imageName' element={
           <Product />
         }></Route>
       </Routes>

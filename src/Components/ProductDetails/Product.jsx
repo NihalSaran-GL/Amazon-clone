@@ -11,9 +11,12 @@ import rating from '../../assets/rating.png';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import amazonchoice from '../../assets/amazon-choice.png';
 import ProductPrice from './ProductPrice'; 
+import { useParams } from 'react-router-dom';
 
 function ProductPage() {
     const [selectedValue, setSelectedValue] = useState('a');
+    const { imageName } = useParams();
+
 
     const handleChange = (event) => {
         setSelectedValue(event.target.value);
@@ -48,7 +51,7 @@ function ProductPage() {
                 <div className="view">
                         <div className="otherView">
                             <span className="preview select">
-                                <img className='pi' src={productImage} alt="Product" />
+                            <img className='pi' src={productImage} alt="" />
                             </span>
                             <span className="preview">
                                 <img className='pi2' src={productImage2} alt="Product" />
@@ -67,7 +70,7 @@ function ProductPage() {
                                 <img className='pi' src={productImage6} alt="Product" />
                             </span>
                         </div>
-                        <img src={productImage} alt="Product" />
+                        <img src={`/Amazon-clone/assets/${imageName}`} alt="Product" />
                         <span className="note">Roll over image to zoom in</span>
                         <img className='shareLogo' src={shareLogo} alt="" />
                     </div>
@@ -75,7 +78,10 @@ function ProductPage() {
 
                     <div className="description">
                         <div className="Text">
-                            <div className="title">iQOO Z9 5G (Brushed Green, 8GB RAM, 128GB Storage) | Dimensity 7200 5G Processor | Sony IMX882 OIS Camera | 120Hz AMOLED with 1800 nits Local Peak Brightness | 44W Charger in The Box</div>
+                            <div className="title">
+                              <div className='image-tittle'>  {imageName}
+                              </div>
+                              </div>
                             <div className="store"><a href="">Visit the iQOO Store</a></div>
                             <div className="rating">
                                 <span>4.2</span>
