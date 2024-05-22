@@ -16,7 +16,7 @@ function Navbar() {
         <div className="left">
           <div className="navbar__logo">
             {/* Use Link for routing */}
-            <Link to="/">
+            <Link to="/Amazon-clone">
             <img src={Amazonlogo} />
 
             </Link>
