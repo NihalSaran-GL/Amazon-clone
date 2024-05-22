@@ -6,7 +6,7 @@ const MyCard = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/cards')
+    fetch('https://vbcm7hql-3001.inc1.devtunnels.ms/cards')
       .then(response => response.json())
       .then(data => setCards(data));
   }, []);
@@ -22,7 +22,7 @@ const MyCard = () => {
             <div className='cardImageContainer'>
               {card.images.slice(0, 2).map((image, i) => (
                 <div key={i} className="cardImage">
-                  <img className='card-img' src={`/assets/${image.src}`} alt="" />
+                  <img className='card-img' src={`/Amazon-clone/assets/${image.src}`} alt="" />
                   <span className='card-img-des'>{image.description}</span>
                 </div>
               ))}
@@ -30,7 +30,7 @@ const MyCard = () => {
             <div className='cardImageContainer'>
               {card.images.slice(2, 4).map((image, i) => (
                 <div key={i} className="cardImage">
-                  <img className='card-img' src={`/assets/${image.src}`} alt="" />
+                  <img className='card-img' src={`/Amazon-clone/assets/${image.src}`} alt="" />
                   <span className='card-img-des'>{image.description}</span>
                 </div>
               ))}
