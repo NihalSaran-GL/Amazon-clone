@@ -9,11 +9,56 @@ const MyCard = () => {
 
   useEffect(() => {
     fetch('https://vbcm7hql-3001.inc1.devtunnels.ms/cards')
-      .then(response => response.json())
-      .then(data => setCards(data));
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => setCards(data))
+      .catch(() => {
+        // Fallback to dummy data if API call fails
+        setCards([
+          {
+            title: 'Card Title 1- Fallback Data',
+            images: [
+              { src: "productimg.jpg", description: "Lorem ipsum dolor sit amet." },
+              { src: "productimg3.jpg", description: "Lorem ipsum dolor sit amet." },
+              { src: "productimg4.jpg", description: "Lorem ipsum dolor sit amet." },
+              { src: "productimg5.jpg", description: "Lorem ipsum dolor sit amet." },
+            ]
+          },
+          {
+            title: "Card Title 2- Fallback Data",
+            images: [
+              { src: "productimg3.jpg", description: "Lorem ipsum dolor sit amet." },
+              { src: "productimg4.jpg", description: "Lorem ipsum dolor sit amet." },
+              { src: "productimg5.jpg", description: "Lorem ipsum dolor sit amet." },
+              { src: "productimg.jpg", description: "Lorem ipsum dolor sit amet." },
+            ]
+          },
+          {
+            title: "Card Title 3- Fallback Data",
+            images: [
+              { src: "productimg4.jpg", description: "Lorem ipsum dolor sit amet." },
+              { src: "productimg5.jpg", description: "Lorem ipsum dolor sit amet." },
+              { src: "productimg.jpg", description: "Lorem ipsum dolor sit amet." },
+              { src: "productimg3.jpg", description: "Lorem ipsum dolor sit amet." },
+            ]
+          },
+          {
+            title: "Card Title 4- Fallback Data",
+            images: [
+              { "src": "productimg5.jpg", description: "Lorem ipsum dolor sit amet." },
+              { "src": "productimg.jpg", description: "Lorem ipsum dolor sit amet." },
+              { "src": "productimg3.jpg", description: "Lorem ipsum dolor sit amet." },
+              { "src": "productimg4.jpg", description: "Lorem ipsum dolor sit amet." },
+            ]
+          }
+        ])
+      });
   }, []);
 
-  // Function to handle image click and navigate to product page
   const handleImageClick = (imageName) => {
     navigate(`/product/${imageName}`);
   };
