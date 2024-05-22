@@ -3,10 +3,10 @@
     {
       "title": "Keep shopping for",
       "images": [
-        {"src": "https://m.media-amazon.com/images/I/41WnWm3IjiL._MCnd_AC_.jpg", "description": "smartphones & bas..."},
-        {"src": "https://m.media-amazon.com/images/I/31WpdiXNM5L._MCnd_AC_.jpg", "description": "mobile portable pow..."},
-        {"src": "https://m.media-amazon.com/images/I/41-Cj-ucPoL._MCnd_AC_.jpg", "description": "Mobile wireless auto..."},
-        {"src": "https://m.media-amazon.com/images/I/41g9WSZ2d6L._MCnd_AC_.jpg", "description": "Lorem ipsum dolor sit amet."}
+        {"src": "productimg.jpg", "description": "smartphones & bas..."},
+        {"src": "productimg3.jpg", "description": "mobile portable pow..."},
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."}
       ]
     },
     {
