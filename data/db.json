@@ -1,10 +1,10 @@
 {
   "cards": [
     {
-      "title": "Keep shopping for",
+      "title": "Card Title 1",
       "images": [
-        {"src": "productimg.jpg", "description": "smartphones & bas..."},
-        {"src": "productimg3.jpg", "description": "mobile portable pow..."},
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."},
         {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
         {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."}
       ]
