@@ -5,9 +5,10 @@
 .productPage-container {
     .productPage-navbottom {
         font-family: Arial, Helvetica, sans-serif;
-        height: 60px;
+        height: 10px;
+        /* height: 60px; */
         background-color: white;
-        border-bottom: 1px solid rgb(223, 221, 221);
+        /* border-bottom: 1px solid rgb(223, 221, 221); */
         color: rgb(18, 18, 18);
         font-size: 12px;
 

@@ -24,7 +24,7 @@ function ProductPage() {
 
             <div className="productPage-container">
                 <nav className="productPage-navbottom">
-                    <span className="li-1">Electronics</span>
+                    {/* <span className="li-1">Electronics</span>
                     <span className="li">Mobiles & Accessories</span>
                     <span className="li">laptops & Accessories</span>
                     <span className="li">TV & Home Entertainment</span>
@@ -33,9 +33,9 @@ function ProductPage() {
                     <span className="li">Computer Peripherals</span>
                     <span className="li">Smart Technology</span>
                     <span className="li">Musical Instruments</span>
-                    <span className="li">Office & Stationery</span>
+                    <span className="li">Office & Stationery</span> */}
                 </nav>
-                <span className='productDirectory'>
+                {/* <span className='productDirectory'>
                     <span>Electronics</span>
                     <span>›</span>
                     <span>Mobiles & Accessories</span>
@@ -43,7 +43,7 @@ function ProductPage() {
                     <span>Smartphones & Basic Mobiles</span>
                     <span>›</span>
                     <span>Smartphones</span>
-                </span>
+                </span> */}
                 <div className="productDescription-container">
                 <div className="view">
                         <div className="otherView">
