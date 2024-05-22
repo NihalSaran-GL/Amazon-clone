@@ -1,5 +1,6 @@
 import React from 'react'
 import './FooterSignIn.css'
+import { Link } from 'react-router-dom'
 
 export const FooterSignIn = () => {
   return (
@@ -10,13 +11,17 @@ export const FooterSignIn = () => {
         <div className="mehrcontainer">
           <a href="">
             <div className="amazonbutton">
-              <span> Sign In </span>
+              <Link to='/signin'>
+                <span> Sign In </span>
+              </Link>
             </div>
           </a>
         </div>
         <div>
           <span>New customers?</span>
-          <span id='span2'>Start here.</span>
+          <Link to='/signup'>
+            <a href='' id='span2'>Start here.</a>
+          </Link>
         </div>
       </div>
       <hr />

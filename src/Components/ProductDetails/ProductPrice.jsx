@@ -1,9 +1,15 @@
-import React from 'react';
-import './ProductPrice.css'
+import React, { useState } from 'react';
+import './ProductPrice.css';
 import Radio from '@mui/material/Radio';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
-function ProductPrice({ selectedValue, handleChange }) {
+function ProductPrice() {
+    const [selectedValue, setSelectedValue] = useState('a');
+
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
+    };
+
     return (
         <div className="price">
             <div className="withExchange">
@@ -40,7 +46,7 @@ function ProductPrice({ selectedValue, handleChange }) {
                 <div className="fastest-delivery">Or fastest delivery <span className='today'>Today.&nbsp;</span>Order within <span className='time'>9 hrs 50 mins.</span><span>&nbsp;Details</span></div>
                 <div className='locationicon'>
                     <LocationOnOutlinedIcon className='location-icon' />
-                    <span className="update-location">update loaction</span>
+                    <span className="update-location">update location</span>
                 </div>
                 <div className="instock">In Stock</div>
                 <div className="company">Ships from<span>Amazon</span></div>
