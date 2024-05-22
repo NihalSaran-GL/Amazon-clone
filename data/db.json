@@ -72,5 +72,44 @@
         {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."}
       ]
     }
+  ],
+
+  "product-details": [
+
+    {
+      "title": "productimg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.",
+      "price": "$19.99",
+      "images": [
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    },
+    {
+      "title": "Product Title 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.",
+      "price": "$19.99",
+      "images": [
+        {"src": "productimg3.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."}
+      ]
+    },
+    {
+      "title": "Product Title 3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.",
+      "price": "$19.99",
+      "images": [
+        {"src": "productimg4.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg5.jpg", "description": "Lorem ipsum dolor sit amet."},
+        {"src": "productimg.jpg", "description": "Lorem ipsum dolor sit amet."}
+    
   ]
+
+  }
+  ]
+
 }
