@@ -3,7 +3,7 @@ import './Footer.css'
 import { FooterBottom } from './FooterBottom/FooterBottom';
 import { FooterSignIn } from './FooterSignIn/FooterSignIn'
 
-export const Footer = () => {
+function Footer() {
   return (
     <>
       <FooterSignIn />
@@ -53,3 +53,5 @@ export const Footer = () => {
     </>
   )
 }
+
+export default Footer;
