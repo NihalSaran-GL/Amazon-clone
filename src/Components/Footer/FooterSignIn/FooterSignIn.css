@@ -1,5 +1,58 @@
-.footerSignIn-container{
-    height: 233px;
+.footerSignIn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 183px;
     background-color: white;
-    margin-top: 70px !important;
+    color: black;
+    padding: 10px 30px;
+    justify-content: space-around;
+    text-align: center;
+
+    div {
+        font-size: 12px;
+        margin: 8px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+
+        span {
+            font-weight: 400;
+            margin: 4px;
+        }
+
+        #span2 {
+            color: rgb(0, 113, 113);
+        }
+    }
+
+    hr {
+        width: 100%;
+        border-top: 1px solid rgb(209, 208, 208);
+    }
+
+    .mehrcontainer {
+        width: 280px;
+        height: 28px;
+        margin-bottom: 15px;
+        a{
+            text-decoration: none;
+        }
+    }
+
+    .amazonbutton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        border: 1px solid #b79033;
+        background: linear-gradient(#fde7ae, #f3c451);
+        padding: 3px;
+    }
+
+    .amazonbutton span {
+        font-family: Helvetica, sans-serif;
+        color: black;
+        font-size: 13px;
+        font-weight: bold;
+    }
 }
