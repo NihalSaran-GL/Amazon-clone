@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={
+        <Route path="/Amazon-clone" element={
           <Home />
         } />
         <Route path='/product' element={
