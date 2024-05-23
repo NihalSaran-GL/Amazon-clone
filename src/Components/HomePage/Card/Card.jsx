@@ -9,7 +9,7 @@ const MyCard = () => {
 
   useEffect(() => {
    fetch('https://api-amazon-clone.vercel.app/cards')
-   // fetch('http://localhost:3001/cards')
+   // fetch('http://localhost:3001/cards')  npx json-server --watch data/db.json --port 3001
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
