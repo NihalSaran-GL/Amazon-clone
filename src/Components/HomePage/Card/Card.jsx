@@ -8,7 +8,7 @@ const MyCard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://vbcm7hql-3001.inc1.devtunnels.ms/cards')
+    fetch('http://localhost:3001/cards')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -74,7 +74,7 @@ const MyCard = () => {
             <div className='cardImageContainer'>
               {card.images.slice(0, 2).map((image, i) => (
                 <div key={i} className="cardImage" onClick={() => handleImageClick(image.src)}>
-                  <img className='card-img' src={`/Amazon-clone/assets/${image.src}`} alt="" />
+                  <img className='card-img' src={`${image.src}`} alt="" />
                   <span className='card-img-des'>{image.description}</span>
                 </div>
               ))}
@@ -82,7 +82,7 @@ const MyCard = () => {
             <div className='cardImageContainer'>
               {card.images.slice(2, 4).map((image, i) => (
                 <div key={i} className="cardImage" onClick={() => handleImageClick(image.src)}>
-                  <img className='card-img' src={`/Amazon-clone/assets/${image.src}`} alt="" />
+                  <img className='card-img' src={`${image.src}`} alt="" />
                   <span className='card-img-des'>{image.description}</span>
                 </div>
               ))}
