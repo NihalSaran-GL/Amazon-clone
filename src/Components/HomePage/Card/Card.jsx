@@ -8,7 +8,8 @@ const MyCard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:3001/cards')
+   fetch('https://api-amazon-clone.vercel.app/cards')
+   // fetch('http://localhost:3001/cards')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -59,8 +60,8 @@ const MyCard = () => {
       });
   }, []);
 
-  const handleImageClick = (imageName) => {
-    navigate(`/product/${imageName}`);
+  const handleImageClick = (id) => {
+    navigate(`/product/${id}`);
   };
 
   return (
@@ -73,7 +74,7 @@ const MyCard = () => {
             </Typography>
             <div className='cardImageContainer'>
               {card.images.slice(0, 2).map((image, i) => (
-                <div key={i} className="cardImage" onClick={() => handleImageClick(image.src)}>
+                <div key={i} className="cardImage" onClick={() => handleImageClick(image.id)}>
                   <img className='card-img' src={`${image.src}`} alt="" />
                   <span className='card-img-des'>{image.description}</span>
                 </div>
@@ -81,7 +82,7 @@ const MyCard = () => {
             </div>
             <div className='cardImageContainer'>
               {card.images.slice(2, 4).map((image, i) => (
-                <div key={i} className="cardImage" onClick={() => handleImageClick(image.src)}>
+                <div key={i} className="cardImage" onClick={() => handleImageClick(image.id)}>
                   <img className='card-img' src={`${image.src}`} alt="" />
                   <span className='card-img-des'>{image.description}</span>
                 </div>

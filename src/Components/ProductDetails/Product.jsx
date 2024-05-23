@@ -1,88 +1,79 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Product.css';
-import productImage from '../../assets/productimg.jpg';
-import productImage2 from '../../assets/productimg2.png';
-import productImage3 from '../../assets/productimg3.jpg';
-import productImage4 from '../../assets/productimg4.jpg';
-import productImage5 from '../../assets/productimg5.jpg';
-import productImage6 from '../../assets/productimg6.jpg';
 import shareLogo from '../../assets/sharelogo.png';
 import rating from '../../assets/rating.png';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import amazonchoice from '../../assets/amazon-choice.png';
-import ProductPrice from './ProductPrice'; 
+import ProductPrice from './ProductPrice';
 import { useParams } from 'react-router-dom';
 
 function ProductPage() {
+    const [product, setProduct] = useState(null);
+    const [mainImage, setMainImage] = useState(null); // State variable to store main product image
+    const { id } = useParams();
 
-    const [selectedImage, setSelectedImage] = useState(productImage);
+    useEffect(() => {
+        // Fetch product data based on the id parameter
+        fetch(`https://api-amazon-clone.vercel.app/products/${id}`)
+     //   fetch(`http://localhost:3001/products/${id}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setProduct(data);
+                setMainImage(data.src); // Set initial main image to the first preview image
+            })
+            .catch(error => {
+                console.error('Error fetching product data:', error);
+            });
+    }, [id]);
 
-    const { imageName } = useParams();
-
-
-    const handleImageClick = (image) => {
-        setSelectedImage(image);
+    const handleImageClick = (imageUrl) => {
+        // Update the main product image when a preview image is clicked
+        setMainImage(imageUrl);
     };
+
+    if (!product) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className='product-main-page'>
             <div className="productPage-container">
-                <nav className="productPage-navbottom">
-                    {/* Navigation items */}   {/* <span className="li-1">Electronics</span>
-                    <span className="li">Mobiles & Accessories</span>
-                    <span className="li">laptops & Accessories</span>
-                    <span className="li">TV & Home Entertainment</span>
-                    <span className="li">Audio</span>
-                    <span className="li">Cameras</span>
-                    <span className="li">Computer Peripherals</span>
-                    <span className="li">Smart Technology</span>
-                    <span className="li">Musical Instruments</span>
-                    <span className="li">Office & Stationery</span> */}
-                </nav>
-                {/* <span className='productDirectory'>
-                    <span>Electronics</span>
-                    <span>›</span>
-                    <span>Mobiles & Accessories</span>
-                    <span>›</span>
-                    <span>Smartphones & Basic Mobiles</span>
-                    <span>›</span>
-                    <span>Smartphones</span>
-                </span> */}
                 <div className="productDescription-container">
                     <div className="view">
                         <div className="otherView">
                             <span className="preview select">
-
-                                <img className='pi' src={productImage} alt="Product" onClick={() => handleImageClick(productImage)} />
-
+                                <img className='pi' src={product.images[0].src1} alt="Product" onClick={() => handleImageClick(product.images[0].src1)} />
                             </span>
                             <span className="preview">
-                                <img className='pi2' src={productImage2} alt="Product" onClick={() => handleImageClick(productImage2)} />
+                                <img className='pi2' src={product.images[1].src2} alt="Product" onClick={() => handleImageClick(product.images[1].src2)} />
                             </span>
                             <span className="preview">
-                                <img className='pi' src={productImage3} alt="Product" onClick={() => handleImageClick(productImage3)} />
+                                <img className='pi' src={product.images[2].src3} alt="Product" onClick={() => handleImageClick(product.images[2].src3)} />
                             </span>
                             <span className="preview">
-                                <img className='pi' src={productImage4} alt="Product" onClick={() => handleImageClick(productImage4)} />
+                                <img className='pi' src={product.images[3].src4} alt="Product" onClick={() => handleImageClick(product.images[3].src4)} />
                             </span>
                             <span className="preview">
-                                <img className='pi' src={productImage5} alt="Product" onClick={() => handleImageClick(productImage5)} />
+                                <img className='pi' src={product.images[4].src5} alt="Product" onClick={() => handleImageClick(product.images[4].src5)} />
                             </span>
                             <span className="preview">
-                                <img className='pi' src={productImage6} alt="Product" onClick={() => handleImageClick(productImage6)} />
+                                <img className='pi' src={product.images[5].src6} alt="Product" onClick={() => handleImageClick(product.images[5].src6)} />
                             </span>
                         </div>
-            <img src={`/Amazon-clone/assets/${imageName}`} alt="Product" />
-
+                        <img src={mainImage} alt={product.title} /> {/* Display the main product image */}
                         <span className="note">Roll over image to zoom in</span>
                         <img className='shareLogo' src={shareLogo} alt="" />
                     </div>
                     <div className="description">
                         <div className="Text">
                             <div className="title">
-                              <div className='image-tittle'>  {imageName}
-                              </div>
-                              </div>
+                                <div className='image-tittle'>{product.title}</div>
+                            </div>
                             <div className="store"><a href="">Visit the iQOO Store</a></div>
                             <div className="rating">
                                 <span>4.2</span>

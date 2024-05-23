@@ -19,10 +19,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/Amazon-clone" element={<Home />}/>
-          <Route path="/product" element={<Product />} />
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path='/product/:imageName' element={<Product />}></Route>
+          <Route path="/product/:id" element={<Product />}></Route>
         </Routes>
         <Footer />
       </div>
