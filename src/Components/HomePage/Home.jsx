@@ -13,9 +13,9 @@ function Home() {
       <div className="card-grid">
         <MyCard title="Another Card" content="This is another card." />
       </div>
-      <Slider1 />
+      {/* <Slider1 />
       <Slider2 />
-      <Slider3 />
+      <Slider3 /> */}
     </div>
   );
 }

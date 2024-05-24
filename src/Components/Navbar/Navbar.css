@@ -49,7 +49,6 @@
 }
 
 .navbar__deliver-to-country {
-
   font-weight: bold;
   margin-left: 2px;
 }
@@ -70,8 +69,6 @@
 
 .navbar__logo img {
   height: 40px;
-
-
 }
 
 .navbar__links {
@@ -119,7 +116,6 @@
   margin: auto;
 }
 
-
 .navbar__search button:hover {
   background-color: black;
 }
@@ -130,7 +126,6 @@
 }
 
 .lang {
-
   span {
     font-size: 17px !important;
     font-weight: bold;
@@ -156,11 +151,25 @@
   }
 }
 
-.cartParent{
+.cartParent {
   display: flex !important;
   flex-direction: row !important;
 }
 
-.cart{
+.cart {
   margin-top: 3px !important;
+}
+
+/* Style for Logout button */
+.logoutButton {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+.logoutButton:hover {
+  text-decoration: underline;
 }

@@ -17,8 +17,7 @@ function Navbar() {
           <div className="navbar__logo">
             {/* Use Link for routing */}
             <Link to="/Amazon-clone">
-            <img src={Amazonlogo} />
-
+              <img src={Amazonlogo} />
             </Link>
           </div>
           <div className="navbar__deliver-to">
@@ -79,5 +78,11 @@ function Navbar() {
     </>
   );
 }
+
+const handleLogout = () => {
+  setIsLoggedIn(false); // Clear login state
+  sessionStorage.removeItem('isLoggedIn'); // Remove login state from sessionStorage
+  console.log('Logged out!');
+};
 
 export default Navbar;
