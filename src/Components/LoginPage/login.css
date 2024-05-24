@@ -87,3 +87,27 @@
     border-style: solid;
     width: 115px;
 }
+
+.login__logoutButton {
+    background-color: #dc3545; /* Red color */
+    border-radius: 8px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Additional styling for the container of the logout message */
+.login__logoutContainer {
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 20px;
+    margin-top: 20px; /* Adjust this margin as needed */
+    
+}
