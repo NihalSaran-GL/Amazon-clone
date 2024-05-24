@@ -18,7 +18,8 @@ function SignUp() {
         };
 
         try {
-            const response = await axios.post('http://localhost:3001/users', user);
+        //    const response = await axios.post('http://localhost:3001/users', user);
+            const response = await axios.post('https://api-amazon-clone.vercel.app/users', user);
             console.log(response.data);
             navigate('/signin');
         } catch (error) {
