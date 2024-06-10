@@ -1,11 +1,18 @@
 import React from "react";
+import styled from "styled-components";
 
-function Logo({ image, text }) {
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  color: white;
+`;
+
+function Logo({ image, text, sizeW, sizeH }) {
   return (
-    <>
-      <img src={image} alt={text} />
-      <h1>{text}</h1>
-    </>
+    <LogoContainer>
+      <img src={image} alt={text} style={{ width: sizeW, height: sizeH }} />
+      <p>{text}</p>
+    </LogoContainer>
   );
 }
 
