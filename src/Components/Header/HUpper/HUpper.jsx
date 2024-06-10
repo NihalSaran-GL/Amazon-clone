@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Logo from "../../ReusableComponents/Logo";
+import Logo from "../../ReusableComponets/Logo";
+import englishData from '../../../../data/English.json';
+import imagesData from '../../../../data/image.json';
+
 
 const HUpperMainBody = styled.div`
   font-size: 18px;
@@ -36,20 +39,14 @@ function HUpper() {
   const [logoData, setLogoData] = useState({ image: '', text: '' });
 
   useEffect(() => {
-    Promise.all([
-      fetch('/english.json').then(response => response.json()),
-      fetch('/images.json').then(response => response.json())
-    ])
-    .then(([englishData, imagesData]) => {
-      setLogoData({ image: imagesData.logoimage, text: englishData.logotext });
-    })
-    .catch(error => console.error('Error loading data:', error));
+    setLogoData({ image: imagesData.logoimage1, text: englishData.logotext });
   }, []);
 
   return (
     <HUpperMainBody>
       <LeftSection>
         <Logo image={logoData.image} text={logoData.text} />
+        LeftSection
       </LeftSection>
       <CenterSection>CenterSection</CenterSection>
       <RightSection>RightSection</RightSection>
