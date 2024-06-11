@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-const LogoContainer = styled.div`
+const LogoContainer = styled.figure`
   display: flex;
   align-items: center;
   color: white;
 `;
 
-function Logo({ image, text, sizeW, sizeH }) {
+function Logo({ image, logoName, text, width, height }) {
   return (
     <LogoContainer>
-      <img src={image} alt={text} style={{ width: sizeW, height: sizeH }} />
+      <img src={image} alt={logoName} style={{ width: width, height: height }} />
       <p>{text}</p>
     </LogoContainer>
   );
