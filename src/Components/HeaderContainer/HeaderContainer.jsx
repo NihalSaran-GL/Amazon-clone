@@ -1,6 +1,6 @@
 import React from 'react'
 import HUpper from './MainHeader/MainHeader'
-import HLower from './Header-Components/HLower'
+import HLower from './HeaderMenu/HeaderMenu'
 
 function Header() {
   return (
