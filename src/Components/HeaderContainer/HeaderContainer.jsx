@@ -1,6 +1,6 @@
 import React from 'react'
-import HUpper from './HUpper/HUpper'
-import HLower from './HLower/HLower'
+import HUpper from './MainHeader/MainHeader'
+import HLower from './HeaderMenu/HeaderMenu'
 
 function Header() {
   return (
