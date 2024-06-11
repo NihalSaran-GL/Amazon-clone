@@ -1,9 +1,0 @@
-/* ImageCarousel.css */
-.carousel-container {
-    max-width: 500px; /* Adjust the width to your desired value */
-    margin: 0 auto; /* Center the carousel */
-  }
-  
-.thumbs{
-  display: none;
-}
