@@ -1,6 +1,6 @@
 export const textSize = {
   XXS: "8px",
-  XS: "16px",
+  XS: "18px",
   S: "24px",
   M: "32px",
   L: "12px",
@@ -15,7 +15,8 @@ export const size = {
   S: "12px",
   M: "16px",
   L: "24px",
-  XL: "32px",
-  XXL: "40px",
-  XXXL: "48px",
+  XL: "37px",
+  XXL: "48px",
+  XXXL: "60px",
+  XXXXL: "100px",
 };

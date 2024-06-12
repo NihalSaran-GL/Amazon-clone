@@ -1,25 +1,26 @@
 import styled from "styled-components";
-import { size } from "../../ReusableComponets/Sizes";
+import { size, textSize } from "../../ReusableComponets/Sizes";
+import colors from "../../ReusableComponets/Colors";
 
-export const LogoWidth = size.XXXL;
-export const LogoHeight = size.XXL;
+export const LogoWidth = size.XXXXL;
+export const LogoHeight = size.XL;
 
 export const MainHeader = styled.nav`
-  font-size: 18px;
+  font-size: ${textSize.XS};
   display: flex;
-  background-color: rgb(19, 25, 33);
+  background-color: ${colors.mainHeaderBackground};
+  padding: ${size.S};
 `;
 
 export const LeftSection = styled.section`
-  padding: 0px 10px;
-  font-size: 18px;
+  font-size: ${textSize.XS};
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const CenterSection = styled.section`
-  font-size: 18px;
+  font-size: ${textSize.XS};
   display: flex;
   flex: 1;
   align-items: center;
@@ -28,7 +29,7 @@ export const CenterSection = styled.section`
 `;
 
 export const RightSection = styled.section`
-  font-size: 18px;
+  font-size: ${textSize.XS};
   display: flex;
   align-items: center;
   justify-content: center;

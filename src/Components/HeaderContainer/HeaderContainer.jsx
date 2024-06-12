@@ -1,14 +1,18 @@
-import React from 'react'
-import HUpper from './MainHeader/MainHeader'
-import HLower from './HeaderMenu/HeaderMenu'
+import React from 'react';
+import styled from 'styled-components'; // Importing styled from styled-components
+import MainHeader from './MainHeader/MainHeader';
+import HeaderMenu from './HeaderMenu/HeaderMenu';
+
+const HeaderContainer = styled.header`
+`;
 
 function Header() {
   return (
-    <>
-        <HUpper />
-        <HLower />
-    </>
-  )
+    <HeaderContainer>
+      <MainHeader />
+      <HeaderMenu />
+    </HeaderContainer>
+  );
 }
 
-export default Header
+export default Header;

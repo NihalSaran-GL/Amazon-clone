@@ -1,9 +1,13 @@
 import React from 'react'
+import styled from 'styled-components'
 
-function HLower() {
+const HeaderMenu = styled.nav`
+`;
+
+function Header_Menu() {
   return (
-    <div>HLower</div>
+    <HeaderMenu>Header Menu</HeaderMenu>
   )
 }
 
-export default HLower
+export default Header_Menu
