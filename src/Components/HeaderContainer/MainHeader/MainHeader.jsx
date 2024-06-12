@@ -1,24 +1,23 @@
 import React from "react";
 import { MainHeader, LeftSection, CenterSection, RightSection, LogoWidth, LogoHeight } from "./MainHeaderStyles";
 import Logo from "../../ReusableComponets/Logo";
-import { useLogoData, useLocationIconData } from "../../ReusableComponets/Hooks";
+import { useLogoData} from "../../ReusableComponets/Hooks";
 import englishData from "../../../../public/data/English.json";
 import imagesData from "../../../../public/data/Image.json";
+import iconData from "../../../../public/data/Icon.json";
+import Icons from "../../ReusableComponets/Icons";
+import { LocationOn } from "@mui/icons-material";
 
 const LogoData = {
   image: imagesData.amazon_logo_image,
-  text: englishData.logotext,
+  text: englishData.amazon_logo_text,
   logoName: englishData.logo_name,
-};
-
-const LocationIconData = {
-  text1: englishData.location_icon_text1,
-  text2: englishData.location_icon_text2,
+  iconName: iconData.location,
 };
 
 function Main_Header() {
+
   const logoData = useLogoData(LogoData);
-  const locationIconData = useLocationIconData(LocationIconData);
 
   return (
     <MainHeader>
@@ -30,6 +29,7 @@ function Main_Header() {
           width={LogoWidth}
           height={LogoHeight}
         />
+        <Icons Icon={LocationOn} iconColor="white" iconSize="1.5rem" />
       </LeftSection>
       <CenterSection>CenterSection</CenterSection>
       <RightSection>RightSection</RightSection>
