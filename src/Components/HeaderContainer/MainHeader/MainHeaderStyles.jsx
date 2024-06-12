@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { size } from "../../ReusableComponets/Sizes";
 
-export const LogoWidth = size.XXXL;
+export const LogoWidth = size.XXXXL;
 export const LogoHeight = size.XXL;
 
 export const MainHeader = styled.nav`

@@ -17,5 +17,6 @@ export const size = {
   L: "24px",
   XL: "32px",
   XXL: "40px",
-  XXXL: "48px",
+  XXXL: "50px",
+  XXXXL: "100px",
 };
