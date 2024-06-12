@@ -2,8 +2,8 @@ import React from "react";
 
 function Icons({ Icon, iconColor, iconSize }) {
   return (
-    <i style={{ color: iconColor, fontSize: iconSize }}>
-      <Icon />
+    <i>
+      <Icon style={{ color: iconColor, fontSize: iconSize }} />
     </i>
   );
 }

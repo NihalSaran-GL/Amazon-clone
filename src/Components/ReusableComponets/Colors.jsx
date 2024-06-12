@@ -1,11 +1,13 @@
+import { leftBoxOfSearchBox } from "../HeaderContainer/MainHeader/MainHeaderStyles";
+
 const colors = {
-  primary: "#3498db",
-  secondary: "#2ecc71",
   mainHeaderBackground: "rgb(19, 25, 33)",
-  text: "#2c3e50",
-  white: "#ffffff",
-  black: "#000000",
-  gray: "#95a5a6",
+  iconTextColor1: "#cccccc",
+  iconTextColor2: "#ffffff",
+  iconColor: "#ffffff",
+  searchIconColor: "#333333",
+  searchIconBoxColor: "#FEBD69",
+  leftBoxOfSearchBox: "#E6E6E6"
 };
 
 export default colors;
