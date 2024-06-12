@@ -2,5 +2,7 @@
     "logo_name": "Amazon",
     "amazon_logo_text": ".in",
     "location_icon_text1":"Deliver to",
-    "location_icon_text2":"India"
+    "location_icon_text2":"India",
+    "search_box_text": "Search Amazon.in",
+    "left_search_box_text": "All"
 }
