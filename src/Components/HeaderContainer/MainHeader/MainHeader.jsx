@@ -2,8 +2,8 @@ import React from "react";
 import { MainHeader, LeftSection, CenterSection, RightSection, LogoWidth, LogoHeight } from "./MainHeaderStyles";
 import Logo from "../../ReusableComponets/Logo";
 import { useLogoData, useLocationIconData } from "../../ReusableComponets/Hooks";
-import englishData from "../../../../data/English.json";
-import imagesData from "../../../../data/Image.json";
+import englishData from "../../../../public/data/English.json";
+import imagesData from "../../../../public/data/Image.json";
 
 const LogoData = {
   image: imagesData.amazon_logo_image,
