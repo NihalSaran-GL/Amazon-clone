@@ -13,13 +13,12 @@ export const LocationIconText2Size = textSize.XS;
 export const LocationIconSize = size.M;
 
 export const searchBarBorderColor = "transparent";
-export const leftBoxOfSearchBox = size.XL;
 export const SearchIconColor = colors.searchIconColor;
 export const SearchIconBoxPadding = size.XS;
 export const SearchIconBoxColor1 = colors.leftBoxOfSearchBox;
 export const SearchIconBoxColor2 = colors.searchIconBoxColor;
-export const SearchIconBoxBorderRadius1 = size.XXS + " 0 0 " + size.XXS;
-export const SearchIconBoxBorderRadius2 = "0 " + size.XXS + " " + size.XXS + " 0";
+export const SearchIconBoxBorderRadius1 = size.XS + " 0 0 " + size.XS;
+export const SearchIconBoxBorderRadius2 = "0 " + size.XS + " " + size.XS + " 0";
 
 export const MainHeader = styled.nav`
   font-size: ${textSize.XS};
@@ -67,7 +66,7 @@ export const SearchBar = styled.fieldset`
 `;
 
 export const MainSearchSection = styled.input`
-  padding: ${size.XXS};
+  padding: ${size.S};
   border: none;
   width: ${largeSize.XXL};
 `;

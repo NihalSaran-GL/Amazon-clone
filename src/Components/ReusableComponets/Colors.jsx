@@ -1,5 +1,3 @@
-import { leftBoxOfSearchBox } from "../HeaderContainer/MainHeader/MainHeaderStyles";
-
 const colors = {
   mainHeaderBackground: "rgb(19, 25, 33)",
   iconTextColor1: "#cccccc",

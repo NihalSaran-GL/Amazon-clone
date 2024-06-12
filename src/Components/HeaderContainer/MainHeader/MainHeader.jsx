@@ -23,7 +23,6 @@ import {
   SearchIconBoxColor1,
   SearchIconBoxBorderRadius1,
   SearchIconBoxBorderRadius2,
-  leftBoxOfSearchBox,
 } from "./MainHeaderStyles";
 import Logo from "../../ReusableComponets/Logo";
 import englishData from "../../../../public/data/English.json";
