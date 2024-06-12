@@ -1,10 +1,8 @@
 import styled from "styled-components";
+import { size } from "../../ReusableComponets/Sizes";
 
-export const AmazonLogoWidth = "50px";
-export const AmazonLogoHeight = "30px";
-export const LocationIconColor = "white";
-export const LocationIconSize = "14px";
-export const LocationIconTextSize = "L";
+export const LogoWidth = size.XXXL;
+export const LogoHeight = size.XXL;
 
 export const MainHeader = styled.nav`
   font-size: 18px;

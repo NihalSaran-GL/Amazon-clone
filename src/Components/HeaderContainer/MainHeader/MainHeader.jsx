@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { MainHeader, LeftSection, CenterSection, RightSection, AmazonLogoWidth, AmazonLogoHeight, LocationIconTextSize, LocationIconColor, LocationIconSize  } from "./MainHeaderStyles";
+import React from "react";
+import { MainHeader, LeftSection, CenterSection, RightSection, LogoWidth, LogoHeight } from "./MainHeaderStyles";
 import Logo from "../../ReusableComponets/Logo";
-import Icons from "../../ReusableComponets/Icons";
-import { LocationOn } from "styled-icons/material";
-import FontSizeText from "../../ReusableComponets/FontSizeText";
+import { useLogoData, useLocationIconData } from "../../ReusableComponets/Hooks";
 import englishData from "../../../../data/English.json";
 import imagesData from "../../../../data/Image.json";
 
@@ -18,16 +16,9 @@ const LocationIconData = {
   text2: englishData.location_icon_text2,
 };
 
-
-function HUpper() {
-
-  const [logoData, setLogoData] = useState(LogoData);
-  const [locationIconData, setLocationIconData] = useState(LocationIconData);
-
-  useEffect(() => {
-    setLogoData(LogoData);
-    setLocationIconData(LocationIconData);
-  }, []);
+function Main_Header() {
+  const logoData = useLogoData(LogoData);
+  const locationIconData = useLocationIconData(LocationIconData);
 
   return (
     <MainHeader>
@@ -36,20 +27,9 @@ function HUpper() {
           image={logoData.image}
           logoName={logoData.logoName}
           text={logoData.text}
-          width={AmazonLogoWidth}
-          height={AmazonLogoHeight}
+          width={LogoWidth}
+          height={LogoHeight}
         />
-        <FontSizeText size={LocationIconTextSize}>
-          {locationIconData.text1}
-        </FontSizeText>
-        <FontSizeText size={LocationIconTextSize}>
-          {locationIconData.text2}
-        </FontSizeText>
-        <Icons
-            Icon={LocationOn}
-            iconColor={LocationIconColor}
-            iconSize={LocationIconSize}
-          />
       </LeftSection>
       <CenterSection>CenterSection</CenterSection>
       <RightSection>RightSection</RightSection>
@@ -57,4 +37,4 @@ function HUpper() {
   );
 }
 
-export default HUpper;
+export default Main_Header;
