@@ -19,7 +19,6 @@ import Logo from "../../ReusableComponets/Logo";
 import { useLogoData } from "../../ReusableComponets/Hooks";
 import englishData from "../../../../public/data/English.json";
 import imagesData from "../../../../public/data/Image.json";
-import iconData from "../../../../public/data/Icon.json";
 import Icons from "../../ReusableComponets/Icons";
 import { LocationOn } from "@mui/icons-material";
 
@@ -27,7 +26,6 @@ const LogoData = {
   image: imagesData.amazon_logo_image,
   text: englishData.amazon_logo_text,
   logoName: englishData.logo_name,
-  iconName: iconData.location,
 };
 
 function Main_Header() {
