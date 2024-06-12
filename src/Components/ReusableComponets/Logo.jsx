@@ -7,11 +7,11 @@ const LogoContainer = styled.figure`
   color: white;
 `;
 
-function Logo({ image, logoName, text, width, height }) {
+function Logo({ image, logoName, text, width, height, color }) {
   return (
     <LogoContainer>
-      <img src={image} alt={logoName} style={{ width: width, height: height }} />
-      <p>{text}</p>
+      <img src={image} alt={logoName} style={{ width: width, height: height, color: color }} />
+      <figcaption>{text}</figcaption>
     </LogoContainer>
   );
 }
