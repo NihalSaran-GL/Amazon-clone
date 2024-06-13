@@ -27,7 +27,7 @@ export const largeSize = {
   S: "200px",
   M: "340px",
   L: "425px",
-  XL: "500px",
+  XL: "485px",
   XXL: "600px",
   XXXL: "850px",
 };

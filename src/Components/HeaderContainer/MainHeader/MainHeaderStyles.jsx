@@ -79,7 +79,7 @@ export const SearchBar = styled.fieldset`
 export const MainSearchSection = styled.input`
   padding: ${size.S};
   border: none;
-  width: ${largeSize.XXL};
+  width: ${largeSize.XL};
 `;
 
 export const BoxHover = styled.section`
