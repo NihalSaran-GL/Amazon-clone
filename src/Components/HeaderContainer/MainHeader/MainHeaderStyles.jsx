@@ -20,6 +20,18 @@ export const SearchIconBoxColor2 = colors.searchIconBoxColor;
 export const SearchIconBoxBorderRadius1 = size.XS + " 0 0 " + size.XS;
 export const SearchIconBoxBorderRadius2 = "0 " + size.XS + " " + size.XS + " 0";
 
+export const FlagIconTextColor = colors.iconTextColor1;
+export const flagIconColor = colors.iconColor;
+export const FlagIconTextSize = textSize.XS;
+export const FlagIconTextMargin = "0 " + size.XXS + " -" + size.XXS + " 0";
+export const FlagIcon2TextMargin = "0 0 -" + size.XS + " -" + size.XS;
+
+export const ArrowDropDownSignInIconColor = colors.iconColor;
+export const ArrowDropDownSignInTextMargin = "0 0 -" + size.XS + " -" + size.S;
+
+export const CartIconColor = colors.iconColor;
+export const CartIconSize = size.L;
+
 export const MainHeader = styled.nav`
   font-size: ${textSize.XS};
   display: flex;
@@ -53,7 +65,6 @@ export const RightSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: yellow;
 `;
 
 export const LogoContainer = styled.section`
@@ -69,4 +80,17 @@ export const MainSearchSection = styled.input`
   padding: ${size.S};
   border: none;
   width: ${largeSize.XXL};
+`;
+
+export const BoxHover = styled.section`
+  display: flex;
+  padding: ${size.S};
+  margin: 0 ${size.XS};
+  border-radius: ${size.XS};
+  cursor: pointer;
+  border: 1px solid ${colors.mainHeaderBackground};
+  transition: border 0.2s;
+  &:hover {
+    border: 1px solid ${colors.searchIconBoxHover};
+  }
 `;

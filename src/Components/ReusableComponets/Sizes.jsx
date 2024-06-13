@@ -28,6 +28,6 @@ export const largeSize = {
   M: "340px",
   L: "425px",
   XL: "500px",
-  XXL: "700px",
+  XXL: "600px",
   XXXL: "850px",
 };

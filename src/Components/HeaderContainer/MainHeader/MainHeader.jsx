@@ -23,20 +23,32 @@ import {
   SearchIconBoxColor1,
   SearchIconBoxBorderRadius1,
   SearchIconBoxBorderRadius2,
+  FlagIconTextColor,
+  FlagIconTextSize,
+  FlagIconTextMargin,
+  FlagIcon2TextMargin,
+  BoxHover,
+  ArrowDropDownSignInIconColor,
+  ArrowDropDownSignInTextMargin,
+  flagIconColor,
+  CartIconColor,
+  CartIconSize,
 } from "./MainHeaderStyles";
 import Logo from "../../ReusableComponets/Logo";
 import englishData from "../../../../public/data/English.json";
 import imagesData from "../../../../public/data/Image.json";
 import Icons from "../../ReusableComponets/Icons";
-import { ArrowDropDown, LocationOn, Search } from "@mui/icons-material";
+import { ArrowDropDown, LocationOn, Search, Flag, AddShoppingCart } from "@mui/icons-material";
 import Button from "../../ReusableComponets/Button";
+import { F } from "styled-icons/fa-solid";
 
 const Data = {
   image: imagesData.amazon_logo_image,
   text: englishData.amazon_logo_text,
   logoName: englishData.logo_name,
   searchBarPlaceholder: englishData.search_box_text,
-  leftBoxOfSearchBox: englishData.left_search_box_text
+  leftBoxOfSearchBox: englishData.left_search_box_text,
+  flagIconText: englishData.flag_icon_text,
 };
 
 function Main_Header() {
@@ -53,29 +65,31 @@ function Main_Header() {
             color={LocationIconColor}
           />
         </LogoContainer>
-        <Icons
-          Icon={LocationOn}
-          iconColor={LocationIconColor}
-          iconSize={LocationIconSize}
-        />
-        <TextContainer>
-          <p
-            style={{
-              color: LocationIconText1,
-              fontSize: LocationIconText1Size,
-            }}
-          >
-            Deliver to
-          </p>
-          <p
-            style={{
-              color: LocationIconText2,
-              fontSize: LocationIconText2Size,
-            }}
-          >
-            India
-          </p>
-        </TextContainer>
+        <BoxHover>
+          <Icons
+            Icon={LocationOn}
+            iconColor={LocationIconColor}
+            iconSize={LocationIconSize}
+          />
+          <TextContainer>
+            <p
+              style={{
+                color: LocationIconText1,
+                fontSize: LocationIconText1Size,
+              }}
+            >
+              Deliver to
+            </p>
+            <p
+              style={{
+                color: LocationIconText2,
+                fontSize: LocationIconText2Size,
+              }}
+            >
+              India
+            </p>
+          </TextContainer>
+        </BoxHover>
       </LeftSection>
       <CenterSection>
         <SearchBar>
@@ -99,7 +113,75 @@ function Main_Header() {
           />
         </SearchBar>
       </CenterSection>
-      <RightSection>RightSection</RightSection>
+      <RightSection>
+        <BoxHover>
+          <Icons
+            Icon={Flag}
+            iconColor={flagIconColor}
+            text={Data.flagIconText}
+            textSize={FlagIconTextSize}
+            textColor={FlagIconTextColor}
+            Icon2={ArrowDropDown}
+            margin={FlagIconTextMargin}
+            margin2={FlagIcon2TextMargin}
+          />
+        </BoxHover>
+        <BoxHover>
+          <TextContainer>
+            <p
+              style={{
+                color: LocationIconText1,
+                fontSize: LocationIconText1Size,
+              }}
+            >
+              Hello, Sign in
+            </p>
+            <p
+              style={{
+                color: LocationIconText2,
+                fontSize: LocationIconText2Size,
+              }}
+            >
+              Account & Lists
+            </p>
+          </TextContainer>
+          <Icons
+            Icon={ArrowDropDown}
+            iconColor={ArrowDropDownSignInIconColor}
+            margin={ArrowDropDownSignInTextMargin}
+          />
+        </BoxHover>
+        <BoxHover>
+          <TextContainer>
+            <p
+              style={{
+                color: LocationIconText1,
+                fontSize: LocationIconText1Size,
+              }}
+            >
+              Returns
+            </p>
+            <p
+              style={{
+                color: LocationIconText2,
+                fontSize: LocationIconText2Size,
+              }}
+            >
+              & Orders
+            </p>
+          </TextContainer>
+        </BoxHover>
+        <BoxHover>
+          <Icons
+            text={"cart"}
+            textColor={LocationIconText2}
+            iconSize={CartIconSize}
+            Icon={AddShoppingCart}
+            iconColor={CartIconColor}
+            margin={ArrowDropDownSignInTextMargin}
+          />
+        </BoxHover>
+      </RightSection>
     </MainHeader>
   );
 }

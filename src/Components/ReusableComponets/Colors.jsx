@@ -5,7 +5,8 @@ const colors = {
   iconColor: "#ffffff",
   searchIconColor: "#333333",
   searchIconBoxColor: "#FEBD69",
-  leftBoxOfSearchBox: "#E6E6E6"
+  leftBoxOfSearchBox: "#E6E6E6",
+  searchIconBoxHover: "#ffffff"
 };
 
 export default colors;
