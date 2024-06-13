@@ -55,6 +55,7 @@ function Main_Header() {
   return (
     <MainHeader>
       <LeftSection>
+      <BoxHover> 
         <LogoContainer>
           <Logo
             image={Data.image}
@@ -65,6 +66,7 @@ function Main_Header() {
             color={LocationIconColor}
           />
         </LogoContainer>
+        </BoxHover>
         <BoxHover>
           <Icons
             Icon={LocationOn}
