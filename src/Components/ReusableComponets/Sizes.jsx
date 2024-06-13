@@ -10,9 +10,9 @@ export const textSize = {
 };
 
 export const size = {
-  XXS: "5.5px",
-  XS: "6px",
-  S: "12px",
+  XXS: "2px",
+  XS: "5px",
+  S: "10px",
   M: "18px",
   L: "24px",
   XL: "37px",
@@ -28,6 +28,6 @@ export const largeSize = {
   M: "340px",
   L: "425px",
   XL: "500px",
-  XXL: "700px",
+  XXL: "600px",
   XXXL: "850px",
 };
