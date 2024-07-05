@@ -40,15 +40,14 @@ import imagesData from "../../../../public/data/Image.json";
 import Icons from "../../ReusableComponets/Icons";
 import { ArrowDropDown, LocationOn, Search, Flag, AddShoppingCart } from "@mui/icons-material";
 import Button from "../../ReusableComponets/Button";
-import { F } from "styled-icons/fa-solid";
 
 const Data = {
-  image: imagesData.amazon_logo_image,
-  text: englishData.amazon_logo_text,
-  logoName: englishData.logo_name,
-  searchBarPlaceholder: englishData.search_box_text,
-  leftBoxOfSearchBox: englishData.left_search_box_text,
-  flagIconText: englishData.flag_icon_text,
+  image: imagesData.header_container.main_header.amazon_logo_image,
+  text: englishData.header_container.main_header.amazon_logo_text,
+  logoName: englishData.header_container.main_header.logo_name,
+  searchBarPlaceholder: englishData.header_container.main_header.search_box_text,
+  leftBoxOfSearchBox: englishData.header_container.main_header.left_search_box_text,
+  flagIconText: englishData.header_container.main_header.flag_icon_text,
 };
 
 function Main_Header() {
