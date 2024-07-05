@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "../Screens/Home_page/Home";
+import Home from "../Screens/Home";
 import Header from "./HeaderContainer/HeaderContainer";
 
 function App() {

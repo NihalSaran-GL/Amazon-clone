@@ -45,9 +45,16 @@ const Data = {
   image: imagesData.header_container.main_header.amazon_logo_image,
   text: englishData.header_container.main_header.amazon_logo_text,
   logoName: englishData.header_container.main_header.logo_name,
+  locationIconText1: englishData.header_container.main_header.location_icon_text1,
+  locationIconText2: englishData.header_container.main_header.location_icon_text2,
   searchBarPlaceholder: englishData.header_container.main_header.search_box_text,
-  leftBoxOfSearchBox: englishData.header_container.main_header.left_search_box_text,
+  searchBarFilterButton: englishData.header_container.main_header.search_bar_filter_button,
   flagIconText: englishData.header_container.main_header.flag_icon_text,
+  signInText: englishData.header_container.main_header.sign_in_text,
+  accountText: englishData.header_container.main_header.account_text,
+  ordersText: englishData.header_container.main_header.orders_text,
+  returnsText: englishData.header_container.main_header.return_text,
+  cartText: englishData.header_container.main_header.cart_text,
 };
 
 function Main_Header() {
@@ -79,7 +86,7 @@ function Main_Header() {
                 fontSize: LocationIconText1Size,
               }}
             >
-              Deliver to
+              {Data.locationIconText1}
             </p>
             <p
               style={{
@@ -87,7 +94,7 @@ function Main_Header() {
                 fontSize: LocationIconText2Size,
               }}
             >
-              India
+              {Data.locationIconText2}
             </p>
           </TextContainer>
         </BoxHover>
@@ -95,7 +102,7 @@ function Main_Header() {
       <CenterSection>
         <SearchBar>
           <Button
-            text={Data.leftBoxOfSearchBox}
+            text={Data.searchBarFilterButton}
             icon={<ArrowDropDown />}
             color={SearchIconColor}
             padding={SearchIconBoxPadding}
@@ -135,7 +142,7 @@ function Main_Header() {
                 fontSize: LocationIconText1Size,
               }}
             >
-              Hello, Sign in
+              {Data.signInText}
             </p>
             <p
               style={{
@@ -143,7 +150,7 @@ function Main_Header() {
                 fontSize: LocationIconText2Size,
               }}
             >
-              Account & Lists
+             {Data.accountText}
             </p>
           </TextContainer>
           <Icons
@@ -160,7 +167,7 @@ function Main_Header() {
                 fontSize: LocationIconText1Size,
               }}
             >
-              Returns
+              {Data.returnsText}
             </p>
             <p
               style={{
@@ -168,13 +175,13 @@ function Main_Header() {
                 fontSize: LocationIconText2Size,
               }}
             >
-              & Orders
+              {Data.ordersText}
             </p>
           </TextContainer>
         </BoxHover>
         <BoxHover>
           <Icons
-            text={"cart"}
+            text={Data.cartText}
             textColor={LocationIconText2}
             iconSize={CartIconSize}
             Icon={AddShoppingCart}

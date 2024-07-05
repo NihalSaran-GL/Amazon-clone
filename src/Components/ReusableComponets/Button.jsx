@@ -10,19 +10,33 @@ const IconButton = styled.button`
   transition: background-color 0.3s ease;
 `;
 
-const Button = ({ icon, text, color, borderColor, bgColor, borderRadius, padding }) => {
+const Button = ({ icon, text, color, borderColor, bgColor, borderRadius, padding, height, width, align, iconSize, gap, iconColor}) => {
+  const iconStyle = {
+    width: iconSize || undefined,
+    height: iconSize || undefined,
+    color: iconColor || undefined,
+  };
+
+  const textStyle = {
+    marginLeft: align === 'left' && gap ? gap : '0',
+    marginRight: align !== 'left' && gap ? gap : '0',
+    color: color || undefined,
+  };
+
   return (
     <IconButton
       style={{
-        color: color,
         borderColor: borderColor,
         backgroundColor: bgColor,
         borderRadius: borderRadius,
-        padding: padding
+        padding: padding,
+        height: height,
+        width: width,
       }}
     >
-      {text}
-      {React.isValidElement(icon) ? icon : null}
+      {align === "left" && React.isValidElement(icon) && React.cloneElement(icon, { style: { ...icon.props.style, ...iconStyle } })}
+      <p style={textStyle}>{text}</p>
+      {align !== "left" && React.isValidElement(icon) && React.cloneElement(icon, { style: { ...icon.props.style, ...iconStyle } })}
     </IconButton>
   );
 };
