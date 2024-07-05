@@ -10,7 +10,7 @@ const IconButton = styled.button`
   transition: background-color 0.3s ease;
 `;
 
-const Button = ({ icon, text, color, borderColor, bgColor, borderRadius, padding }) => {
+const Button = ({ icon, text, color, borderColor, bgColor, borderRadius, padding, height, width }) => {
   return (
     <IconButton
       style={{
@@ -18,7 +18,9 @@ const Button = ({ icon, text, color, borderColor, bgColor, borderRadius, padding
         borderColor: borderColor,
         backgroundColor: bgColor,
         borderRadius: borderRadius,
-        padding: padding
+        padding: padding,
+        height: height,
+        width: width,
       }}
     >
       {text}
