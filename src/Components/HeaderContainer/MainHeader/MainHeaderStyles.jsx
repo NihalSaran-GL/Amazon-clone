@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { largeSize, size, textSize } from "../../ReusableComponets/Sizes";
+import { sectionSize, size, textSize } from "../../ReusableComponets/Sizes";
 import colors from "../../ReusableComponets/Colors";
 
-export const LogoWidth = size.XXXXL;
-export const LogoHeight = size.XL;
+export const LogoWidth = size.XXL;
+export const LogoHeight = size.L;
 
 export const LocationIconText1 = colors.iconTextColor1;
 export const LocationIconText2 = colors.iconTextColor2;
@@ -79,7 +79,8 @@ export const SearchBar = styled.fieldset`
 export const MainSearchSection = styled.input`
   padding: ${size.S};
   border: none;
-  width: ${largeSize.XL};
+  width: ${sectionSize.XL};
+  height: ${size.M};
 `;
 
 export const BoxHover = styled.section`
