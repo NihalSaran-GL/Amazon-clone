@@ -5,16 +5,29 @@ import theme from "./theme";
 
 const StyledContainer = styled.section`
   max-width: 100%;
-  height: auto; // Adjust this to a specific value or use max-height
+  height: auto;
   margin: auto;
   padding: 0px;
   display: flex;
   justify-content: center;
+  background-color: yellow; /* Add a light blue background for debugging */
   align-items: center;
+  position: relative; /* Ensure the container can hold absolute positioned elements */
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px; /* Adjust the height to control the fade effect area */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* Change to match the container's background */
+    pointer-events: none; /* Allows clicks to pass through */
+  }
 `;
 
 const StyledImage = styled.img`
-  max-height: 700px;
+  max-height: 600px;
   object-fit: cover; /* Cover the container without stretching the image */
   border: 2px solid blue; /* Add a blue border for debugging */
   background-color: lightblue; /* Add a light blue background for debugging */

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Caraousel from './Caraousel'
+import Caraousel from './Caraousel/Caraousel'
 
 const Container = styled.main`
 `;
