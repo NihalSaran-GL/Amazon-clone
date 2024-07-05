@@ -1,3 +1,7 @@
 {
-    "amazon_logo_image": "/assets/Logo.png"
+    "header_container": {
+        "main_header": {
+            "amazon_logo_image": "/assets/Logo.png"
+        }
+    }
 }
