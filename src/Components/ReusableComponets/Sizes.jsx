@@ -1,11 +1,11 @@
 export const textSize = {
-  XXS: "0.7rem",
-  XS: "0.8rem",
-  S: "1rem",
-  M: "1.5rem",
-  L: "2rem",
-  XL: "2.5rem",
-  XXL: "3rem",
+  XXS: "0.7rem", 
+  XS: "0.8rem", 
+  S: "1rem",    
+  M: "1.5rem", 
+  L: "2rem",    
+  XL: "2.5rem",  
+  XXL: "3rem", 
 };
 
 export const size = {
