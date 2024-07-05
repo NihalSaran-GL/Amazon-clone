@@ -1,8 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+import HeaderMenu from './HeaderMenuStyles'
 
-const HeaderMenu = styled.nav`
-`;
 
 function Header_Menu() {
   return (

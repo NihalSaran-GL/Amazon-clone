@@ -1,12 +1,10 @@
-const colors = {
-  mainHeaderBackground: "rgb(19, 25, 33)",
-  iconTextColor1: "#cccccc",
-  iconTextColor2: "#ffffff",
-  iconColor: "#ffffff",
-  searchIconColor: "#333333",
-  searchIconBoxColor: "#FEBD69",
-  leftBoxOfSearchBox: "#E6E6E6",
-  searchIconBoxHover: "#ffffff"
+const colors = {  
+  primary: "#ffffff",
+  secondary:"#131921",
+  tertiary: "#cccccc",
+  quaternary: "#333333",
+  quinary: "#FEBD69",
+  senary: "#E6E6E6",
 };
 
 export default colors;
