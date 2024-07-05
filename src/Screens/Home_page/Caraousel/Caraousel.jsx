@@ -37,7 +37,8 @@ function App() {
   const srcList = "https://cdn.pixabay.com/photo/2022/01/25/04/42/bird-6965228_1280.jpg "
     .repeat(10)
     .split(" ")
-    .slice(0, 10);
+    .slice(0, 10)
+    .map((src, index) => ({ id: `image-${index}`, src }));
 
   return (
     <StyledContainer>
@@ -52,7 +53,9 @@ function App() {
             lg: 1,
             xl: 1
           }}
-          itemRenderer={(item) => <StyledImage src={item} alt="" />}
+          itemRenderer={(item) => (
+            <StyledImage key={item.id} src={item.src} alt={`Image ${item.id}`} />
+          )}
           maxContainerWidth={theme.breakpoints.values["lg"]}
         />
       </main>
