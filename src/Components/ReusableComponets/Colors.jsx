@@ -5,6 +5,7 @@ const colors = {
   quaternary: "#333333",
   quinary: "#FEBD69",
   senary: "#E6E6E6",
+  septenary: "#232f3e",
 };
 
 export default colors;

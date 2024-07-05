@@ -1,14 +1,16 @@
 import styled from 'styled-components'
+import { size, textSize } from "../../ReusableComponets/Sizes";
+import colors from '../../ReusableComponets/Colors';
 
-const HeaderMenu = styled.nav`
+export const HeaderMenu = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: #000;
-    border-bottom: 1px solid #fff;
+    padding: ${size.S};
+    font-size: ${textSize.XS};
+    color: ${colors.primary};
+    background-color: ${colors.septenary};
+    border-bottom: 1px solid ${colors.primary};
 `;
 
 export default HeaderMenu
