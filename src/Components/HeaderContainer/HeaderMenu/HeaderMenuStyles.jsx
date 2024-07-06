@@ -10,6 +10,7 @@ export const MenuGapSize = size.XXS;
 export const Menu1IconAlign = "left";
 export const MenuIconColorPrimary = colors.primary;
 export const MenuIconColorSecondary = colors.tertiary;
+export const MenuIconTextSize = textSize.XXS;
 
 export const HeaderMenu = styled.nav`
     display: flex;
