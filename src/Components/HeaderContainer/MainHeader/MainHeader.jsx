@@ -27,7 +27,6 @@ import {
   FlagIconTextSize,
   FlagIconTextMargin,
   FlagIcon2TextMargin,
-  BoxHover,
   ArrowDropDownSignInIconColor,
   ArrowDropDownSignInTextMargin,
   flagIconColor,
@@ -40,6 +39,7 @@ import imagesData from "../../../../public/data/Image.json";
 import Icons from "../../ReusableComponets/Icons";
 import { ArrowDropDown, LocationOn, Search, Flag, AddShoppingCart } from "@mui/icons-material";
 import Button from "../../ReusableComponets/Button";
+import { BoxHover } from "../../ReusableComponets/BoxHover";
 
 const Data = {
   image: imagesData.header_container.main_header.amazon_logo_image,

@@ -83,15 +83,3 @@ export const MainSearchSection = styled.input`
   height: ${size.M};
 `;
 
-export const BoxHover = styled.section`
-  display: flex;
-  padding: ${size.S};
-  margin: 0 ${size.XS};
-  border-radius: ${size.XS};
-  cursor: pointer;
-  border: 1px solid ${colors.secondary};
-  transition: border 0.2s;
-  &:hover {
-    border: 1px solid ${colors.primary};
-  }
-`;

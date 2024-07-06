@@ -9,10 +9,12 @@ import {
   MenuIconSize,
   MenuIconColorSecondary,
   MenuIconColorPrimary,
+  MenuIconTextSize,
 } from "./HeaderMenuStyles";
 import Button from "../../ReusableComponets/Button";
 import englishData from "../../../../public/data/English.json";
 import { ArrowDropDown, Menu } from "@mui/icons-material";
+import { BoxHover } from "../../ReusableComponets/BoxHover";
 
 const Data = {
   menu1: englishData.header_container.header_menu.menu1,
@@ -37,119 +39,170 @@ const Data = {
 function Header_Menu() {
   return (
     <HeaderMenu>
-      <Button
-        text={Data.menu1}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-        icon={<Menu />}
-        align={Menu1IconAlign}
-        iconSize={MenuIconSize}
-        gap={MenuGapSize}
-        iconColor={MenuIconColorPrimary}
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu1}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+          icon={<Menu />}
+          align={Menu1IconAlign}
+          iconSize={MenuIconSize}
+          gap={MenuGapSize}
+          iconColor={MenuIconColorPrimary}
         />
-      <Button
-        text={Data.menu2}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-        icon={<ArrowDropDown />}
-        iconSize={MenuIconSize}
-        iconColor={MenuIconColorSecondary}
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu2}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+          icon={<ArrowDropDown />}
+          iconSize={MenuIconSize}
+          iconColor={MenuIconColorSecondary}
         />
-      <Button
-        text={Data.menu3}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu3}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
         />
-      <Button
-        text={Data.menu4}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu4}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
         />
-      <Button
-        text={Data.menu5}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu5}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
         />
-      <Button
-        text={Data.menu6}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu6}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
         />
-      <Button
-        text={Data.menu7}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu7}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
         />
-      <Button
-        text={Data.menu8}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-        icon={<ArrowDropDown />}
-        iconSize={MenuIconSize}
-        iconColor={MenuIconColorSecondary}
-      />
-      <Button
-        text={Data.menu9}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-      />
-      <Button
-        text={Data.menu10}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-      />
-      <Button
-        text={Data.menu11}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-      />
-      <Button
-        text={Data.menu12}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-      />
-      <Button
-        text={Data.menu13}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-      />
-      <Button
-        text={Data.menu14}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-      />
-      <Button
-        text={Data.menu15}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-      />
-      <Button
-        text={Data.menu16}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-      />
-      <Button
-        text={Data.menu17}
-        bgColor={ButtonBackgroundColor}
-        borderColor={ButtonBorderColor}
-        color={ButtonColor}
-      />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu8}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+          icon={<ArrowDropDown />}
+          iconSize={MenuIconSize}
+          iconColor={MenuIconColorSecondary}
+        />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu9}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+        />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu10}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+        />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu11}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+        />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu12}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+        />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu13}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+        />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu14}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+        />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu15}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+        />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu16}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+        />
+      </BoxHover>
+      <BoxHover>
+        <Button
+          textSize={MenuIconTextSize}
+          text={Data.menu17}
+          bgColor={ButtonBackgroundColor}
+          borderColor={ButtonBorderColor}
+          color={ButtonColor}
+        />
+      </BoxHover>
     </HeaderMenu>
   );
 }
