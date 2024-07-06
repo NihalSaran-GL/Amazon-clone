@@ -6,8 +6,32 @@
             "location_icon_text1": "Deliver to",
             "location_icon_text2": "India",
             "search_box_text": "Search Amazon.in",
-            "left_search_box_text": "All",
-            "flag_icon_text": "EN"
+            "search_bar_filter_button": "All",
+            "flag_icon_text": "EN",
+            "sign_in_text": "Hello, Sign in",
+            "account_text": "Account & Lists",
+            "return_text": "Returns",
+            "orders_text": "& Orders",
+            "cart_text": "Cart"
+        },
+        "header_menu": {
+            "menu1": "All",
+            "menu2": "Fresh",
+            "menu3": "Amazon miniTV",
+            "menu4": "Sell",
+            "menu5": "Best Sellers",
+            "menu6": "Mobiles",
+            "menu7": "Today's Deals",
+            "menu8": "Prime",
+            "menu9": "Fashion",
+            "menu10": "Electronincs",
+            "menu11": "Customer Service",
+            "menu12": "New Releases",
+            "menu13": "Amazon Pay",
+            "menu14": "Home & Kitchen",
+            "menu15": "Computers",
+            "menu16": "Books",
+            "menu17": "Car & Motorbike"
         }
     }
 }
