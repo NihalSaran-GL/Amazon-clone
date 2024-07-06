@@ -1,11 +1,11 @@
 export const textSize = {
-  XXS: "0.75vw",
-  XS: "0.8vw",
-  S: "1.25vw",
-  M: "1.75vw",
-  L: "2.50vw",
-  XL: "3vw",
-  XXL: "4.5vw",
+  XXS: "0.7rem", 
+  XS: "0.8rem", 
+  S: "1rem",    
+  M: "1.3rem", 
+  L: "1.8rem",    
+  XL: "2rem",  
+  XXL: "2.5rem", 
 };
 
 export const size = {
@@ -24,6 +24,6 @@ export const sectionSize = {
   S: "15vw",
   M: "20vw",
   L: "25vw",
-  XL: "40vw",
+  XL: "39vw",
   XXL: "50vw",
 };

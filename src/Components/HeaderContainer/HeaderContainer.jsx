@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'; // Importing styled from styled-components
+import styled from 'styled-components';
 import MainHeader from './MainHeader/MainHeader';
 import HeaderMenu from './HeaderMenu/HeaderMenu';
 
