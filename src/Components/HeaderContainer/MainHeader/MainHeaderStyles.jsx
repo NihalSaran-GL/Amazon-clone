@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { sectionSize, size, textSize } from "../../ReusableComponets/Sizes";
 import colors from "../../ReusableComponets/Colors";
 
-export const LogoWidth = size.XXL;
-export const LogoHeight = size.L;
+export const LogoWidth = size.XL;
+export const LogoHeight = size.M;
 
 export const LocationIconText1 = colors.tertiary;
 export const LocationIconText2 = colors.primary;
