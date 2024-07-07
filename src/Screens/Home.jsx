@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Caraousel from "../Components/HomeContainer/Caraousel/Caraousel";
+import Caraousel from "../Components/HomeContainer/Caraousel";
 import Card from "../Components/ReusableComponets/Card";
 import ParentCard from "../Components/ReusableComponets/ParentCard";
 import GridWrapper from "../Components/ReusableComponets/GridWrapper";
@@ -12,6 +12,7 @@ const Container = styled.main`
 `;
 
 function Home() {
+
   return (
     <Container>
       <Caraousel></Caraousel>
