@@ -37,18 +37,29 @@ import Logo from "../../ReusableComponets/Logo";
 import englishData from "../../../../public/data/English.json";
 import imagesData from "../../../../public/data/Image.json";
 import Icons from "../../ReusableComponets/Icons";
-import { ArrowDropDown, LocationOn, Search, Flag, AddShoppingCart } from "@mui/icons-material";
+import {
+  ArrowDropDown,
+  LocationOn,
+  Search,
+  Flag,
+  AddShoppingCart,
+} from "@mui/icons-material";
 import Button from "../../ReusableComponets/Button";
 import { BoxHover } from "../../ReusableComponets/BoxHover";
+import Dropdown from "../../ReusableComponets/DropdownMenu";
 
 const Data = {
   image: imagesData.header_container.main_header.amazon_logo_image,
   text: englishData.header_container.main_header.amazon_logo_text,
   logoName: englishData.header_container.main_header.logo_name,
-  locationIconText1: englishData.header_container.main_header.location_icon_text1,
-  locationIconText2: englishData.header_container.main_header.location_icon_text2,
-  searchBarPlaceholder: englishData.header_container.main_header.search_box_text,
-  searchBarFilterButton: englishData.header_container.main_header.search_bar_filter_button,
+  locationIconText1:
+    englishData.header_container.main_header.location_icon_text1,
+  locationIconText2:
+    englishData.header_container.main_header.location_icon_text2,
+  searchBarPlaceholder:
+    englishData.header_container.main_header.search_box_text,
+  searchBarFilterButton:
+    englishData.header_container.main_header.search_bar_filter_button,
   flagIconText: englishData.header_container.main_header.flag_icon_text,
   signInText: englishData.header_container.main_header.sign_in_text,
   accountText: englishData.header_container.main_header.account_text,
@@ -57,21 +68,27 @@ const Data = {
   cartText: englishData.header_container.main_header.cart_text,
 };
 
+const dropdownItems = [
+  { label: "Item 1", href: "#" },
+  { label: "Item 2", href: "#" },
+  { label: "Item 3", href: "#" },
+];
+
 function Main_Header() {
   return (
     <MainHeader>
       <LeftSection>
-      <BoxHover> 
-        <LogoContainer>
-          <Logo
-            image={Data.image}
-            logoName={Data.logoName}
-            text={Data.text}
-            width={LogoWidth}
-            height={LogoHeight}
-            color={LocationIconColor}
-          />
-        </LogoContainer>
+        <BoxHover>
+          <LogoContainer>
+            <Logo
+              image={Data.image}
+              logoName={Data.logoName}
+              text={Data.text}
+              width={LogoWidth}
+              height={LogoHeight}
+              color={LocationIconColor}
+            />
+          </LogoContainer>
         </BoxHover>
         <BoxHover>
           <Icons
@@ -101,14 +118,25 @@ function Main_Header() {
       </LeftSection>
       <CenterSection>
         <SearchBar>
-          <Button
-            text={Data.searchBarFilterButton}
+          <Dropdown
+            buttonLabel={Data.searchBarFilterButton}
+            items={dropdownItems}
+            buttonProps={{
+              backgroundColor: SearchIconBoxColor1,
+              padding: SearchIconBoxPadding,
+              fontSize: "14px",
+              color: SearchIconColor,
+              borderRadius:SearchIconBoxBorderRadius1,
+            }}
+            dropdownProps={{
+              contentBgColor: "#eee",
+            }}
+            itemProps={{
+              itemColor: "#333",
+              itemPadding: "14px 20px",
+              itemHoverBgColor: "#ddd",
+            }}
             icon={<ArrowDropDown />}
-            color={SearchIconColor}
-            padding={SearchIconBoxPadding}
-            bgColor={SearchIconBoxColor1}
-            borderColor={searchBarBorderColor}
-            borderRadius={SearchIconBoxBorderRadius1}
           />
           <MainSearchSection placeholder={Data.searchBarPlaceholder} />
           <Button
@@ -150,7 +178,7 @@ function Main_Header() {
                 fontSize: LocationIconText2Size,
               }}
             >
-             {Data.accountText}
+              {Data.accountText}
             </p>
           </TextContainer>
           <Icons
