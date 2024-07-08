@@ -27,13 +27,17 @@ const IconContainer = styled.span`
   display: flex;
   align-items: center;
   border: ${(props) => props.borderColor || "transparent"};
+  margin-left: ${(props) => props.marginLeft || "-2px"};
 `;
 
 const DropdownContent = styled.div`
   display: ${(props) => (props.isOpen ? "block" : "none")};
+  border-radius: ${(props) => props.borderRadius || "5px"};
   position: absolute;
   background-color: ${(props) => props.contentBgColor || "#f9f9f9"};
   min-width: ${(props) => props.minWidth || "max-content"};
+  max-height: ${(props) => props.maxHeight || "200px"};
+  overflow-y: auto; /* Makes the content scrollable */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 `;
@@ -45,6 +49,8 @@ const DropdownItem = styled.a`
   display: block;
   &:hover {
     background-color: ${(props) => props.itemHoverBgColor || "#f1f1f1"};
+    color: ${(props) => props.itemHoverColor || "white"};
+    text-decoration: none;
   }
 `;
 
@@ -57,6 +63,7 @@ const Dropdown = ({
   icon = null,
   iconMarginLeft = "-2px",
   iconBorderColor = "transparent",
+  maxHeight = "200px",
 }) => {
   const { isOpen, toggleDropdown } = useDropdown();
 
@@ -73,7 +80,7 @@ const Dropdown = ({
           </IconContainer>
         )}
       </DropdownButton>
-      <DropdownContent isOpen={isOpen} {...dropdownProps}>
+      <DropdownContent isOpen={isOpen} maxHeight={maxHeight} {...dropdownProps}>
         {items.map((item, index) => (
           <DropdownItem key={index} href={item.href || "#"} {...itemProps}>
             {item.label || "Item"}

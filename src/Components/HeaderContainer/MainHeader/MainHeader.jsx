@@ -2,6 +2,7 @@ import React from "react";
 import {
   MainHeader,
   LeftSection,
+  searchBarFontsize,
   CenterSection,
   RightSection,
   LogoWidth,
@@ -32,6 +33,10 @@ import {
   flagIconColor,
   CartIconColor,
   CartIconSize,
+  DropdownMenuColor,
+  DropdownMenuHoverColor,
+  DropdownContentColor,
+  DropdownContentPadding,
 } from "./MainHeaderStyles";
 import Logo from "../../ReusableComponets/Logo";
 import englishData from "../../../../public/data/English.json";
@@ -69,10 +74,54 @@ const Data = {
 };
 
 const dropdownItems = [
-  { label: "Item 1", href: "#" },
-  { label: "Item 2", href: "#" },
-  { label: "Item 3", href: "#" },
+  { label: "All Categories", href: "/" },
+  { label: "Alexa Skills", href: "Alexa Skills" },
+  { label: "Amazon Devices", href: "Amazon Devices" },
+  { label: "Amazon Fashion", href: "Amazon Fashion" },
+  { label: "Amazon Fresh", href: "Amazon Fresh" },
+  { label: "Amazon Fresh Meat", href: "Amazon Fresh Meat" },
+  { label: "Amazon Pharmacy", href: "Amazon Pharmacy" },
+  { label: "Appliances", href: "Appliances" },
+  { label: "Apps & Games", href: "Apps & Games" },
+  { label: "Audible Audiobooks", href: "Audible Audiobooks" },
+  { label: "Baby", href: "Baby" },
+  { label: "Beauty", href: "Beauty" },
+  { label: "Books", href: "Books" },
+  { label: "Car & Motorbikes", href: "Car & Motorbikes" },
+  { label: "Clothing & Accessories", href: "Clothing & Accessories" },
+  { label: "Collectibles", href: "Collectibles" },
+  { label: "Computers & Accessories", href: "Computers & Accessories" },
+  { label: "Deals", href: "Deals" },
+  { label: "Electronics", href: "Electronics" },
+  { label: "Furniture", href: "Furniture" },
+  { label: "Garden & Outdoors", href: "Garden & Outdoors" },
+  { label: "Gift Cards", href: "Gift Cards" },
+  { label: "Grocery & Gourmet Foods", href: "Grocery & Gourmet Foods" },
+  { label: "Health & Personal Care", href: "Health & Personal Care" },
+  { label: "Home & Kitchen", href: "Home & Kitchen" },
+  { label: "Industrial & Scientific", href: "Industrial & Scientific" },
+  { label: "Jewellery", href: "Jewellery" },
+  { label: "Kindle Store", href: "Kindle Store" },
+  { label: "Luggage & Bags", href: "Luggage & Bags" },
+  { label: "Luxury Beauty", href: "Luxury Beauty" },
+  { label: "Movies & TV Shows", href: "Movies & TV Shows" },
+  { label: "MP3 Music", href: "MP3 Music" },
+  { label: "Music", href: "Music" },
+  { label: "Musical Instruments", href: "Musical Instruments" },
+  { label: "Office Products", href: "Office Products" },
+  { label: "Pet Supplies", href: "Pet Supplies" },
+  { label: "Prime Video", href: "Prime Video" },
+  { label: "Shoes & Handbags", href: "Shoes & Handbags" },
+  { label: "Software", href: "Software" },
+  { label: "Sports, Fitness & Outdoors", href: "Sports, Fitness & Outdoors" },
+  { label: "Subscribe & Save", href: "Subscribe & Save" },
+  { label: "Tools & Home Improvements", href: "Tools & Home Improvements" },
+  { label: "Toys & Games", href: "Toys & Games" },
+  { label: "Under ₹500", href: "Under ₹500" },
+  { label: "Video Games", href: "Video Games" },
+  { label: "Watches", href: "Watches" },
 ];
+
 
 function Main_Header() {
   return (
@@ -124,19 +173,20 @@ function Main_Header() {
             buttonProps={{
               backgroundColor: SearchIconBoxColor1,
               padding: SearchIconBoxPadding,
-              fontSize: "14px",
+              fontSize: searchBarFontsize,
               color: SearchIconColor,
               borderRadius:SearchIconBoxBorderRadius1,
             }}
             dropdownProps={{
-              contentBgColor: "#eee",
+              contentBgColor: DropdownMenuColor,
             }}
             itemProps={{
-              itemColor: "#333",
-              itemPadding: "14px 20px",
-              itemHoverBgColor: "#ddd",
+              itemPadding:  DropdownContentPadding,
+              itemHoverBgColor: DropdownMenuHoverColor,
+              itemHoverColor: DropdownContentColor,
             }}
             icon={<ArrowDropDown />}
+            maxHeight="350px"
           />
           <MainSearchSection placeholder={Data.searchBarPlaceholder} />
           <Button

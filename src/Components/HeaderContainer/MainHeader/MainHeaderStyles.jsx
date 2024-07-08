@@ -13,12 +13,17 @@ export const LocationIconText2Size = textSize.XS;
 export const LocationIconSize = size.M;
 
 export const searchBarBorderColor = "transparent";
+export const searchBarFontsize = textSize.XS;
 export const SearchIconColor = colors.quaternary;
 export const SearchIconBoxPadding = size.XS;
 export const SearchIconBoxColor1 = colors.senary;
 export const SearchIconBoxColor2 = colors.quinary;
 export const SearchIconBoxBorderRadius1 = size.XS + " 0 0 " + size.XS;
 export const SearchIconBoxBorderRadius2 = "0 " + size.XS + " " + size.XS + " 0";
+export const DropdownMenuColor = colors.primary;
+export const DropdownMenuHoverColor = colors.nonary;
+export const DropdownContentColor = colors.primary;
+export const DropdownContentPadding = size.S;
 
 export const FlagIconTextColor = colors.tertiary;
 export const flagIconColor = colors.primary;
