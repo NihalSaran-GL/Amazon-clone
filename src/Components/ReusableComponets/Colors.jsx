@@ -7,6 +7,7 @@ const colors = {
   senary: "#E6E6E6",
   septenary: "#232f3e",
   octonary: "#007185",
+  nonary: "#1967D2",
 };
 
 export default colors;
