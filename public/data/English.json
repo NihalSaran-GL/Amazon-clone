@@ -21,27 +21,27 @@
                 },
                 {
                     "label": "Alexa Skills",
-                    "href": "Alexa Skills"
+                    "href": "AlexaSkills"
                 },
                 {
                     "label": "Amazon Devices",
-                    "href": "Amazon Devices"
+                    "href": "AmazonDevices"
                 },
                 {
                     "label": "Amazon Fashion",
-                    "href": "Amazon Fashion"
+                    "href": "AmazonFashion"
                 },
                 {
                     "label": "Amazon Fresh",
-                    "href": "Amazon Fresh"
+                    "href": "AmazonFresh"
                 },
                 {
                     "label": "Amazon Fresh Meat",
-                    "href": "Amazon Fresh Meat"
+                    "href": "AmazonFreshMeat"
                 },
                 {
                     "label": "Amazon Pharmacy",
-                    "href": "Amazon Pharmacy"
+                    "href": "AmazonPharmacy"
                 },
                 {
                     "label": "Appliances",
@@ -49,11 +49,11 @@
                 },
                 {
                     "label": "Apps & Games",
-                    "href": "Apps & Games"
+                    "href": "Apps&Games"
                 },
                 {
                     "label": "Audible Audiobooks",
-                    "href": "Audible Audiobooks"
+                    "href": "AudibleAudiobooks"
                 },
                 {
                     "label": "Baby",
@@ -69,11 +69,11 @@
                 },
                 {
                     "label": "Car & Motorbikes",
-                    "href": "Car & Motorbikes"
+                    "href": "Car&Motorbikes"
                 },
                 {
                     "label": "Clothing & Accessories",
-                    "href": "Clothing & Accessories"
+                    "href": "Clothing&Accessories"
                 },
                 {
                     "label": "Collectibles",
@@ -81,7 +81,7 @@
                 },
                 {
                     "label": "Computers & Accessories",
-                    "href": "Computers & Accessories"
+                    "href": "Computers&Accessories"
                 },
                 {
                     "label": "Deals",
@@ -97,27 +97,27 @@
                 },
                 {
                     "label": "Garden & Outdoors",
-                    "href": "Garden & Outdoors"
+                    "href": "Garden&Outdoors"
                 },
                 {
                     "label": "Gift Cards",
-                    "href": "Gift Cards"
+                    "href": "GiftCards"
                 },
                 {
                     "label": "Grocery & Gourmet Foods",
-                    "href": "Grocery & Gourmet Foods"
+                    "href": "Grocery&GourmetFoods"
                 },
                 {
                     "label": "Health & Personal Care",
-                    "href": "Health & Personal Care"
+                    "href": "Health&PersonalCare"
                 },
                 {
                     "label": "Home & Kitchen",
-                    "href": "Home & Kitchen"
+                    "href": "Home&Kitchen"
                 },
                 {
                     "label": "Industrial & Scientific",
-                    "href": "Industrial & Scientific"
+                    "href": "Industrial&Scientific"
                 },
                 {
                     "label": "Jewellery",
@@ -125,23 +125,23 @@
                 },
                 {
                     "label": "Kindle Store",
-                    "href": "Kindle Store"
+                    "href": "KindleStore"
                 },
                 {
                     "label": "Luggage & Bags",
-                    "href": "Luggage & Bags"
+                    "href": "Luggage&Bags"
                 },
                 {
                     "label": "Luxury Beauty",
-                    "href": "Luxury Beauty"
+                    "href": "LuxuryBeauty"
                 },
                 {
                     "label": "Movies & TV Shows",
-                    "href": "Movies & TV Shows"
+                    "href": "Movies&TVShows"
                 },
                 {
                     "label": "MP3 Music",
-                    "href": "MP3 Music"
+                    "href": "MP3Music"
                 },
                 {
                     "label": "Music",
@@ -149,23 +149,23 @@
                 },
                 {
                     "label": "Musical Instruments",
-                    "href": "Musical Instruments"
+                    "href": "MusicalInstruments"
                 },
                 {
                     "label": "Office Products",
-                    "href": "Office Products"
+                    "href": "OfficeProducts"
                 },
                 {
                     "label": "Pet Supplies",
-                    "href": "Pet Supplies"
+                    "href": "PetSupplies"
                 },
                 {
                     "label": "Prime Video",
-                    "href": "Prime Video"
+                    "href": "PrimeVideo"
                 },
                 {
                     "label": "Shoes & Handbags",
-                    "href": "Shoes & Handbags"
+                    "href": "Shoes&Handbags"
                 },
                 {
                     "label": "Software",
@@ -173,27 +173,27 @@
                 },
                 {
                     "label": "Sports, Fitness & Outdoors",
-                    "href": "Sports, Fitness & Outdoors"
+                    "href": "Sports,Fitness&Outdoors"
                 },
                 {
                     "label": "Subscribe & Save",
-                    "href": "Subscribe & Save"
+                    "href": "Subscribe&Save"
                 },
                 {
                     "label": "Tools & Home Improvements",
-                    "href": "Tools & Home Improvements"
+                    "href": "Tools&HomeImprovements"
                 },
                 {
                     "label": "Toys & Games",
-                    "href": "Toys & Games"
+                    "href": "Toys&Games"
                 },
                 {
                     "label": "Under ₹500",
-                    "href": "Under ₹500"
+                    "href": "Under₹500"
                 },
                 {
                     "label": "Video Games",
-                    "href": "Video Games"
+                    "href": "VideoGames"
                 },
                 {
                     "label": "Watches",
