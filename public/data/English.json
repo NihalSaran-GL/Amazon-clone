@@ -3,6 +3,7 @@
         "main_header": {
             "logo_name": "Amazon",
             "amazon_logo_text": ".in",
+            "amazon_logo_image": "/path/to/your/logo.png",
             "location_icon_text1": "Deliver to",
             "location_icon_text2": "India",
             "search_box_text": "Search Amazon.in",
@@ -12,7 +13,193 @@
             "account_text": "Account & Lists",
             "return_text": "Returns",
             "orders_text": "& Orders",
-            "cart_text": "Cart"
+            "cart_text": "Cart",
+            "dropdown_menu": [
+                {
+                    "label": "All Categories",
+                    "href": "/"
+                },
+                {
+                    "label": "Alexa Skills",
+                    "href": "AlexaSkills"
+                },
+                {
+                    "label": "Amazon Devices",
+                    "href": "AmazonDevices"
+                },
+                {
+                    "label": "Amazon Fashion",
+                    "href": "AmazonFashion"
+                },
+                {
+                    "label": "Amazon Fresh",
+                    "href": "AmazonFresh"
+                },
+                {
+                    "label": "Amazon Fresh Meat",
+                    "href": "AmazonFreshMeat"
+                },
+                {
+                    "label": "Amazon Pharmacy",
+                    "href": "AmazonPharmacy"
+                },
+                {
+                    "label": "Appliances",
+                    "href": "Appliances"
+                },
+                {
+                    "label": "Apps & Games",
+                    "href": "Apps&Games"
+                },
+                {
+                    "label": "Audible Audiobooks",
+                    "href": "AudibleAudiobooks"
+                },
+                {
+                    "label": "Baby",
+                    "href": "Baby"
+                },
+                {
+                    "label": "Beauty",
+                    "href": "Beauty"
+                },
+                {
+                    "label": "Books",
+                    "href": "Books"
+                },
+                {
+                    "label": "Car & Motorbikes",
+                    "href": "Car&Motorbikes"
+                },
+                {
+                    "label": "Clothing & Accessories",
+                    "href": "Clothing&Accessories"
+                },
+                {
+                    "label": "Collectibles",
+                    "href": "Collectibles"
+                },
+                {
+                    "label": "Computers & Accessories",
+                    "href": "Computers&Accessories"
+                },
+                {
+                    "label": "Deals",
+                    "href": "Deals"
+                },
+                {
+                    "label": "Electronics",
+                    "href": "Electronics"
+                },
+                {
+                    "label": "Furniture",
+                    "href": "Furniture"
+                },
+                {
+                    "label": "Garden & Outdoors",
+                    "href": "Garden&Outdoors"
+                },
+                {
+                    "label": "Gift Cards",
+                    "href": "GiftCards"
+                },
+                {
+                    "label": "Grocery & Gourmet Foods",
+                    "href": "Grocery&GourmetFoods"
+                },
+                {
+                    "label": "Health & Personal Care",
+                    "href": "Health&PersonalCare"
+                },
+                {
+                    "label": "Home & Kitchen",
+                    "href": "Home&Kitchen"
+                },
+                {
+                    "label": "Industrial & Scientific",
+                    "href": "Industrial&Scientific"
+                },
+                {
+                    "label": "Jewellery",
+                    "href": "Jewellery"
+                },
+                {
+                    "label": "Kindle Store",
+                    "href": "KindleStore"
+                },
+                {
+                    "label": "Luggage & Bags",
+                    "href": "Luggage&Bags"
+                },
+                {
+                    "label": "Luxury Beauty",
+                    "href": "LuxuryBeauty"
+                },
+                {
+                    "label": "Movies & TV Shows",
+                    "href": "Movies&TVShows"
+                },
+                {
+                    "label": "MP3 Music",
+                    "href": "MP3Music"
+                },
+                {
+                    "label": "Music",
+                    "href": "Music"
+                },
+                {
+                    "label": "Musical Instruments",
+                    "href": "MusicalInstruments"
+                },
+                {
+                    "label": "Office Products",
+                    "href": "OfficeProducts"
+                },
+                {
+                    "label": "Pet Supplies",
+                    "href": "PetSupplies"
+                },
+                {
+                    "label": "Prime Video",
+                    "href": "PrimeVideo"
+                },
+                {
+                    "label": "Shoes & Handbags",
+                    "href": "Shoes&Handbags"
+                },
+                {
+                    "label": "Software",
+                    "href": "Software"
+                },
+                {
+                    "label": "Sports, Fitness & Outdoors",
+                    "href": "Sports,Fitness&Outdoors"
+                },
+                {
+                    "label": "Subscribe & Save",
+                    "href": "Subscribe&Save"
+                },
+                {
+                    "label": "Tools & Home Improvements",
+                    "href": "Tools&HomeImprovements"
+                },
+                {
+                    "label": "Toys & Games",
+                    "href": "Toys&Games"
+                },
+                {
+                    "label": "Under ₹500",
+                    "href": "Under₹500"
+                },
+                {
+                    "label": "Video Games",
+                    "href": "VideoGames"
+                },
+                {
+                    "label": "Watches",
+                    "href": "Watches"
+                }
+            ]
         },
         "header_menu": {
             "menu1": "All",
@@ -24,7 +211,7 @@
             "menu7": "Today's Deals",
             "menu8": "Prime",
             "menu9": "Fashion",
-            "menu10": "Electronincs",
+            "menu10": "Electronics",
             "menu11": "Customer Service",
             "menu12": "New Releases",
             "menu13": "Amazon Pay",

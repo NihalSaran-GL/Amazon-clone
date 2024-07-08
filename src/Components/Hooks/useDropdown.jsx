@@ -1,4 +1,3 @@
-// useDropdown.js
 import { useState } from 'react';
 
 export const useDropdown = (initialState = false) => {
