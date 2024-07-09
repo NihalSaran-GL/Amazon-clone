@@ -27,3 +27,20 @@ export const sectionSize = {
   XL: "39vw",
   XXL: "50vw",
 };
+export const sizee = {//Footer Size
+  XXS: '4px',
+  XS: '8px',
+  S: '16px',
+  M: '24px',
+  L: '32px',
+  XL: '48px',
+  XXL: '64px',
+};
+
+export const texttSize = { //Footer Text Size
+  XS: '12px',
+  S: '14px',
+  M: '16px',
+  L: '20px',
+  XL: '24px',
+};
