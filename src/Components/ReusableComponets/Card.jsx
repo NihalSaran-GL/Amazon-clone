@@ -5,9 +5,9 @@ import colors from "./Colors";
 
 const CardWrapper = styled.article`
   border: 1px solid #ddd;
-  border-radius: ${(props) => props.borderRadius || size.S};
+  border-radius: ${(props) => props.borderRadius || "0px"};
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: ${(props) => props.wrapperPadding || size.M};
+  padding: ${(props) => props.wrapperPadding || "0px"};
   margin: ${(props) => props.wrapperMargin || size.M};
   background-color: ${(props) => props.wrapperBgColor || colors.primary};
 `;
