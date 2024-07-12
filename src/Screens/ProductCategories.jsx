@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
+import ProductCategoryMain from "../Components/ProductCategoryContainer/ProductCategoryMain";
 
-function ProductCategories() {
+function ProductCategories() {  
+
   return (
-    <div>
-      hello
-    </div>
-  )
+    <ProductCategoryMain />
+  );
 }
 
-export default ProductCategories
+export default ProductCategories;
