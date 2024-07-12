@@ -1,0 +1,93 @@
+{
+    "CategoryCard": {
+        "Card1": {
+            "title": "Revamp your home in style",
+            "category1": {
+                "id": 1,
+                "name": "Cushion covers, bedsheets & more",
+                "image": "category1.jpg"
+            },
+            "category2": {
+                "id": 2,
+                "name": "Figurines, vases & more",
+                "image": "category2.jpg"
+            },
+            "category3": {
+                "id": 3,
+                "name": "Home Storage",
+                "image": "category3.jpg"
+            },
+            "category4": {
+                "id": 4,
+                "name": "Lighting solutions",
+                "image": "category4.jpg"
+            }
+        },
+        "Card2": {
+            "category1": {
+                "id": 5,
+                "name": "Category 5",
+                "image": "category5.jpg"
+            },
+            "category2": {
+                "id": 6,
+                "name": "Category 6",
+                "image": "category6.jpg"
+            },
+            "category3": {
+                "id": 7,
+                "name": "Category 7",
+                "image": "category7.jpg"
+            },
+            "category4": {
+                "id": 8,
+                "name": "Category 8",
+                "image": "category8.jpg"
+            }
+        },
+        "Card3": {
+            "category1": {
+                "id": 9,
+                "name": "Category 9",
+                "image": "category9.jpg"
+            },
+            "category2": {
+                "id": 10,
+                "name": "Category 10",
+                "image": "category10.jpg"
+            },
+            "category3": {
+                "id": 11,
+                "name": "Category 11",
+                "image": "category11.jpg"
+            },
+            "category4": {
+                "id": 12,
+                "name": "Category 12",
+                "image": "category12.jpg"
+            }
+        },
+        "Card4": {
+            "category1": {
+                "id": 13,
+                "name": "Category 13",
+                "image": "category13.jpg"
+            },
+            "category2": {
+                "id": 14,
+                "name": "Category 14",
+                "image": "category14.jpg"
+            },
+            "category3": {
+                "id": 15,
+                "name": "Category 15",
+                "image": "category15.jpg"
+            },
+            "category4": {
+                "id": 16,
+                "name": "Category 16",
+                "image": "category16.jpg"
+            }
+        }
+    }
+}
