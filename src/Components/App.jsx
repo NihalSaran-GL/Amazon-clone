@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/AmazonFashion" element={<ProductCategories />} />
+        <Route path="/Home&Kitchen" element={<ProductCategories />} />
       </Routes>
     </Router>
   );
