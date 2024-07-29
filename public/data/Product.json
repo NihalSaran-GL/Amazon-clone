@@ -5,23 +5,24 @@
             "category1": {
                 "id": 1,
                 "name": "Cushion covers, bedsheets & more",
-                "image": "category1.jpg"
+                "image": "../assets/Categories/Card1/product1.jpg"
             },
             "category2": {
                 "id": 2,
                 "name": "Figurines, vases & more",
-                "image": "category2.jpg"
+                "image": "../assets/Categories/Card1/product2.jpg"
             },
             "category3": {
                 "id": 3,
                 "name": "Home Storage",
-                "image": "category3.jpg"
+                "image": "../assets/Categories/Card1/product3.jpg"
             },
             "category4": {
                 "id": 4,
                 "name": "Lighting solutions",
-                "image": "category4.jpg"
-            }
+                "image": "../assets/Categories/Card1/product4.jpg"
+            },
+            "footer": "Explore all"
         },
         "Card2": {
             "category1": {

@@ -28,7 +28,8 @@ function Home() {
         {Object.entries(categories).map(([key, category]) => (
           <Card
             key={key}
-            title={category.title || "Default Title"}
+            title={category.title}
+            cardsPerRow={2}
             content={
               <>
                 {Object.values(category).map((cat) =>
@@ -41,14 +42,14 @@ function Home() {
                 )}
               </>
             }
-            footer="Footer text"
-            headerFontSize={textSize.L}
+            footer={category.footer}
+            headerFontSize={textSize.M}
             headerMarginBottom={size.S}
-            contentFontSize={textSize.M}
+            contentFontSize={textSize.XS}
             contentMarginBottom={size.M}
             footerFontSize={textSize.XXS}
-            footerColor={colors.secondary}
-            footerTextAlign="center"
+            footerColor={colors.octonary}
+            footerTextAlign="left"
             padding={size.M}
             margin={size.XS}
             wrapperBgColor={colors.primary}
