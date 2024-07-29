@@ -5,89 +5,80 @@
             "category1": {
                 "id": 1,
                 "name": "Cushion covers, bedsheets & more",
-                "image": "category1.jpg"
+                "image": "../assets/Categories/Card1/product1.jpg"
             },
             "category2": {
                 "id": 2,
                 "name": "Figurines, vases & more",
-                "image": "category2.jpg"
+                "image": "../assets/Categories/Card1/product2.jpg"
             },
             "category3": {
                 "id": 3,
                 "name": "Home Storage",
-                "image": "category3.jpg"
+                "image": "../assets/Categories/Card1/product3.jpg"
             },
             "category4": {
                 "id": 4,
                 "name": "Lighting solutions",
-                "image": "category4.jpg"
-            }
+                "image": "../assets/Categories/Card1/product4.jpg"
+            },
+            "footer": "Explore all"
         },
         "Card2": {
+            "title": "Appliances for your home | Up to 55% off",
             "category1": {
                 "id": 5,
-                "name": "Category 5",
-                "image": "category5.jpg"
+                "name": "Air conditioners",
+                "image": "../assets/Categories/Card2/product1.jpg"
             },
             "category2": {
                 "id": 6,
-                "name": "Category 6",
-                "image": "category6.jpg"
+                "name": "Refrigerators",
+                "image": "../assets/Categories/Card2/product2.jpg"
             },
             "category3": {
                 "id": 7,
-                "name": "Category 7",
-                "image": "category7.jpg"
+                "name": "Microwave",
+                "image": "../assets/Categories/Card2/product3.jpg"
             },
             "category4": {
                 "id": 8,
-                "name": "Category 8",
-                "image": "category8.jpg"
-            }
+                "name": "Washing machines",
+                "image": "../assets/Categories/Card2/product4.jpg"
+            },
+            "footer": "see more"
         },
         "Card3": {
+            "title": "Starting ₹149 | Headphones",
             "category1": {
                 "id": 9,
-                "name": "Category 9",
-                "image": "category9.jpg"
+                "name": "Starting ₹249 | boAt",
+                "image": "../assets/Categories/Card3/product1.jpg"
             },
             "category2": {
                 "id": 10,
-                "name": "Category 10",
-                "image": "category10.jpg"
+                "name": "Starting ₹349 | boult",
+                "image": "../assets/Categories/Card3/product2.jpg"
             },
             "category3": {
                 "id": 11,
-                "name": "Category 11",
-                "image": "category11.jpg"
+                "name": "Starting ₹649 | Noise",
+                "image": "../assets/Categories/Card3/product3.jpg"
             },
             "category4": {
                 "id": 12,
-                "name": "Category 12",
-                "image": "category12.jpg"
-            }
+                "name": "Starting ₹149 | Zebronics",
+                "image": "../assets/Categories/Card3/product4.jpg"
+            },
+            "footer":"See all offers"
         },
         "Card4": {
+            "title": "Great Freedom Sale | Coming soon",
             "category1": {
                 "id": 13,
-                "name": "Category 13",
-                "image": "category13.jpg"
+                "image": "../assets/Categories/Card4/product1.jpg"
             },
-            "category2": {
-                "id": 14,
-                "name": "Category 14",
-                "image": "category14.jpg"
-            },
-            "category3": {
-                "id": 15,
-                "name": "Category 15",
-                "image": "category15.jpg"
-            },
-            "category4": {
-                "id": 16,
-                "name": "Category 16",
-                "image": "category16.jpg"
-            }
+            "footer":"See all offers"
         }
     }
 }
