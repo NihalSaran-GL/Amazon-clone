@@ -10,6 +10,7 @@ const CardWrapper = styled.article`
   padding: ${(props) => props.wrapperPadding || "0px"};
   margin: ${(props) => props.wrapperMargin || size.M};
   background-color: ${(props) => props.wrapperBgColor || colors.primary};
+  width: 320px;
 `;
 
 const CardHeader = styled.header`
@@ -20,10 +21,13 @@ const CardHeader = styled.header`
 const CardContent = styled.section`
   font-size: ${(props) => props.contentFontSize || textSize.S};
   margin-bottom: ${(props) => props.contentMarginBottom || size.S};
+  display: grid;
+  grid-template-columns: repeat(${(props) => props.cardsPerRow || 1}, 1fr);
+  gap: ${(props) => props.gridGap || size.M};
 `;
 
 const CardFooter = styled.footer`
-  text-align: ${(props) => props.footerTextAlign || 'left'};
+  text-align: ${(props) => props.footerTextAlign || "left"};
   font-size: ${(props) => props.footerFontSize || textSize.XXS};
   color: ${(props) => props.footerColor || colors.octonary};
 `;
@@ -43,6 +47,7 @@ const Card = ({
   margin,
   wrapperBgColor,
   borderRadius,
+  cardsPerRow
 }) => (
   <CardWrapper
     wrapperPadding={padding}
@@ -56,6 +61,7 @@ const Card = ({
     <CardContent
       contentFontSize={contentFontSize}
       contentMarginBottom={contentMarginBottom}
+      cardsPerRow={cardsPerRow}
     >
       {content}
     </CardContent>
