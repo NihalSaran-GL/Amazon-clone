@@ -22,7 +22,7 @@ const CardContent = styled.section`
   font-size: ${(props) => props.contentFontSize || textSize.S};
   margin-bottom: ${(props) => props.contentMarginBottom || size.S};
   display: grid;
-  grid-template-columns: repeat(${(props) => props.cardsPerRow || 1}, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: ${(props) => props.gridGap || size.M};
 `;
 
@@ -47,7 +47,6 @@ const Card = ({
   margin,
   wrapperBgColor,
   borderRadius,
-  cardsPerRow
 }) => (
   <CardWrapper
     wrapperPadding={padding}
@@ -61,7 +60,6 @@ const Card = ({
     <CardContent
       contentFontSize={contentFontSize}
       contentMarginBottom={contentMarginBottom}
-      cardsPerRow={cardsPerRow}
     >
       {content}
     </CardContent>
