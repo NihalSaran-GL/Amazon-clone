@@ -7,13 +7,13 @@ const SliderContainer = styled.section`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 200%;
   margin: 0 auto;
 `;
 
 const CardsContainer = styled.div`
   display: flex;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
 `;
 
