@@ -22,19 +22,10 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const imagess = [
-  'assets/productimg.jpg',
-  'assets/productimg2.jpg',
-  'assets/productimg3.jpg',
-  'assets/productimg4.jpg',
-];
-
 const images = "https://cdn.pixabay.com/photo/2022/01/25/04/42/bird-6965228_1280.jpg "
     .repeat(10)
     .split(" ")
     .slice(0, 10);
-
-    
 
 function Home() {
   const [categories, setCategories] = useState([]);
@@ -81,7 +72,7 @@ function Home() {
       images={images}
       backgroundColor="lightblue"
       fadeHeight="150px"
-      fadeToColor="rgba(173, 216, 230, 1)" // Light blue
+      fadeToColor="rgba(173, 216, 230, 1)"
       imageMaxHeight="500px"
       debugMode={true}
       itemsPerPage={{
