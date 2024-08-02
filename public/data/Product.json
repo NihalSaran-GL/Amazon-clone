@@ -80,5 +80,25 @@
             },
             "footer":"See all offers"
         }
+    },
+    "SliderCards": {
+        "Card1": {
+            "title": "Apple iPhone 15 Plus (128 GB) - Black",
+            "image": "../assets/SliderCards/product1.jpg",
+            "stars": 4,
+            "noOfReviews": 894,
+            "price": "₹81,900.00",
+            "note": "FREE Delivery by Amazon",
+            "deliveryDate": "Get it by Friday, August 2"
+        },
+        "Card2": {
+            "title": "TheGiftKart Ultra-Hybrid Crystal Clear Back Case Cover for iPhone 15 Plus | Shockproof Design | Camera Protection Bump | Hard Clear Back",
+            "image": "../assets/SliderCards/product2.jpg",
+            "stars": 4,
+            "noOfReviews": 894,
+            "price": "₹295.00",
+            "note": "FREE Delivery by Amazon",
+            "deliveryDate": "Get it by Friday, August 2"
+        }
     }
 }

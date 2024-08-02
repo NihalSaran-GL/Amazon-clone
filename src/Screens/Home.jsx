@@ -8,7 +8,6 @@ import { size, textSize } from "../Components/ReusableComponets/Sizes";
 import colors from "../Components/ReusableComponets/Colors";
 import categoriesData from "../../public/data/Product.json";
 
-
 const Container = styled.main`
   max-width: 1500px;
   margin: 0 auto;
@@ -59,6 +58,30 @@ function Home() {
       footerFontSize={textSize.XXS}
       footerColor={colors.octonary}
       footerTextAlign="left"
+      padding={size.M}
+      margin={size.XS}
+      wrapperBgColor={colors.primary}
+    />
+  ));
+
+  const sliderCards = Object.entries(categories).map(([key, category]) => (
+    <Card
+      key={key}
+      cardsPerRow={2}
+      content={
+        <>
+          {Object.values(category).map((cat) =>
+            typeof cat === "object" ? (
+              <ImageWrapper key={cat.id}>
+                <img src={cat.image} alt={cat.name} />
+                <p>{cat.name}</p>
+              </ImageWrapper>
+            ) : null
+          )}
+        </>
+      }
+      contentFontSize={textSize.XS}
+      contentMarginBottom={size.M}
       padding={size.M}
       margin={size.XS}
       wrapperBgColor={colors.primary}
