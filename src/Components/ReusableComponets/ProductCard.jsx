@@ -10,6 +10,7 @@ const ProductImage = styled.img`
 
 const ProductTitle = styled.p`
   color: ${colors.octonary};
+  font-size: ${textSize.XS};
   margin-bottom: 5px;
 `;
 
