@@ -4,6 +4,7 @@ import ImageCarousel from "../Components/HomeContainer/ImageCarousel";
 import CardSlider from "../Components/HomeContainer/CardSlider";
 import Card from "../Components/ReusableComponets/Card";
 import GridWrapper from "../Components/ReusableComponets/GridWrapper";
+import ProductCard from "../Components/ReusableComponets/ProductCard";
 import { size, textSize } from "../Components/ReusableComponets/Sizes";
 import colors from "../Components/ReusableComponets/Colors";
 import categoriesData from "../../public/data/Product.json";
@@ -70,24 +71,23 @@ function Home() {
   const sliderCards = Object.entries(sliderCategories).map(([key, category]) => (
     <Card
       key={key}
-      cardsPerRow={2}
       content={
-        <>
-          <ImageWrapper key={category.id}>
-            <img src={category.image} alt={category.title} />
-            <p>{category.title}</p>
-            <p>{category.price}</p>
-            <p>{category.note}</p>
-            <p>{category.deliveryDate}</p>
-          </ImageWrapper>
-        </>
+        <ProductCard
+          image={category.image}
+          title={category.title}
+          price={category.price}
+          stars={category.stars}
+          note={category.note}
+          deliveryDate={category.deliveryDate}
+        />
       }
       contentFontSize={textSize.XS}
-      contentMarginBottom={size.M}
-      padding={size.M}
+      contentMarginBottom={size.XXS}
+      padding={size.S}
       margin={size.XS}
       wrapperBgColor={colors.primary}
       width={"200px"}
+      gap={size.XXS}
     />
   ));
 

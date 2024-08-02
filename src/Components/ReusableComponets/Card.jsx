@@ -20,7 +20,7 @@ const CardHeader = styled.header`
 
 const CardContent = styled.section`
   font-size: ${(props) => props.contentFontSize || textSize.S};
-  margin-bottom: ${(props) => props.contentMarginBottom || size.S};
+  margin-bottom: ${(props) => props.contentMarginBottom || "0px"};
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: ${(props) => props.gridGap || size.M};
@@ -48,6 +48,7 @@ const Card = ({
   wrapperBgColor,
   borderRadius,
   width,
+  gap,
 }) => (
   <CardWrapper
     wrapperPadding={padding}
@@ -62,6 +63,7 @@ const Card = ({
     <CardContent
       contentFontSize={contentFontSize}
       contentMarginBottom={contentMarginBottom}
+      gridGap={gap}
     >
       {content}
     </CardContent>
