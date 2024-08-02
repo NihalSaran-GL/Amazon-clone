@@ -81,7 +81,6 @@ function Home() {
           deliveryDate={category.deliveryDate}
         />
       }
-      contentFontSize={textSize.XS}
       contentMarginBottom={size.XXS}
       padding={size.S}
       margin={size.XS}
