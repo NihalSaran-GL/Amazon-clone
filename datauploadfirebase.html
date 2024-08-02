@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert JSON to Firebase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insert JSON Data into Firebase Firestore</h1>
+    <form id="jsonForm">
+        <textarea id="jsonData" placeholder="Enter JSON data here" rows="10" cols="50"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Firebase SDK -->
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script>
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB_iM8eRcYObPit6c-LSaLzB2-mAnCajp4",
+    authDomain: "clone-f1ccd.firebaseapp.com",
+    projectId: "clone-f1ccd",
+    storageBucket: "clone-f1ccd.appspot.com",
+    messagingSenderId: "167467505553",
+    appId: "1:167467505553:web:39ce8b8729c73d88152c30",
+    measurementId: "G-2DF81P6CKL"
+};
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+
+        document.getElementById('jsonForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const jsonData = document.getElementById('jsonData').value;
+    const customDocName = 'Faculty of Engineering'; // Replace with your custom document name
+    
+    try {
+        const data = JSON.parse(jsonData);
+        await db.collection('seekhobuddydb').doc(customDocName).set(data);
+        alert('Data successfully added to Firestore!');
+    } catch (error) {
+        console.error('Error adding document: ', error);
+        alert('Invalid JSON data or Firestore error');
+    }
+});
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import styled from "styled-components";
 import ImageCarousel from "../Components/HomeContainer/ImageCarousel";
 import CardSlider from "../Components/HomeContainer/CardSlider";
@@ -68,27 +68,29 @@ function Home() {
     />
   ));
 
-  const sliderCards = Object.entries(sliderCategories).map(([key, category]) => (
-    <Card
-      key={key}
-      content={
-        <ProductCard
-          image={category.image}
-          title={category.title}
-          price={category.price}
-          stars={category.stars}
-          note={category.note}
-          deliveryDate={category.deliveryDate}
-        />
-      }
-      contentMarginBottom={size.XXS}
-      padding={size.S}
-      margin={size.XS}
-      wrapperBgColor={colors.primary}
-      width={"200px"}
-      gap={size.XXS}
-    />
-  ));
+  const sliderCards = useMemo(() => {
+    return Object.values(sliderCategories).map((category, index) => (
+      <Card
+        key={index}
+        content={
+          <ProductCard
+            image={category.image}
+            title={category.title}
+            price={category.price}
+            stars={category.stars}
+            note={category.note}
+            deliveryDate={category.deliveryDate}
+          />
+        }
+        contentMarginBottom={size.XXS}
+        padding={size.S}
+        margin={size.XS}
+        wrapperBgColor={colors.primary}
+        width={"200px"}
+        gap={size.XXS}
+      />
+    ));
+  }, [sliderCategories]);
 
   return (
     <Container>
@@ -105,6 +107,10 @@ function Home() {
           xl: 1
         }}
       />
+      <GridWrapper columns={"4"}>
+        {cards}
+      </GridWrapper>
+      <CardSlider cards={sliderCards} />
       <GridWrapper columns={"4"}>
         {cards}
       </GridWrapper>

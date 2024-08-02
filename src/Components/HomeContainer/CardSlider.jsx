@@ -1,96 +1,121 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const SliderContainer = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 200%;
-  margin: 0 auto;
-`;
-
-const CardsContainer = styled.div`
-  display: flex;
+  position: relative;
   width: 100%;
   overflow: hidden;
 `;
 
-const CardWrapper = styled.div`
-  flex: 0 0 calc(100% / 8);
-  transition: transform 0.3s ease;
+const CardsContainer = styled(motion.div)`
+  display: flex;
+  width: 100%;
+`;
+
+const CardWrapper = styled(motion.div)`
+  flex: 0 0 calc(1% / var(--visible-cards));
+  padding: 10 1px;
 `;
 
 const SliderButton = styled.button`
-  background: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
   border: none;
   font-size: 24px;
   cursor: pointer;
   padding: 10px;
-  color: #333;
-  transition: color 0.3s ease;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 10;
+  border-radius: 50%;
 
   &:hover, &:focus {
     color: #007bff;
+    background: rgba(255, 255, 255, 0.9);
   }
 
   &:disabled {
     color: #ccc;
     cursor: not-allowed;
   }
+
+  &.prev {
+    left: 10px;
+  }
+
+  &.next {
+    right: 0px;
+  }
 `;
 
 const CardSlider = ({ cards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState([]);
+  const [visibleCards, setVisibleCards] = useState(8);
 
   useEffect(() => {
-    updateVisibleCards();
-  }, [currentIndex, cards]);
+    const updateVisibleCards = () => {
+      if (window.innerWidth >= 1200) setVisibleCards(8);
+      else if (window.innerWidth >= 992) setVisibleCards(6);
+      else if (window.innerWidth >= 768) setVisibleCards(4);
+      else setVisibleCards(2);
+    };
 
-  const updateVisibleCards = () => {
-    const newVisibleCards = [];
-    for (let i = 0; i < 8; i++) {
-      const index = (currentIndex + i) % cards.length;
-      newVisibleCards.push(cards[index]);
-    }
-    setVisibleCards(newVisibleCards);
-  };
+    updateVisibleCards();
+    window.addEventListener('resize', updateVisibleCards);
+    return () => window.removeEventListener('resize', updateVisibleCards);
+  }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+    setCurrentIndex((prevIndex) => (prevIndex + visibleCards) % cards.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
+    setCurrentIndex((prevIndex) => (prevIndex - visibleCards + cards.length) % cards.length);
   };
+
+  if (!cards || cards.length === 0) {
+    return null;
+  }
 
   return (
     <SliderContainer aria-roledescription="carousel">
-      <SliderButton 
-        onClick={prevSlide} 
-        aria-label="Previous card"
-      >
-        &lt;
-      </SliderButton>
+      {cards.length > visibleCards && (
+        <SliderButton 
+          onClick={prevSlide} 
+          aria-label="Previous cards"
+          className="prev"
+        >
+          &lt;
+        </SliderButton>
+      )}
       <CardsContainer 
-        role="group" 
-        aria-roledescription="slide"
-        aria-label={`Card ${currentIndex + 1} of ${cards.length}`}
+        as={motion.div}
+        animate={{ x: `${-100 * currentIndex / visibleCards}%` }}
+        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        style={{ 
+          '--visible-cards': visibleCards,
+          width: `${(cards.length / visibleCards) * 100}%`
+        }}
       >
-        {visibleCards.map((card, index) => (
+        {cards.map((card, index) => (
           <CardWrapper key={index}>
             {card}
           </CardWrapper>
         ))}
       </CardsContainer>
-      <SliderButton 
-        onClick={nextSlide} 
-        aria-label="Next card"
-      >
-        &gt;
-      </SliderButton>
+      {cards.length > visibleCards && (
+        <SliderButton 
+          onClick={nextSlide} 
+          aria-label="Next cards"
+          className="next"
+        >
+          &gt;
+        </SliderButton>
+      )}
     </SliderContainer>
   );
 };
