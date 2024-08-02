@@ -4,7 +4,7 @@ import ImageCarousel from "../Components/HomeContainer/ImageCarousel";
 import CardSlider from "../Components/HomeContainer/CardSlider";
 import Card from "../Components/ReusableComponets/Card";
 import GridWrapper from "../Components/ReusableComponets/GridWrapper";
-import StarRating from "../Components/ReusableComponets/StarRating";
+import ProductCard from "../Components/ReusableComponets/ProductCard";
 import { size, textSize } from "../Components/ReusableComponets/Sizes";
 import colors from "../Components/ReusableComponets/Colors";
 import categoriesData from "../../public/data/Product.json";
@@ -71,25 +71,23 @@ function Home() {
   const sliderCards = Object.entries(sliderCategories).map(([key, category]) => (
     <Card
       key={key}
-      cardsPerRow={2}
       content={
-        <>
-          <ImageWrapper key={category.id}>
-            <img style={{ marginBottom: "10px" }} src={category.image} alt={category.title} />
-            <p style={{ color: colors.octonary, marginBottom: "5px" }}>{category.title}</p>
-            <p style={{ marginBottom: "5px", fontWeight: "bold", fontSize: textSize.S }}>{category.price}</p>
-            <StarRating starRating={category.stars} />
-            <p style={{ fontSize: textSize.XXS }}>{category.note}</p>
-            <p style={{ fontSize: textSize.XXS }}>{category.deliveryDate}</p>
-          </ImageWrapper>
-        </>
+        <ProductCard
+          image={category.image}
+          title={category.title}
+          price={category.price}
+          stars={category.stars}
+          note={category.note}
+          deliveryDate={category.deliveryDate}
+        />
       }
       contentFontSize={textSize.XS}
-      contentMarginBottom={size.M}
-      padding={size.M}
+      contentMarginBottom={size.XXS}
+      padding={size.S}
       margin={size.XS}
       wrapperBgColor={colors.primary}
       width={"200px"}
+      gap={size.XXS}
     />
   ));
 
