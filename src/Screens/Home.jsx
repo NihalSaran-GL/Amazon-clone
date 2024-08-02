@@ -4,6 +4,7 @@ import ImageCarousel from "../Components/HomeContainer/ImageCarousel";
 import CardSlider from "../Components/HomeContainer/CardSlider";
 import Card from "../Components/ReusableComponets/Card";
 import GridWrapper from "../Components/ReusableComponets/GridWrapper";
+import StarRating from "../Components/ReusableComponets/StarRating";
 import { size, textSize } from "../Components/ReusableComponets/Sizes";
 import colors from "../Components/ReusableComponets/Colors";
 import categoriesData from "../../public/data/Product.json";
@@ -74,11 +75,12 @@ function Home() {
       content={
         <>
           <ImageWrapper key={category.id}>
-            <img src={category.image} alt={category.title} />
-            <p>{category.title}</p>
-            <p>{category.price}</p>
-            <p>{category.note}</p>
-            <p>{category.deliveryDate}</p>
+            <img style={{ marginBottom: "10px" }} src={category.image} alt={category.title} />
+            <p style={{ color: colors.octonary, marginBottom: "5px" }}>{category.title}</p>
+            <p style={{ marginBottom: "5px", fontWeight: "bold", fontSize: textSize.S }}>{category.price}</p>
+            <StarRating starRating={category.stars} />
+            <p style={{ fontSize: textSize.XXS }}>{category.note}</p>
+            <p style={{ fontSize: textSize.XXS }}>{category.deliveryDate}</p>
           </ImageWrapper>
         </>
       }
