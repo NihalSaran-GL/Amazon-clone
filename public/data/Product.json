@@ -83,7 +83,8 @@
     },
     "SliderCards": {
         "Card1": {
-            "title": "Apple iPhone 15 Plus (128 GB) - Black",
+            "id": 1,
+            "title": "POPIO Tempered Glass Screen Protector Compatible For Iphone 15 Plus (Black) Edge To Edge Coverage With Easy Installation Kit for Smartphone",
             "image": "../assets/SliderCards/product1.jpg",
             "stars": 4,
             "noOfReviews": 894,
@@ -92,7 +93,8 @@
             "deliveryDate": "Get it by Friday, August 2"
         },
         "Card2": {
-            "title": "TheGiftKart Ultra-Hybrid Crystal Clear Back Case Cover for iPhone 15 Plus | Shockproof Design | Camera Protection Bump | Hard Clear Back",
+            "id": 2,
+            "title": "TheGiftKart Genuine Liquid Silicone Back Cover Case for iPhone 15 Plus | Soft Micro-Fibre Lining Inside",
             "image": "../assets/SliderCards/product2.jpg",
             "stars": 4,
             "noOfReviews": 894,

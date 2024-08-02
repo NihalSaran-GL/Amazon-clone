@@ -22,15 +22,17 @@ const ImageWrapper = styled.div`
 `;
 
 const images = "https://cdn.pixabay.com/photo/2022/01/25/04/42/bird-6965228_1280.jpg "
-    .repeat(10)
-    .split(" ")
-    .slice(0, 10);
+  .repeat(10)
+  .split(" ")
+  .slice(0, 10);
 
 function Home() {
   const [categories, setCategories] = useState([]);
+  const [sliderCategories, setSliderCategories] = useState([]);
 
   useEffect(() => {
     setCategories(categoriesData.CategoryCard);
+    setSliderCategories(categoriesData.SliderCards);
   }, []);
 
   const cards = Object.entries(categories).map(([key, category]) => (
@@ -61,23 +63,23 @@ function Home() {
       padding={size.M}
       margin={size.XS}
       wrapperBgColor={colors.primary}
+      width={"320px"}
     />
   ));
 
-  const sliderCards = Object.entries(categories).map(([key, category]) => (
+  const sliderCards = Object.entries(sliderCategories).map(([key, category]) => (
     <Card
       key={key}
       cardsPerRow={2}
       content={
         <>
-          {Object.values(category).map((cat) =>
-            typeof cat === "object" ? (
-              <ImageWrapper key={cat.id}>
-                <img src={cat.image} alt={cat.name} />
-                <p>{cat.name}</p>
-              </ImageWrapper>
-            ) : null
-          )}
+          <ImageWrapper key={category.id}>
+            <img src={category.image} alt={category.title} />
+            <p>{category.title}</p>
+            <p>{category.price}</p>
+            <p>{category.note}</p>
+            <p>{category.deliveryDate}</p>
+          </ImageWrapper>
         </>
       }
       contentFontSize={textSize.XS}
@@ -85,29 +87,29 @@ function Home() {
       padding={size.M}
       margin={size.XS}
       wrapperBgColor={colors.primary}
+      width={"200px"}
     />
   ));
-
 
   return (
     <Container>
       <ImageCarousel 
-      images={images}
-      backgroundColor="lightblue"
-      fadeHeight="150px"
-      fadeToColor="rgba(173, 216, 230, 1)"
-      imageMaxHeight="500px"
-      debugMode={true}
-      itemsPerPage={{
-        md: 1,
-        lg: 1,
-        xl: 1
-      }}
-    />
+        images={images}
+        backgroundColor="lightblue"
+        fadeHeight="150px"
+        fadeToColor="rgba(173, 216, 230, 1)"
+        imageMaxHeight="500px"
+        debugMode={true}
+        itemsPerPage={{
+          md: 1,
+          lg: 1,
+          xl: 1
+        }}
+      />
       <GridWrapper columns={"4"}>
         {cards}
       </GridWrapper>
-      <CardSlider cards={cards} />
+      <CardSlider cards={sliderCards} />
     </Container>
   );
 }

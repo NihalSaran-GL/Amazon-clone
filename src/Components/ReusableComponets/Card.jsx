@@ -10,7 +10,7 @@ const CardWrapper = styled.article`
   padding: ${(props) => props.wrapperPadding || "0px"};
   margin: ${(props) => props.wrapperMargin || size.M};
   background-color: ${(props) => props.wrapperBgColor || colors.primary};
-  width: 320px;
+  width: ${(props) => props.wrapperWidth || "220px"};
 `;
 
 const CardHeader = styled.header`
@@ -47,12 +47,14 @@ const Card = ({
   margin,
   wrapperBgColor,
   borderRadius,
+  width,
 }) => (
   <CardWrapper
     wrapperPadding={padding}
     wrapperMargin={margin}
     wrapperBgColor={wrapperBgColor}
     borderRadius={borderRadius}
+    wrapperWidth={width}
   >
     <CardHeader fontSize={headerFontSize} marginBottom={headerMarginBottom}>
       {title}
