@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   HoverCardContainer,
@@ -57,6 +57,9 @@ import { BoxHover } from "../../ReusableComponets/BoxHover";
 import Dropdown from "../../ReusableComponets/DropdownMenu";
 import useDropdownData from "../../Hooks/useHeaderData";
 import HoverCard from "./HoverCard";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../../Firebase/firebaseConfig"; // Adjust the import path to your Firebase config
 
 const Data = {
   image: imagesData.header_container.main_header.amazon_logo_image,
@@ -82,9 +85,54 @@ function Main_Header() {
   const navigate = useNavigate();
   const dropdownItems = useDropdownData();
   const [hover, setHover] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setIsLoggedIn(true);
+        try {
+          const userData = await fetchUserData(user.uid);
+          setUserName(userData.displayName || "User");
+        } catch (error) {
+          setUserName("User");
+        } finally {
+          setLoading(false);
+        }
+      } else {
+        setIsLoggedIn(false);
+        setLoading(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleLogoClick = () => {
     navigate("/");
+  };
+
+  const handleCartClick = () => {
+    navigate("/AddToCart");
+  };
+
+  const fetchUserData = async (uid) => {
+    try {
+      const userDocRef = doc(db, "users", uid);
+      const userDoc = await getDoc(userDocRef);
+      if (userDoc.exists()) {
+        return userDoc.data();
+      } else {
+        console.log("No such document!");
+        return { displayName: "User" }; // Fallback display name
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      return { displayName: "User" }; // Fallback display name
+    }
   };
 
   return (
@@ -187,7 +235,7 @@ function Main_Header() {
                   fontSize: LocationIconText1Size,
                 }}
               >
-                {Data.signInText}
+                {loading ? "Loading..." : isLoggedIn ? `Hello ${userName}` : Data.signInText}
               </p>
               <p
                 style={{
@@ -230,7 +278,7 @@ function Main_Header() {
             </p>
           </TextContainer>
         </BoxHover>
-        <BoxHover>
+        <BoxHover onClick={handleCartClick}>
           <Icons
             text={Data.cartText}
             textColor={LocationIconText2}
