@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import {
   MainHeader,
   LeftSection,
@@ -75,12 +76,17 @@ const Data = {
 };
 
 function Main_Header() {
+  const navigate = useNavigate(); // Initialize useNavigate
   const dropdownItems = useDropdownData(); // Use the custom hook
+
+  const handleLogoClick = () => {
+    navigate("/"); // Navigate to root path
+  };
 
   return (
     <MainHeader>
       <LeftSection>
-        <BoxHover>
+        <BoxHover onClick={handleLogoClick}> {/* Add onClick handler */}
           <LogoContainer>
             <Logo
               image={Data.image}
