@@ -93,24 +93,14 @@ const images = "https://cdn.pixabay.com/photo/2022/01/25/04/42/bird-6965228_1280
   
     const sliderCards = useMemo(() => {
       return Object.values(sliderCategories).map((category, index) => (
-        <Card
+        <ProductCard
           key={index}
-          content={
-            <ProductCard
-              image={category.image}
-              title={category.title}
-              price={category.price}
-              stars={category.stars}
-              note={category.note}
-              deliveryDate={category.deliveryDate}
-            />
-          }
-          contentMarginBottom={size.XXS}
-          padding={size.S}
-          margin={size.XS}
-          wrapperBgColor={colors.primary}
-          width={"200px"}
-          gap={size.XXS}
+          image={category.image}
+          // title={category.title}
+          // price={category.price}
+          // stars={category.stars}
+          // note={category.note}
+          // deliveryDate={category.deliveryDate}
         />
       ));
     }, [sliderCategories]);
@@ -133,7 +123,18 @@ const images = "https://cdn.pixabay.com/photo/2022/01/25/04/42/bird-6965228_1280
         <GridWrapper columns={"4"}>
           {cards}
         </GridWrapper>
-        <CardSlider cards={sliderCards} />
+        <Card
+        content={
+          <CardSlider cards={sliderCards} />
+        }
+        contentMarginBottom={size.XXS}
+        title="Featured Products"
+        padding={size.S}
+        margin={size.XS}
+        wrapperBgColor={colors.primary}
+        width="100%"
+        gap={size.XXXS}
+      />
         
       </Container>
     );
