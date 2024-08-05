@@ -9,6 +9,7 @@ export const textSize = {
 };
 
 export const size = {
+  XXXS: "0.13rem",
   XXS: "0.10vw",
   XS: "0.3vw",
   S: "0.5vw",
