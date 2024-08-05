@@ -88,3 +88,17 @@ export const MainSearchSection = styled.input`
   height: ${size.M};
 `;
 
+export const HoverCardWrapper = styled.div`
+  position: relative;
+`;
+
+export const HoverCardContainer = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+  background: ${colors.primary};
+  border: 1px solid ${colors.tertiary};
+  box-shadow: 0 ${size.XXS} ${size.XS} rgba(0, 0, 0, 0.1);
+  display: "block"  ;
+`;
