@@ -134,10 +134,7 @@ const images = "https://cdn.pixabay.com/photo/2022/01/25/04/42/bird-6965228_1280
           {cards}
         </GridWrapper>
         <CardSlider cards={sliderCards} />
-        <GridWrapper columns={"4"}>
-          {cards}
-        </GridWrapper>
-        <CardSlider cards={sliderCards} />
+        
       </Container>
     );
   }
