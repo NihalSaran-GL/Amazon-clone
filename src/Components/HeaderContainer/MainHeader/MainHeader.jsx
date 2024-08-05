@@ -1,6 +1,8 @@
-import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
+  HoverCardContainer,
+  HoverCardWrapper,
   MainHeader,
   LeftSection,
   searchBarFontsize,
@@ -54,6 +56,7 @@ import Button from "../../ReusableComponets/Button";
 import { BoxHover } from "../../ReusableComponets/BoxHover";
 import Dropdown from "../../ReusableComponets/DropdownMenu";
 import useDropdownData from "../../Hooks/useHeaderData";
+import HoverCard from "./HoverCard";
 
 const Data = {
   image: imagesData.header_container.main_header.amazon_logo_image,
@@ -76,17 +79,18 @@ const Data = {
 };
 
 function Main_Header() {
-  const navigate = useNavigate(); // Initialize useNavigate
-  const dropdownItems = useDropdownData(); // Use the custom hook
+  const navigate = useNavigate();
+  const dropdownItems = useDropdownData();
+  const [hover, setHover] = useState(false);
 
   const handleLogoClick = () => {
-    navigate("/"); // Navigate to root path
+    navigate("/");
   };
 
   return (
     <MainHeader>
       <LeftSection>
-        <BoxHover onClick={handleLogoClick}> {/* Add onClick handler */}
+        <BoxHover onClick={handleLogoClick}>
           <LogoContainer>
             <Logo
               image={Data.image}
@@ -171,31 +175,41 @@ function Main_Header() {
             margin2={FlagIcon2TextMargin}
           />
         </BoxHover>
-        <BoxHover>
-          <TextContainer>
-            <p
-              style={{
-                color: LocationIconText1,
-                fontSize: LocationIconText1Size,
-              }}
-            >
-              {Data.signInText}
-            </p>
-            <p
-              style={{
-                color: LocationIconText2,
-                fontSize: LocationIconText2Size,
-              }}
-            >
-              {Data.accountText}
-            </p>
-          </TextContainer>
-          <Icons
-            Icon={ArrowDropDown}
-            iconColor={ArrowDropDownSignInIconColor}
-            margin={ArrowDropDownSignInTextMargin}
-          />
-        </BoxHover>
+        <HoverCardWrapper
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+        >
+          <BoxHover>
+            <TextContainer>
+              <p
+                style={{
+                  color: LocationIconText1,
+                  fontSize: LocationIconText1Size,
+                }}
+              >
+                {Data.signInText}
+              </p>
+              <p
+                style={{
+                  color: LocationIconText2,
+                  fontSize: LocationIconText2Size,
+                }}
+              >
+                {Data.accountText}
+              </p>
+            </TextContainer>
+            <Icons
+              Icon={ArrowDropDown}
+              iconColor={ArrowDropDownSignInIconColor}
+              margin={ArrowDropDownSignInTextMargin}
+            />
+          </BoxHover>
+          {hover && (
+            <HoverCardContainer>
+              <HoverCard />
+            </HoverCardContainer>
+          )}
+        </HoverCardWrapper>
         <BoxHover>
           <TextContainer>
             <p
