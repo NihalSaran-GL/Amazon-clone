@@ -30,6 +30,7 @@ const CheckoutButton = styled.button`
   width: 100%;
   font-size: ${textSize.S};
   cursor: pointer;
+  border-radius: 20px;
 `;
 
 export default PriceDetails;

@@ -6,8 +6,9 @@ import colors from "../Components/ReusableComponets/Colors";
 import Logo from "../Components/ReusableComponets/Logo";
 import englishData from "../../public/data/English.json";
 import imagesData from "../../public/data/Image.json";
-import { auth, googleProvider } from "../Firebase/firebaseConfig";
+import { auth, googleProvider, db } from "../Firebase/firebaseConfig";
 import { signInWithPopup } from "firebase/auth";
+import { collection, doc, setDoc } from "firebase/firestore";
 
 export const LogoWidth = size.XXL;
 export const LogoHeight = size.L;
@@ -60,13 +61,11 @@ const GoogleIcon = styled.img`
 const SmallText = styled.p`
   font-size: ${textSize.XS};
   margin-bottom: ${size.M};
-  text-align: center;
 `;
 
 const Link = styled.a`
   color: ${colors.link};
   text-decoration: none;
-
   &:hover {
     text-decoration: underline;
     color: ${colors.linkHover};
@@ -84,15 +83,28 @@ const Data = {
   logoName: englishData.header_container.main_header.logo_name,
 };
 
-function LoginPage() {
+function SignUp() {
   const navigate = useNavigate();
 
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+
+      // Extract user details
+      const userDetails = {
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+      };
+
+      // Save user details to Firestore
+      await setDoc(doc(collection(db, "users"), user.uid), userDetails);
+
       // Handle successful sign-in
-      console.log("User signed in", result.user);
-      navigate('/home'); // Navigate to /home after successful sign-in
+      console.log("User signed in", user);
+      navigate('/'); // Navigate to /home after successful sign-in
     } catch (error) {
       console.error("Error signing in with Google", error);
       // Handle sign-in errors here
@@ -110,10 +122,10 @@ function LoginPage() {
         />
       </LogoContainer>
       <SignInContainer>
-        <Title>Sign in</Title>
+        <Title>Sign Up</Title>
         <GoogleButton onClick={handleGoogleSignIn}>
           <GoogleIcon src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo" />
-          Sign in with Google
+          Sign Up with Google
         </GoogleButton>
         <SmallText>
           By continuing, you agree to Amazon clone's{" "}
@@ -131,4 +143,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default SignUp;

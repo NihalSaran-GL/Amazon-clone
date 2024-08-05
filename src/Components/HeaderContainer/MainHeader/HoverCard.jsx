@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import {size, textSize} from "../../ReusableComponets/Sizes";
+import { size, textSize } from "../../ReusableComponets/Sizes";
 import colors from "../../ReusableComponets/Colors";
+import { useNavigate } from "react-router-dom";
+import { auth } from '../../../Firebase/firebaseConfig';
 
 const Container = styled.div`
   font-family: Arial, sans-serif;
@@ -32,9 +34,9 @@ const NewCustomerLink = styled.a`
 const ListContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  `;
-  
-  const List = styled.ul`
+`;
+
+const List = styled.ul`
   list-style-type: none;
   padding: 0;
   margin-right: ${size.L};
@@ -70,13 +72,43 @@ const HorizontalLine = styled.hr`
 `;
 
 function AmazonMenu() {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Subscribe to auth state changes
+    const unsubscribe = auth.onAuthStateChanged(setUser);
+
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
+  }, []);
+
+  const handleAuthAction = () => {
+    if (user) {
+      // User is signed in; sign out
+      auth.signOut().then(() => {
+        // Sign-out successful, navigate to home page
+        navigate("/");
+      }).catch((error) => {
+        // An error happened
+        console.error("Sign out error: ", error);
+      });
+    } else {
+      // User is not signed in; navigate to sign-in page
+      navigate("/SignIn");
+    }
+  };
+  
+
   return (
     <Container>
-      <SignInButton>Sign in</SignInButton>
-      <NewCustomerLink href="#">New customer? Start here.</NewCustomerLink>
+      <SignInButton onClick={handleAuthAction}>
+        {user ? 'Sign out' : 'Sign in'}
+      </SignInButton>
+      {!user && <NewCustomerLink href="/SignUp">New customer? Start here.</NewCustomerLink>}
       
       <ListContainer>
-      <ListColumn>
+        <ListColumn>
           <ListTitle>Your Lists</ListTitle>
           <List>
             <ListItem><a href="#">Create a Wish List</a></ListItem>
