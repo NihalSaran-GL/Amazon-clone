@@ -5,6 +5,7 @@ import Header from "./HeaderContainer/HeaderContainer";
 import ProductCategories from "../Screens/ProductCategories";
 import ShoppingCart from "../Screens/CartPage";
 import LanguageSettings from "../Screens/LanguageSettings";
+import SignIn from "../Screens/LoginPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/Home&Kitchen" element={<ProductCategories />} />
         <Route path="/AddToCart" element={<ShoppingCart />} />
         <Route path="/LanguageSettings" element={<LanguageSettings />} />
+        <Route path="/SignIn" element={<SignIn />} />
       </Routes>
     </Router>
   );
