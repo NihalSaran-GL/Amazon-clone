@@ -60,6 +60,7 @@ import HoverCard from "./HoverCard";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../Firebase/firebaseConfig";
+import LocationPopup from "./LocationPopup";
 
 const Data = {
   image: imagesData.header_container.main_header.amazon_logo_image,
@@ -88,6 +89,7 @@ function Main_Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
   const [loading, setLoading] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const auth = getAuth();
@@ -150,7 +152,7 @@ function Main_Header() {
             />
           </LogoContainer>
         </BoxHover>
-        <BoxHover>
+        <BoxHover onClick={() => setShowPopup(true)}>
           <Icons
             Icon={LocationOn}
             iconColor={LocationIconColor}
@@ -175,6 +177,7 @@ function Main_Header() {
             </p>
           </TextContainer>
         </BoxHover>
+        {showPopup && <LocationPopup onClose={() => setShowPopup(false)} />}
       </LeftSection>
       <CenterSection>
         <SearchBar>
