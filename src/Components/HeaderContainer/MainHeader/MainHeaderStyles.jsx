@@ -55,7 +55,7 @@ export const TextContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-right: ${size.S};
+  margin-right: ${size.XS};
 `;
 
 export const CenterSection = styled.section`

@@ -59,7 +59,7 @@ import useDropdownData from "../../Hooks/useHeaderData";
 import HoverCard from "./HoverCard";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../../Firebase/firebaseConfig"; // Adjust the import path to your Firebase config
+import { db } from "../../../Firebase/firebaseConfig";
 
 const Data = {
   image: imagesData.header_container.main_header.amazon_logo_image,
@@ -127,11 +127,11 @@ function Main_Header() {
         return userDoc.data();
       } else {
         console.log("No such document!");
-        return { displayName: "User" }; // Fallback display name
+        return { displayName: "User" };
       }
     } catch (error) {
       console.error('Error fetching user data:', error);
-      return { displayName: "User" }; // Fallback display name
+      return { displayName: "User" };
     }
   };
 
