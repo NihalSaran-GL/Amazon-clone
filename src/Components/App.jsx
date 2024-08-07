@@ -8,6 +8,7 @@ import ShoppingCart from "../Screens/CartPage";
 import LanguageSettings from "../Screens/LanguageSettings";
 import LoginPage from "../Screens/LoginPage";
 import SignUp from "../Screens/SignUpPage";
+import ProductListing from "../Screens/ProductListing";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function AnimatedRoutes() {
         <Route path="/LanguageSettings" element={<LanguageSettings />} />
         <Route path="/SignIn" element={<LoginPage />} />
         <Route path="/SignUp" element={<SignUp/>} /> 
+        <Route path="/ProductListing" element={<ProductListing/>} /> 
       </Routes>
     </motion.div>
   );
