@@ -212,7 +212,7 @@ const ProductListing = () => {
 
       <MainContent>
         <Header>Results</Header>
-        <p>Check each product page for other buying options.</p>
+        <p style={{marginBottom: size.S}}>Check each product page for other buying options.</p>
 
         <ProductGrid>
           <Product
