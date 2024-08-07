@@ -39,10 +39,10 @@ const Title = styled.h1`
 const GoogleButton = styled.button`
   width: 100%;
   padding: ${size.S};
-  background-color: #4285F4; /* Google blue color */
+  background-color: ${colors.quinary};
   border: none;
   border-radius: ${size.XXS};
-  color: ${colors.white};
+  color: ${colors.secondary};
   font-size: ${textSize.S};
   cursor: pointer;
   display: flex;
@@ -90,12 +90,10 @@ function LoginPage() {
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
-      // Handle successful sign-in
       console.log("User signed in", result.user);
-      navigate('/home'); // Navigate to /home after successful sign-in
+      navigate('/');
     } catch (error) {
       console.error("Error signing in with Google", error);
-      // Handle sign-in errors here
     }
   };
 
