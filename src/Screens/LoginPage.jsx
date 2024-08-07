@@ -91,7 +91,7 @@ function LoginPage() {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       console.log("User signed in", result.user);
-      navigate('/home');
+      navigate('/');
     } catch (error) {
       console.error("Error signing in with Google", error);
     }
