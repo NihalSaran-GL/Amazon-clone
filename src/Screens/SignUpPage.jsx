@@ -23,7 +23,7 @@ const PageContainer = styled.div`
 
 const SignInContainer = styled.div`
   width: 350px;
-  border: 1px solid ${colors.border};
+  border: 1px solid black;
   border-radius: ${size.XS};
   padding: ${size.L};
   display: flex;
@@ -40,10 +40,10 @@ const Title = styled.h1`
 const GoogleButton = styled.button`
   width: 100%;
   padding: ${size.S};
-  background-color: #4285F4; /* Google blue color */
+  background-color: ${colors.quinary};
   border: none;
   border-radius: ${size.XXS};
-  color: ${colors.white};
+  color: ${colors.secondary};
   font-size: ${textSize.S};
   cursor: pointer;
   display: flex;
@@ -91,7 +91,6 @@ function SignUp() {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
 
-      // Extract user details
       const userDetails = {
         uid: user.uid,
         email: user.email,
@@ -99,15 +98,12 @@ function SignUp() {
         photoURL: user.photoURL,
       };
 
-      // Save user details to Firestore
       await setDoc(doc(collection(db, "users"), user.uid), userDetails);
 
-      // Handle successful sign-in
       console.log("User signed in", user);
-      navigate('/'); // Navigate to /home after successful sign-in
+      navigate('/');
     } catch (error) {
       console.error("Error signing in with Google", error);
-      // Handle sign-in errors here
     }
   };
 
