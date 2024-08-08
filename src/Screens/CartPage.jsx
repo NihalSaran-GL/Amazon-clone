@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import CartItem from '../Components/CartContainer/CartItem';
-import PriceDetails from '../Components/CartContainer/PriceDetails';
+import ShoppingCart from '../Components/CartContainer/ShoppingCart';
 import Recommendations from '../Components/CartContainer/Recommendations';
 import { size, textSize } from "../Components/ReusableComponets/Sizes";
 import colors from "../Components/ReusableComponets/Colors";
 
-const ShoppingCart = () => {
+const CartPage = () => {
   return (
     <CartContainer>
       <CartItems>
         <Title>Shopping Cart</Title>
-        <CartItem />
-        <PriceDetails />
+        <ShoppingCart />
       </CartItems>
       <Recommendations />
     </CartContainer>
@@ -38,4 +37,4 @@ const Title = styled.h2`
   margin-bottom: ${size.M};
 `;
 
-export default ShoppingCart;
+export default CartPage;

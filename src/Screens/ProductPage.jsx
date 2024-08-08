@@ -8,6 +8,8 @@ import {
 } from "../Components/ReusableComponets/Sizes";
 import colors from "../Components/ReusableComponets/Colors";
 
+// Styled components definitions
+
 const Icon = styled.span`
   display: inline-block;
   width: 24px;
@@ -156,13 +158,31 @@ const BuyNowButton = styled(Button)`
   font-size: ${textSize.S};
 `;
 
+// Dummy data
+const dummyProduct = {
+  name: "Sample Product",
+  imageUrl: "https://via.placeholder.com/600x400",
+  price: "999",
+  originalPrice: "1299",
+  discount: "20% OFF",
+  deliveryInfo: "Delivered in 3-5 business days",
+  offers: [
+    { title: "Buy 1 Get 1 Free", description: "Get a free product with this purchase." }
+  ],
+  features: [
+    { icon: "https://via.placeholder.com/24", title: "Feature 1" },
+    { icon: "https://via.placeholder.com/24", title: "Feature 2" }
+  ],
+  colorOptions: [
+    { image: "https://via.placeholder.com/40", color: "Black" },
+    { image: "https://via.placeholder.com/40", color: "White" }
+  ],
+  color: "Black"
+};
+
 const ProductPage = () => {
   const location = useLocation();
-  const product = location.state?.product; // Fetch product data from state
-
-  if (!product) {
-    return <p>Product not found.</p>;
-  }
+  const product = location.state?.product || dummyProduct; // Use dummy data if no product data is available
 
   const thumbnails = product.thumbnails || [];
   const colorOptions = product.colorOptions || [];

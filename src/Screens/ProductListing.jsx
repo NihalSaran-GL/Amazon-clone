@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { getFirestore, collection, getDocs, doc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import styled from 'styled-components';
+import AlertDialog from '../Components/ReusableComponets/AlertDialog'; // Import the AlertDialog component
 import {
   sectionSize,
   size,
   textSize,
-} from "../Components/ReusableComponets/Sizes";
-import colors from "../Components/ReusableComponets/Colors";
-import StarRating from "../Components/ReusableComponets/StarRating";
-import { useLocation, useNavigate } from "react-router-dom";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { db } from "../Firebase/firebaseConfig";
+} from '../Components/ReusableComponets/Sizes';
+import colors from '../Components/ReusableComponets/Colors';
+import StarRating from '../Components/ReusableComponets/StarRating';
+import { db } from '../Firebase/firebaseConfig';
 
 const FlexContainer = styled.div`
   display: flex;
@@ -131,7 +133,7 @@ const FilterSection = ({ title, children }) => (
   </Section>
 );
 
-const Product = ({ image, title, price, note, onClick }) => (
+const Product = ({ image, title, price, note, onClick, onAddToCart }) => (
   <ProductCard onClick={onClick} style={{ cursor: 'pointer' }}>
     <ProductImageWrapper>
       <ProductImage src={image} alt={title} />
@@ -141,21 +143,28 @@ const Product = ({ image, title, price, note, onClick }) => (
       <ProductPrice>{price}</ProductPrice>
       {note && <ProductNote>{note}</ProductNote>}
       <StarRating starRating={4} />
-      <Button>Add to cart</Button>
+      <Button onClick={(e) => {
+        e.stopPropagation(); // Prevent triggering the Product click event
+        onAddToCart();
+      }}>
+        Add to cart
+      </Button>
     </div>
   </ProductCard>
 );
 
-
 const ProductListing = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
+  const auth = getAuth();
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
-    const searchQuery = searchParams.get("search");
+    const searchQuery = searchParams.get('search');
 
     if (searchQuery) {
       fetchSearchResults(searchQuery);
@@ -165,9 +174,9 @@ const ProductListing = () => {
   const fetchSearchResults = async (query) => {
     setLoading(true);
     try {
-      const productsRef = collection(db, "productdata", "Products", query);
+      const productsRef = collection(db, 'productdata', 'Products', query);
       const querySnapshot = await getDocs(productsRef);
-      
+
       const results = [];
       querySnapshot.forEach((doc) => {
         results.push({ id: doc.id, ...doc.data() });
@@ -175,8 +184,7 @@ const ProductListing = () => {
 
       setSearchResults(results);
     } catch (error) {
-      console.error("Error fetching search results:", error);
-      // Handle the error (e.g., show an error message to the user)
+      console.error('Error fetching search results:', error);
     } finally {
       setLoading(false);
     }
@@ -185,8 +193,37 @@ const ProductListing = () => {
   const handleProductClick = (product) => {
     navigate(`/product/${product.id}`, { state: { product } });
   };
-  
-  // ... rest of the component
+
+  const handleAddToCart = async (product) => {
+    const user = auth.currentUser;
+
+    try {
+      if (user) {
+        // User is logged in
+        const userCartRef = doc(db, 'users', user.uid); // Assuming you have a "users" collection with document id as user.uid
+        await updateDoc(userCartRef, {
+          cart: arrayUnion(product), // Add the entire product object to the cart
+        });
+        setAlertMessage('Product added to your cart.');
+      } else {
+        // User is not logged in
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product); // Add the entire product object to the cart
+        localStorage.setItem('cart', JSON.stringify(cart));
+        setAlertMessage('Product added to local storage.');
+      }
+      setAlertOpen(true);
+    } catch (error) {
+      console.error('Error adding product to cart:', error);
+      setAlertMessage('Failed to add product to cart. Please try again.');
+      setAlertOpen(true);
+    }
+  };
+
+  const handleCloseAlert = () => {
+    setAlertOpen(false);
+  };
+
   return (
     <Page>
       <Sidebar>
@@ -204,7 +241,7 @@ const ProductListing = () => {
 
         <FilterSection title="Category">
           <CheckboxLabel>
-            <input type="checkbox" checked /> Smartphones & Basic Mobiles
+            <input type="checkbox" /> Smartphones & Basic Mobiles
           </CheckboxLabel>
         </FilterSection>
 
@@ -257,8 +294,8 @@ const ProductListing = () => {
       <MainContent>
         <Header>
           {searchResults.length > 0
-            ? `Search Results for "${new URLSearchParams(location.search).get("search")}"`
-            : "All Products"}
+            ? `Search Results for "${new URLSearchParams(location.search).get('search')}"`
+            : 'All Products'}
         </Header>
         <p style={{ marginBottom: size.S }}>Check each product page for other buying options.</p>
 
@@ -274,6 +311,7 @@ const ProductListing = () => {
                 price={`₹${product.price}`}
                 note={product.note}
                 onClick={() => handleProductClick(product)}
+                onAddToCart={() => handleAddToCart(product)} // Pass the entire product object
               />
             ))
           ) : (
@@ -281,6 +319,12 @@ const ProductListing = () => {
           )}
         </ProductGrid>
       </MainContent>
+
+      <AlertDialog 
+        open={alertOpen} 
+        onClose={handleCloseAlert} 
+        message={alertMessage} 
+      />
     </Page>
   );
 };

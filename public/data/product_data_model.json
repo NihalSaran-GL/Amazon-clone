@@ -1,18 +1,252 @@
-{
-    "id": "ear002",
-    "name": "SoundCore Liberty Neo",
-    "description": "True wireless earbuds, IPX7 waterproof, premium sound with graphene drivers",
-    "price": 59.99,
-    "category": "Earphones",
-    "brand": "Anker",
-    "imageUrl": "https://example.com/images/soundcore-liberty-neo.jpg",
-    "rating": 4.5,
-    "numReviews": 12543,
-    "inStock": true,
-    "features": [
-        "Up to 7 hours of playtime",
-        "Push and Go technology",
-        "Bluetooth 5.0",
-        "Ergonomic design with multiple ear tips"
-    ]
-}
+[
+    {
+        "id": "mob001",
+        "name": "Samsung Galaxy S23",
+        "description": "Flagship smartphone with dynamic AMOLED display and Snapdragon 8 Gen 2 processor",
+        "price": 999.99,
+        "originalPrice": 1099.99,
+        "discount": "10% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Trade-In Offer", "description": "Get up to $200 off with eligible trade-in." }
+        ],
+        "deliveryInfo": "Delivered in 2-4 business days",
+        "features": [
+            { "icon": "https://m.media-amazon.com/images/I/71Lv32ogyOL._SL1500_.jpg", "title": "6.1-inch Dynamic AMOLED display" },
+            { "icon": "https://m.media-amazon.com/images/I/714CRqV-SaL._SL1500_.jpg", "title": "Snapdragon 8 Gen 2 processor" },
+            { "icon": "https://m.media-amazon.com/images/I/81rsI4YP0fL._SL1500_.jpg", "title": "Vivid and immersive visuals" },
+            { "icon": "https://m.media-amazon.com/images/I/610x1tT76IL._SL1500_.jpg", "title": "50MP triple camera system" },
+            { "icon": "https://m.media-amazon.com/images/I/61gnzBGKyYL._SL1500_.jpg", "title": "What's in the box" }
+        ],
+        "brand": "Samsung",
+        "imageUrl": "https://m.media-amazon.com/images/I/617l83eY1rL._AC_UY218_.jpg",
+        "rating": 4.8,
+        "numReviews": 10234,
+        "inStock": true
+    },
+    {
+        "id": "mob002",
+        "name": "iPhone 15 Pro",
+        "description": "Premium smartphone with A17 Bionic chip and ProMotion display",
+        "price": 1099.99,
+        "originalPrice": 1199.99,
+        "discount": "8% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Free AirPods Pro", "description": "Get AirPods Pro with every purchase." }
+        ],
+        "deliveryInfo": "Delivered in 3-5 business days",
+        "features": [
+            { "icon": "https://via.placeholder.com/24", "title": "6.1-inch Super Retina XDR display" },
+            { "icon": "https://via.placeholder.com/24", "title": "A17 Bionic chip" },
+            { "icon": "https://via.placeholder.com/24", "title": "6GB RAM, 256GB storage" },
+            { "icon": "https://via.placeholder.com/24", "title": "48MP triple camera system" },
+            { "icon": "https://via.placeholder.com/24", "title": "3200mAh battery" }
+        ],
+        "brand": "Apple",
+        "imageUrl": "https://example.com/images/iphone-15-pro.jpg",
+        "rating": 4.9,
+        "numReviews": 23123,
+        "inStock": true
+    },
+    {
+        "id": "mob003",
+        "name": "Google Pixel 8",
+        "description": "Smartphone with Tensor G3 chip and exceptional camera performance",
+        "price": 799.99,
+        "originalPrice": 899.99,
+        "discount": "11% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Free Google Nest Hub", "description": "Get a Google Nest Hub with purchase." }
+        ],
+        "deliveryInfo": "Delivered in 2-4 business days",
+        "features": [
+            { "icon": "https://via.placeholder.com/24", "title": "6.2-inch OLED display" },
+            { "icon": "https://via.placeholder.com/24", "title": "Tensor G3 chip" },
+            { "icon": "https://via.placeholder.com/24", "title": "8GB RAM, 128GB storage" },
+            { "icon": "https://via.placeholder.com/24", "title": "50MP dual camera system" },
+            { "icon": "https://via.placeholder.com/24", "title": "4600mAh battery" }
+        ],
+        "brand": "Google",
+        "imageUrl": "https://example.com/images/google-pixel-8.jpg",
+        "rating": 4.7,
+        "numReviews": 9876,
+        "inStock": true
+    },
+    {
+        "id": "mob004",
+        "name": "OnePlus 11T",
+        "description": "High-performance smartphone with AMOLED display and fast charging",
+        "price": 649.99,
+        "originalPrice": 749.99,
+        "discount": "13% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Buy 1 Get 1 50% Off", "description": "Get 50% off on a second device." }
+        ],
+        "deliveryInfo": "Delivered in 3-5 business days",
+        "features": [
+            { "icon": "https://via.placeholder.com/24", "title": "6.7-inch AMOLED display" },
+            { "icon": "https://via.placeholder.com/24", "title": "Snapdragon 8+ Gen 1 processor" },
+            { "icon": "https://via.placeholder.com/24", "title": "12GB RAM, 256GB storage" },
+            { "icon": "https://via.placeholder.com/24", "title": "50MP triple camera system" },
+            { "icon": "https://via.placeholder.com/24", "title": "5000mAh battery with 80W fast charging" }
+        ],
+        "brand": "OnePlus",
+        "imageUrl": "https://example.com/images/oneplus-11t.jpg",
+        "rating": 4.6,
+        "numReviews": 6789,
+        "inStock": true
+    },
+    {
+        "id": "mob005",
+        "name": "Xiaomi Mi 13",
+        "description": "Smartphone with high-resolution display and fast performance",
+        "price": 699.99,
+        "originalPrice": 799.99,
+        "discount": "13% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Free Power Bank", "description": "Get a free power bank with purchase." }
+        ],
+        "deliveryInfo": "Delivered in 3-5 business days",
+        "features": [
+            { "icon": "https://via.placeholder.com/24", "title": "6.36-inch AMOLED display" },
+            { "icon": "https://via.placeholder.com/24", "title": "Snapdragon 8 Gen 1 processor" },
+            { "icon": "https://via.placeholder.com/24", "title": "8GB RAM, 128GB storage" },
+            { "icon": "https://via.placeholder.com/24", "title": "50MP triple camera system" },
+            { "icon": "https://via.placeholder.com/24", "title": "4500mAh battery" }
+        ],
+        "brand": "Xiaomi",
+        "imageUrl": "https://example.com/images/xiaomi-mi-13.jpg",
+        "rating": 4.5,
+        "numReviews": 5321,
+        "inStock": true
+    },
+    {
+        "id": "mob006",
+        "name": "Sony Xperia 1 IV",
+        "description": "Flagship smartphone with 4K OLED display and advanced camera features",
+        "price": 1199.99,
+        "originalPrice": 1299.99,
+        "discount": "8% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Free Sony Headphones", "description": "Get a pair of Sony headphones with purchase." }
+        ],
+        "deliveryInfo": "Delivered in 2-4 business days",
+        "features": [
+            { "icon": "https://via.placeholder.com/24", "title": "6.5-inch 4K OLED display" },
+            { "icon": "https://via.placeholder.com/24", "title": "Snapdragon 8 Gen 1 processor" },
+            { "icon": "https://via.placeholder.com/24", "title": "12GB RAM, 256GB storage" },
+            { "icon": "https://via.placeholder.com/24", "title": "12MP quad camera system" },
+            { "icon": "https://via.placeholder.com/24", "title": "5000mAh battery" }
+        ],
+        "brand": "Sony",
+        "imageUrl": "https://example.com/images/sony-xperia-1-iv.jpg",
+        "rating": 4.4,
+        "numReviews": 4210,
+        "inStock": true
+    },
+    {
+        "id": "mob007",
+        "name": "Oppo Find X5 Pro",
+        "description": "Premium smartphone with advanced camera and fast charging capabilities",
+        "price": 849.99,
+        "originalPrice": 949.99,
+        "discount": "10% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Buy 1 Get 1 30% Off", "description": "Get 30% off on a second device." }
+        ],
+        "deliveryInfo": "Delivered in 3-5 business days",
+        "features": [
+            { "icon": "https://via.placeholder.com/24", "title": "6.7-inch AMOLED display" },
+            { "icon": "https://via.placeholder.com/24", "title": "Snapdragon 8 Gen 1 processor" },
+            { "icon": "https://via.placeholder.com/24", "title": "12GB RAM, 256GB storage" },
+            { "icon": "https://via.placeholder.com/24", "title": "50MP triple camera system" },
+            { "icon": "https://via.placeholder.com/24", "title": "5000mAh battery with 80W fast charging" }
+        ],
+        "brand": "Oppo",
+        "imageUrl": "https://example.com/images/oppo-find-x5-pro.jpg",
+        "rating": 4.6,
+        "numReviews": 3487,
+        "inStock": true
+    },
+    {
+        "id": "mob008",
+        "name": "Realme GT 3",
+        "description": "High-performance smartphone with fast charging and large display",
+        "price": 749.99,
+        "originalPrice": 849.99,
+        "discount": "12% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Free Case Included", "description": "Get a free case with purchase." }
+        ],
+        "deliveryInfo": "Delivered in 2-4 business days",
+        "features": [
+            { "icon": "https://via.placeholder.com/24", "title": "6.74-inch AMOLED display" },
+            { "icon": "https://via.placeholder.com/24", "title": "Snapdragon 8 Gen 2 processor" },
+            { "icon": "https://via.placeholder.com/24", "title": "12GB RAM, 256GB storage" },
+            { "icon": "https://via.placeholder.com/24", "title": "50MP triple camera system" },
+            { "icon": "https://via.placeholder.com/24", "title": "4600mAh battery with 150W fast charging" }
+        ],
+        "brand": "Realme",
+        "imageUrl": "https://example.com/images/realme-gt-3.jpg",
+        "rating": 4.5,
+        "numReviews": 2943,
+        "inStock": true
+    },
+    {
+        "id": "mob009",
+        "name": "Huawei P60 Pro",
+        "description": "Flagship smartphone with advanced camera system and large display",
+        "price": 899.99,
+        "originalPrice": 999.99,
+        "discount": "10% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Free Wireless Charger", "description": "Get a free wireless charger with purchase." }
+        ],
+        "deliveryInfo": "Delivered in 3-5 business days",
+        "features": [
+            { "icon": "https://via.placeholder.com/24", "title": "6.67-inch OLED display" },
+            { "icon": "https://via.placeholder.com/24", "title": "Kirin 9000E processor" },
+            { "icon": "https://via.placeholder.com/24", "title": "8GB RAM, 256GB storage" },
+            { "icon": "https://via.placeholder.com/24", "title": "50MP quad camera system" },
+            { "icon": "https://via.placeholder.com/24", "title": "4700mAh battery" }
+        ],
+        "brand": "Huawei",
+        "imageUrl": "https://example.com/images/huawei-p60-pro.jpg",
+        "rating": 4.4,
+        "numReviews": 2785,
+        "inStock": true
+    },
+    {
+        "id": "mob010",
+        "name": "Asus ROG Phone 7",
+        "description": "Gaming smartphone with high refresh rate display and advanced cooling",
+        "price": 999.99,
+        "originalPrice": 1099.99,
+        "discount": "9% OFF",
+        "category": "Mobiles",
+        "offers": [
+            { "title": "Free Game Controller", "description": "Get a free game controller with purchase." }
+        ],
+        "deliveryInfo": "Delivered in 2-4 business days",
+        "features": [
+            { "icon": "https://via.placeholder.com/24", "title": "6.78-inch AMOLED display with 165Hz refresh rate" },
+            { "icon": "https://via.placeholder.com/24", "title": "Snapdragon 8 Gen 2 processor" },
+            { "icon": "https://via.placeholder.com/24", "title": "16GB RAM, 512GB storage" },
+            { "icon": "https://via.placeholder.com/24", "title": "50MP triple camera system" },
+            { "icon": "https://via.placeholder.com/24", "title": "6000mAh battery with 65W fast charging" }
+        ],
+        "brand": "Asus",
+        "imageUrl": "https://example.com/images/asus-rog-phone-7.jpg",
+        "rating": 4.7,
+        "numReviews": 1624,
+        "inStock": true
+    }
+]
