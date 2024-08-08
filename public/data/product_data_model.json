@@ -1,0 +1,18 @@
+{
+    "id": "ear002",
+    "name": "SoundCore Liberty Neo",
+    "description": "True wireless earbuds, IPX7 waterproof, premium sound with graphene drivers",
+    "price": 59.99,
+    "category": "Earphones",
+    "brand": "Anker",
+    "imageUrl": "https://example.com/images/soundcore-liberty-neo.jpg",
+    "rating": 4.5,
+    "numReviews": 12543,
+    "inStock": true,
+    "features": [
+        "Up to 7 hours of playtime",
+        "Push and Go technology",
+        "Bluetooth 5.0",
+        "Ergonomic design with multiple ear tips"
+    ]
+}
