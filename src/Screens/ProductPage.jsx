@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import {
@@ -7,9 +7,11 @@ import {
   textSize,
 } from "../Components/ReusableComponets/Sizes";
 import colors from "../Components/ReusableComponets/Colors";
+import { getFirestore, doc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import AlertDialog from '../Components/ReusableComponets/AlertDialog';
 
 // Styled components definitions
-
 const Icon = styled.span`
   display: inline-block;
   width: 24px;
@@ -184,6 +186,41 @@ const ProductPage = () => {
   const location = useLocation();
   const product = location.state?.product || dummyProduct; // Use dummy data if no product data is available
 
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const auth = getAuth();
+  const db = getFirestore();
+
+  const handleAddToCart = async () => {
+    const user = auth.currentUser;
+
+    try {
+      if (user) {
+        // User is logged in
+        const userCartRef = doc(db, 'users', user.uid); // Assuming you have a "users" collection with document id as user.uid
+        await updateDoc(userCartRef, {
+          cart: arrayUnion(product), // Add the entire product object to the cart
+        });
+        setAlertMessage('Product added to your cart.');
+      } else {
+        // User is not logged in
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product); // Add the entire product object to the cart
+        localStorage.setItem('cart', JSON.stringify(cart));
+        setAlertMessage('Product added to local storage.');
+      }
+      setAlertOpen(true);
+    } catch (error) {
+      console.error('Error adding product to cart:', error);
+      setAlertMessage('Failed to add product to cart. Please try again.');
+      setAlertOpen(true);
+    }
+  };
+
+  const handleCloseAlert = () => {
+    setAlertOpen(false);
+  };
+
   const thumbnails = product.thumbnails || [];
   const colorOptions = product.colorOptions || [];
 
@@ -245,11 +282,17 @@ const ProductPage = () => {
             </ColorOptions>
           </div>
           <div>
-            <AddToCartButton>Add to Cart</AddToCartButton>
+            <AddToCartButton onClick={handleAddToCart}>Add to Cart</AddToCartButton>
             <BuyNowButton>Buy Now</BuyNowButton>
           </div>
         </ProductDetails>
       </ProductContainer>
+
+      <AlertDialog 
+        open={alertOpen} 
+        onClose={handleCloseAlert} 
+        message={alertMessage} 
+      />
     </Page>
   );
 };

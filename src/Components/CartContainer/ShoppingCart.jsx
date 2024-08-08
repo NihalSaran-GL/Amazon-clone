@@ -4,6 +4,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { size, textSize } from "../ReusableComponets/Sizes";
 import colors from "../ReusableComponets/Colors";
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import Button from '@mui/material/Button';
 
 // Fetch cart items from Firestore or local storage
 const fetchCartItems = async () => {
@@ -50,6 +56,9 @@ const updateCart = async (cartItems) => {
 const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const loadCartItems = async () => {
@@ -123,6 +132,19 @@ const ShoppingCart = () => {
     setSubtotal(newSubtotal);
   };
 
+  const handleProceedToBuy = () => {
+    if (cartItems.length > 0) { // Check if cart is not empty
+      navigate('/SignIn'); // Navigate to /SignIn
+    } else {
+      setDialogMessage('Your cart is empty!'); // Set dialog message
+      setDialogOpen(true); // Open dialog
+    }
+  };
+
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
+  };
+
   return (
     <div>
       {cartItems.map((item, index) => (
@@ -138,7 +160,25 @@ const ShoppingCart = () => {
           onDelete={() => handleDelete(item)}
         />
       ))}
-      <PriceDetails subtotal={subtotal} itemCount={cartItems.length} />
+      <PriceDetails subtotal={subtotal} itemCount={cartItems.length} onProceedToBuy={handleProceedToBuy} />
+
+      {/* Dialog for empty cart */}
+      <Dialog
+        open={dialogOpen}
+        onClose={handleCloseDialog}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Cart Empty"}</DialogTitle>
+        <DialogContent>
+          <p>{dialogMessage}</p>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
@@ -214,11 +254,11 @@ const ItemPrice = styled.div`
   margin-top: ${size.S};
 `;
 
-const PriceDetails = ({ subtotal, itemCount }) => {
+const PriceDetails = ({ subtotal, itemCount, onProceedToBuy }) => {
   return (
     <PriceContainer>
       <Subtotal>Subtotal ({itemCount} item{itemCount > 1 ? 's' : ''}): ₹{subtotal.toFixed(2)}</Subtotal>
-      <CheckoutButton>Proceed to Buy</CheckoutButton>
+      <CheckoutButton onClick={onProceedToBuy}>Proceed to Buy</CheckoutButton>
     </PriceContainer>
   );
 };

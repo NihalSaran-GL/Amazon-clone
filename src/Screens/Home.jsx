@@ -9,6 +9,8 @@ import GridWrapper from "../Components/ReusableComponets/GridWrapper";
 import ProductCard from "../Components/ReusableComponets/ProductCard";
 import { size, textSize } from "../Components/ReusableComponets/Sizes";
 import colors from "../Components/ReusableComponets/Colors";
+import { Link } from 'react-router-dom';
+
 
 const Container = styled.main`
   max-width: 1500px;
@@ -16,10 +18,17 @@ const Container = styled.main`
   padding: 0 20px;
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(Link)`
+  display: block;
+  text-decoration: none;
+  color: inherit;
   img {
     width: 100%;
     height: auto;
+  }
+  p {
+    text-align: center;
+    margin: 0;
   }
 `;
 
@@ -28,102 +37,104 @@ const images = "https://cdn.pixabay.com/photo/2022/01/25/04/42/bird-6965228_1280
   .split(" ")
   .slice(0, 10);
 
-  function Home() {
-    const [categories, setCategories] = useState({});
-    const [sliderCategories, setSliderCategories] = useState({});
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const cardDataDoc = await getDoc(doc(db, "productdata", "ProductData"));
-          const sliderDataDoc = await getDoc(doc(db, "productdata", "SliderData"));
-  
-          if (cardDataDoc.exists()) {
-            const data = cardDataDoc.data();
-            setCategories(data.CategoryCard);
-          } else {
-            console.log("No CardData document!");
-          }
-  
-          if (sliderDataDoc.exists()) {
-            const data = sliderDataDoc.data();
-            setSliderCategories(data.SliderCards || {});
-          } else {
-            console.log("No SliderData document!");
-          }
-        } catch (error) {
-          console.error("Error fetching data from Firestore:", error);
+function Home() {
+  const [categories, setCategories] = useState({});
+  const [sliderCategories, setSliderCategories] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const cardDataDoc = await getDoc(doc(db, "productdata", "ProductData"));
+        const sliderDataDoc = await getDoc(doc(db, "productdata", "SliderData"));
+
+        if (cardDataDoc.exists()) {
+          const data = cardDataDoc.data();
+          setCategories(data.CategoryCard);
+        } else {
+          console.log("No CardData document!");
         }
-      };
-  
-      fetchData();
-    }, []);
-  
-    const cards = Object.entries(categories).map(([key, category]) => (
-      <Card
-        key={key}
-        title={category.title}
-        cardsPerRow={2}
-        content={
-          <>
-            {Object.entries(category).map(([catKey, cat]) =>
-              catKey.startsWith('category') && typeof cat === "object" ? (
-                <ImageWrapper key={cat.id}>
-                  <img src={cat.image} alt={cat.name} />
-                  <p>{cat.name}</p>
-                </ImageWrapper>
-              ) : null
-            )}
-          </>
+
+        if (sliderDataDoc.exists()) {
+          const data = sliderDataDoc.data();
+          setSliderCategories(data.SliderCards || {});
+        } else {
+          console.log("No SliderData document!");
         }
-        footer={category.footer}
-        headerFontSize={textSize.M}
-        headerMarginBottom={size.S}
-        contentFontSize={textSize.XS}
-        contentMarginBottom={size.M}
-        footerFontSize={textSize.XXS}
-        footerColor={colors.octonary}
-        footerTextAlign="left"
-        padding={size.M}
-        margin={size.XS}
-        wrapperBgColor={colors.primary}
-        width={"320px"}
+      } catch (error) {
+        console.error("Error fetching data from Firestore:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const cards = Object.entries(categories).map(([key, category]) => (
+    <Card
+      key={key}
+      title={category.title}
+      cardsPerRow={2}
+      content={
+        <>
+          {Object.entries(category).map(([catKey, cat]) =>
+            catKey.startsWith('category') && typeof cat === "object" ? (
+              <ImageWrapper key={cat.id} to="/products">
+                <img src={cat.image} alt={cat.name} />
+                <p>{cat.name}</p>
+              </ImageWrapper>
+            ) : null
+          )}
+        </>
+      }
+      footer={category.footer}
+      headerFontSize={textSize.M}
+      headerMarginBottom={size.S}
+      contentFontSize={textSize.XS}
+      contentMarginBottom={size.M}
+      footerFontSize={textSize.XXS}
+      footerColor={colors.octonary}
+      footerTextAlign="left"
+      padding={size.M}
+      margin={size.XS}
+      wrapperBgColor={colors.primary}
+      width={"320px"}
+    />
+  ));
+  
+
+  const sliderCards = useMemo(() => {
+    return Object.values(sliderCategories).map((category, index) => (
+      <Link key={index} to="/products">
+      <ProductCard
+        image={category.image}
+        // title={category.title}
+        // price={category.price}
+        // stars={category.stars}
+        // note={category.note}
+        // deliveryDate={category.deliveryDate}
       />
-    ));
-  
-    const sliderCards = useMemo(() => {
-      return Object.values(sliderCategories).map((category, index) => (
-        <ProductCard
-          key={index}
-          image={category.image}
-          // title={category.title}
-          // price={category.price}
-          // stars={category.stars}
-          // note={category.note}
-          // deliveryDate={category.deliveryDate}
-        />
-      ));
-    }, [sliderCategories]);
-  
-    return (
-      <Container>
-        <ImageCarousel 
-          images={images}
-          backgroundColor="lightblue"
-          fadeHeight="150px"
-          fadeToColor="rgba(173, 216, 230, 1)"
-          imageMaxHeight="500px"
-          debugMode={true}
-          itemsPerPage={{
-            md: 1,
-            lg: 1,
-            xl: 1
-          }}
-        />
-        <GridWrapper columns={"4"}>
-          {cards}
-        </GridWrapper>
-        <Card
+    </Link>
+  ));
+  }, [sliderCategories]);
+
+  return (
+    <Container>
+      <ImageCarousel
+        images={images}
+        backgroundColor="lightblue"
+        fadeHeight="150px"
+        fadeToColor="rgba(173, 216, 230, 1)"
+        imageMaxHeight="500px"
+        debugMode={true}
+        itemsPerPage={{
+          md: 1,
+          lg: 1,
+          xl: 1
+        }}
+      />
+      <GridWrapper columns={"4"}>
+        {cards}
+      </GridWrapper>
+      <Card
         content={
           <CardSlider cards={sliderCards} />
         }
@@ -135,9 +146,9 @@ const images = "https://cdn.pixabay.com/photo/2022/01/25/04/42/bird-6965228_1280
         width="100%"
         gap={size.XXXS}
       />
-        
-      </Container>
-    );
-  }
-  
-  export default Home;
+
+    </Container>
+  );
+}
+
+export default Home;
