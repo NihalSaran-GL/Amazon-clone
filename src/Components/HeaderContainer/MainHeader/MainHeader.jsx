@@ -90,6 +90,8 @@ function Main_Header() {
   const [userName, setUserName] = useState("");
   const [loading, setLoading] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     const auth = getAuth();
@@ -112,6 +114,12 @@ function Main_Header() {
 
     return () => unsubscribe();
   }, []);
+  
+
+  const handleSearch = () => {
+    if (!searchQuery.trim()) return;
+    navigate(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
+  };
 
   const handleLogoClick = () => {
     navigate("/");
@@ -202,7 +210,12 @@ function Main_Header() {
             icon={<ArrowDropDown />}
             maxHeight="350px"
           />
-          <MainSearchSection placeholder={Data.searchBarPlaceholder} />
+          <MainSearchSection
+            placeholder={Data.searchBarPlaceholder}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+          />
           <Button
             icon={<Search />}
             color={SearchIconColor}
@@ -210,6 +223,7 @@ function Main_Header() {
             bgColor={SearchIconBoxColor2}
             borderColor={searchBarBorderColor}
             borderRadius={SearchIconBoxBorderRadius2}
+            onClick={handleSearch}
           />
         </SearchBar>
       </CenterSection>

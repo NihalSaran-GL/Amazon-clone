@@ -36,6 +36,8 @@ function AnimatedRoutes() {
         <Route path="/SignUp" element={<SignUp/>} /> 
         <Route path="/ProductListing" element={<ProductListing/>} />
         <Route path="/ProductPage" element={<ProductPage/>} />
+        <Route path="/products" element={<ProductListing/>} />
+        <Route path="/product/:id" element={<ProductPage />} />
       </Routes>
     </motion.div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import {
   sectionSize,
@@ -156,23 +157,15 @@ const BuyNowButton = styled(Button)`
 `;
 
 const ProductPage = () => {
-  const thumbnails = [
-    "https://m.media-amazon.com/images/I/31lNkQn-TrL._SS40_.jpg",
-    "https://m.media-amazon.com/images/I/31Q6BS+WwLS._SS40_.jpg",
-    "https://m.media-amazon.com/images/I/31Wka10rU3S._SS40_.jpg",
-    "https://m.media-amazon.com/images/I/41V6kYOAR1S._SS40_.jpg",
-    "https://m.media-amazon.com/images/I/31X8ZZVor4S._SS40_.jpg",
-    "https://m.media-amazon.com/images/I/51gd4+IVOYS._SS40_.jpg",
-  ];
+  const location = useLocation();
+  const product = location.state?.product; // Fetch product data from state
 
-  const colorOptions = [
-    { color: "Multi-coloured", image: "https://m.media-amazon.com/images/I/31qv2igcn6S._SS36_.jpg" },
-    { color: "Black", image: "https://m.media-amazon.com/images/I/31gxGdOqSdL._SS36_.jpg" },
-    { color: "Blue", image: "https://m.media-amazon.com/images/I/31ANThMGYzL._SS36_.jpg" },
-    { color: "Red", image: "https://m.media-amazon.com/images/I/41QupojMfcL._SS36_.jpg" },
-    { color: "White", image: "https://m.media-amazon.com/images/I/41VrLm8lG1L._SS36_.jpg" },
-    // ... add more color options as needed
-  ];
+  if (!product) {
+    return <p>Product not found.</p>;
+  }
+
+  const thumbnails = product.thumbnails || [];
+  const colorOptions = product.colorOptions || [];
 
   return (
     <Page>
@@ -181,70 +174,45 @@ const ProductPage = () => {
       </Breadcrumb>
       <ProductContainer>
         <ImageSection>
-          <MainImage
-            src="https://m.media-amazon.com/images/I/51tSqBl3+9L._SL1500_.jpg"
-            alt="Bluetooth Earphones"
-          />
+          <MainImage src={product.imageUrl} alt={product.name} />
           <ThumbnailContainer>
             {thumbnails.map((thumb, index) => (
-              <Thumbnail
-                key={index}
-                src={thumb}
-                alt={`Thumbnail ${index + 1}`}
-              />
+              <Thumbnail key={index} src={thumb} alt={`Thumbnail ${index + 1}`} />
             ))}
           </ThumbnailContainer>
         </ImageSection>
         <ProductDetails>
-          <ProductTitle>
-            Bluetooth Earphones for Sam-Sung M130K Galaxy K, Sam-Sung M130L
-            Galaxy U, Sam-Sung M150, Sam-Sung M190S Galaxy S Hoppin, Sam-Sung
-            M210S Wave2 Headphones (LVL12)
-          </ProductTitle>
+          <ProductTitle>{product.name}</ProductTitle>
           <PriceSection>
-            <DiscountTag>-52%</DiscountTag>
-            ₹1,199
-            <OriginalPrice>₹2,499</OriginalPrice>
+            {product.discount && <DiscountTag>{product.discount}</DiscountTag>}
+            ₹{product.price}
+            {product.originalPrice && <OriginalPrice>₹{product.originalPrice}</OriginalPrice>}
           </PriceSection>
           <DeliveryInfo>
-            FREE delivery Sunday, 11 August. Details
-            <br />
-            Or fastest delivery Saturday, 10 August. Order within 19 hrs 50
-            mins. Details
+            {product.deliveryInfo}
           </DeliveryInfo>
           <OfferSection>
             <h3>Offers</h3>
             <OfferContainer>
-              <OfferCard>
-                <h4>Bank Offer</h4>
-                <p>Upto ₹500.00 discount on SBI Cr...</p>
-              </OfferCard>
-              <OfferCard>
-                <h4>Partner Offers</h4>
-                <p>Get GST invoice and save up to 28% on...</p>
-              </OfferCard>
+              {product.offers && product.offers.map((offer, index) => (
+                <OfferCard key={index}>
+                  <h4>{offer.title}</h4>
+                  <p>{offer.description}</p>
+                </OfferCard>
+              ))}
             </OfferContainer>
           </OfferSection>
           <FeatureIcons>
-            <Icon
-              style={{ backgroundImage: "url(path_to_replacement_icon.png)" }}
-              title="7 days Replacement"
-            />
-            <Icon
-              style={{ backgroundImage: "url(path_to_delivery_icon.png)" }}
-              title="Free Delivery"
-            />
-            <Icon
-              style={{ backgroundImage: "url(path_to_warranty_icon.png)" }}
-              title="7 Day Warranty"
-            />
-            <Icon
-              style={{ backgroundImage: "url(path_to_amazon_icon.png)" }}
-              title="Amazon Delivered"
-            />
+            {product.features && product.features.map((feature, index) => (
+              <Icon
+                key={index}
+                style={{ backgroundImage: `url(${feature.icon})` }}
+                title={feature.title}
+              />
+            ))}
           </FeatureIcons>
           <div>
-            <h3>Colour: Multi-coloured LVL12</h3>
+            <h3>Colour: {product.color}</h3>
             <ColorOptions>
               {colorOptions.map((option, index) => (
                 <ColorOption

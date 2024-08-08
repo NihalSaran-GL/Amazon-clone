@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import {
   sectionSize,
@@ -7,6 +7,9 @@ import {
 } from "../Components/ReusableComponets/Sizes";
 import colors from "../Components/ReusableComponets/Colors";
 import StarRating from "../Components/ReusableComponets/StarRating";
+import { useLocation, useNavigate } from "react-router-dom";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { db } from "../Firebase/firebaseConfig";
 
 const FlexContainer = styled.div`
   display: flex;
@@ -45,6 +48,7 @@ const ProductCard = styled.article`
   border-radius: ${size.XS};
   background-color: ${colors.primary};
   align-items: center;
+  transition: background-color 0.3s;
 `;
 
 const ProductImageWrapper = styled.div`
@@ -127,22 +131,62 @@ const FilterSection = ({ title, children }) => (
   </Section>
 );
 
-const Product = ({ image, title, price, note }) => (
-  <ProductCard>
+const Product = ({ image, title, price, note, onClick }) => (
+  <ProductCard onClick={onClick} style={{ cursor: 'pointer' }}>
     <ProductImageWrapper>
       <ProductImage src={image} alt={title} />
     </ProductImageWrapper>
     <div>
       <ProductTitle>{title}</ProductTitle>
       <ProductPrice>{price}</ProductPrice>
-      {note && <ProductNote>{note}</ProductNote>} {/* Display note if provided */}
+      {note && <ProductNote>{note}</ProductNote>}
       <StarRating starRating={4} />
       <Button>Add to cart</Button>
     </div>
   </ProductCard>
 );
 
+
 const ProductListing = () => {
+  const [searchResults, setSearchResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const searchQuery = searchParams.get("search");
+
+    if (searchQuery) {
+      fetchSearchResults(searchQuery);
+    }
+  }, [location]);
+
+  const fetchSearchResults = async (query) => {
+    setLoading(true);
+    try {
+      const productsRef = collection(db, "productdata", "Products", query);
+      const querySnapshot = await getDocs(productsRef);
+      
+      const results = [];
+      querySnapshot.forEach((doc) => {
+        results.push({ id: doc.id, ...doc.data() });
+      });
+
+      setSearchResults(results);
+    } catch (error) {
+      console.error("Error fetching search results:", error);
+      // Handle the error (e.g., show an error message to the user)
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleProductClick = (product) => {
+    navigate(`/product/${product.id}`, { state: { product } });
+  };
+  
+  // ... rest of the component
   return (
     <Page>
       <Sidebar>
@@ -211,22 +255,30 @@ const ProductListing = () => {
       </Sidebar>
 
       <MainContent>
-        <Header>Results</Header>
-        <p style={{marginBottom: size.S}}>Check each product page for other buying options.</p>
+        <Header>
+          {searchResults.length > 0
+            ? `Search Results for "${new URLSearchParams(location.search).get("search")}"`
+            : "All Products"}
+        </Header>
+        <p style={{ marginBottom: size.S }}>Check each product page for other buying options.</p>
 
         <ProductGrid>
-          <Product
-            image="https://m.media-amazon.com/images/I/51Zjp5fq1EL.AC_UY218.jpg"
-            title="HMD Crest Max 5G | Segment 1st 50 MP Front Cam | Triple Rear AI Cam with 64 MP Primary Sony Sensor | FHD+ OLED Display | 8 GB RAM & 256 GB Storage | Android 14 | 33W Fast Charger in Box |..."
-            price="₹16,499"
-            note="Additional Flat discount 50"
-          />
-          <Product
-            image="https://m.media-amazon.com/images/I/81Z1scL6HvL.AC_UY218.jpg"
-            title="Redmi Note 13 5G (Arctic White, 6GB RAM, 128GB Storage) | 5G Ready | 120Hz Bezel-Less AMOLED | 7.7mm Slimmest Note Ever | 108MP Pro-Grade Camera"
-            price="₹16,999"
-            note="Limited time offer"
-          />
+          {loading ? (
+            <p>Loading...</p>
+          ) : searchResults.length > 0 ? (
+            searchResults.map((product) => (
+              <Product
+                key={product.id}
+                image={product.imageUrl}
+                title={product.name}
+                price={`₹${product.price}`}
+                note={product.note}
+                onClick={() => handleProductClick(product)}
+              />
+            ))
+          ) : (
+            <p>No results found.</p>
+          )}
         </ProductGrid>
       </MainContent>
     </Page>
